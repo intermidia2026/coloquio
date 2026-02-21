@@ -4,18 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Intermídia - V Colóquio Internacional</title>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="lang-pt">
 
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <button class="close-btn" onclick="toggleMenu()">&times;</button>
+        
+        <ul class="menu-links pt">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre intermidialidade</a></li>
+            <li><a href="inscricoes.html">Sobre as inscrições</a></li>
+            <li><a href="comissao.html">Comissão organizadora</a></li>
+            <li><a href="conferencistas.html">Conferencistas</a></li>
+            <li><a href="programacao.html">Programação</a></li>
+            <li><a href="informacoes.html">Informações úteis</a></li>
+            <li><a href="edicoes.html">Edições anteriores</a></li>
+            <li><a href="apoio.html">Promoção e apoio</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+
+        <ul class="menu-links en">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">About intermediality</a></li>
+            <li><a href="inscricoes.html">About registration</a></li>
+            <li><a href="comissao.html">Organizing Committee</a></li>
+            <li><a href="conferencistas.html">Keynote Speakers</a></li>
+            <li><a href="programacao.html">Schedule</a></li>
+            <li><a href="informacoes.html">Useful Information</a></li>
+            <li><a href="edicoes.html">Previous Editions</a></li>
+            <li><a href="apoio.html">Promotion and Support</a></li>
+            <li><a href="contato.html">Contact</a></li>
+        </ul>
+    </aside>
+
     <nav>
-        <div class="logo pt">GRUPO INTERMÍDIA</div>
-        <div class="logo en">INTERMEDIA GROUP</div>
+        <div class="nav-left">
+            <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
+            <div class="logo pt">GRUPO INTERMÍDIA</div>
+            <div class="logo en">INTERMEDIA GROUP</div>
+        </div>
         <div class="lang-toggle">
             <button class="active" onclick="switchLang('pt', this)">PT</button>
             <button onclick="switchLang('en', this)">EN</button>
@@ -24,14 +57,9 @@
 
     <header>
         <img src="content/images/topo_site.png" alt="Banner V Colóquio Internacional" class="banner-img">
-        
         <div class="header-info">
-            <div class="pt">
-                <p>17 a 20 de maio de 2026 | Universidade Federal de São João del-Rei</p>
-            </div>
-            <div class="en">
-                 <p>May 17 to 20, 2026 | Federal University of São João del-Rei</p>
-            </div>
+            <div class="pt"><p>17 a 20 de maio de 2026 | Universidade Federal de São João del-Rei</p></div>
+            <div class="en"><p>May 17 to 20, 2026 | Federal University of São João del-Rei</p></div>
         </div>
     </header>
 
@@ -67,54 +95,33 @@
             <div class="pt">
                 <h3>Apresentação do Colóquio</h3>
                 <p>O V Colóquio Internacional Escrita, Som, Imagem propõe debater a estética e a poética da paisagem em suas representações nas artes e mídias.</p>
-                <p>Em inglês, <em>landscape</em> deriva do holandês <em>landschap</em> — “lant” (terra, land) e “scap” (forma) — sendo o termo usado, a partir do século 15, para designar representações visuais de cenas naturais pitorescas, mas contém em si a ideia de terra ou lugar. Já paisagem chega ao português através do francês <em>paysage</em> — assim como em outras línguas românicas — derivado de pays / país, que, por sua vez, se origina no latim <em>pagus</em>.</p>
-                <p>O termo paisagem assumiu um papel central no campo da geografia, bem como na área de patrimônio, devido à noção de “paisagem cultural”. No campo de Patrimônio Cultural, a paisagem é vista basicamente de duas formas: como vista (seguindo a tradição visual do conceito) ou como produto da relação entre sociedade e natureza.</p>
-                <p>As paisagens dependem do olhar. O historiador Simon Schama, em entrevista sobre os 30 anos da série documental <em>Landscape and Memory</em>, enfatiza a distinção entre os conceitos de natureza e paisagem. Segundo o historiador, enquanto "a matéria bruta da natureza" se encontra "lá fora," a paisagem é "um estado de espírito antes de poder ser um estado de natureza". Essa noção já estava presente na obra seminal de Raymond Williams, <em>O campo e a cidade</em> (1973).</p>
+                <p>Em inglês, <em>landscape</em> deriva do holandês <em>landschap</em>...</p>
                 
                 <h3>Eixos Temáticos</h3>
-                <p>Convidamos os interessados a enviarem propostas que abordem, do ponto de vista da intermidialidade, um dos tópicos a seguir:</p>
                 <ul class="topics-list">
                     <li>Paisagem, memória, nostalgia</li>
                     <li>Paisagem cultural e patrimônio</li>
                     <li>Paisagens sonoras (soundscapes)</li>
-                    <li>Paisagens literárias</li>
-                    <li>Paisagens no imaginário local, regional, nacional</li>
-                    <li>Paisagem, meio ambiente, transição climática</li>
-                    <li>Direito à paisagem: a paisagem como bem coletivo</li>
-                    <li>Paisagens alteradas e seus impactos socioculturais</li>
-                    <li>Paisagens utópicas e distópicas</li>
-                    <li>Paisagem virtual</li>
                 </ul>
 
                 <div class="highlight-box">
-                    <strong>Esta chamada convoca professores, pesquisadores, artistas e estudantes de pós-graduação e graduação para submissão de resumos de trabalhos nos formatos de comunicação oral, produção criativa e pôster.</strong>
+                    <strong>Esta chamada convoca professores, pesquisadores, artistas e estudantes para submissão de resumos de trabalhos.</strong>
                 </div>
             </div>
 
             <div class="en">
                 <h3>Colloquium Presentation</h3>
-                <p>The V International Colloquium Writing, Sound, Image proposes to debate the aesthetics and poetics of the landscape in its representations in arts and media.</p>
-                <p>In English, <em>landscape</em> derives from the Dutch <em>landschap</em> — “lant” (land) and “scap” (form) — the term being used from the 15th century onwards to designate visual representations of picturesque natural scenes, but it contains within itself the idea of land or place. "Paisagem" reaches Portuguese through the French <em>paysage</em> — as in other Romance languages — derived from pays / country, which in turn originates from the Latin <em>pagus</em>.</p>
-                <p>The term landscape has assumed a central role in the field of geography, as well as in heritage, due to the notion of "cultural landscape". In the field of Cultural Heritage, landscape is seen basically in two ways: as a view (following the visual tradition of the concept) or as a product of the relationship between society and nature.</p>
-                <p>Landscapes depend on the gaze. Historian Simon Schama, in an interview about the 30th anniversary of the documentary series <em>Landscape and Memory</em>, emphasizes the distinction between the concepts of nature and landscape. According to the historian, while "the raw matter of nature" is "out there", the landscape is "a state of mind before it can be a state of nature". This notion was already present in Raymond Williams's seminal work, <em>The Country and the City</em> (1973).</p>
+                <p>The V International Colloquium Writing, Sound, Image proposes to debate the aesthetics and poetics of the landscape...</p>
                 
                 <h3>Thematic Axes</h3>
-                <p>We invite those interested to submit proposals that address, from the perspective of intermediality, one of the following topics:</p>
                 <ul class="topics-list">
                     <li>Landscape, memory, nostalgia</li>
                     <li>Cultural landscape and heritage</li>
                     <li>Soundscapes</li>
-                    <li>Literary landscapes</li>
-                    <li>Landscapes in the local, regional, and national imaginary</li>
-                    <li>Landscape, environment, climate transition</li>
-                    <li>Right to the landscape: landscape as a collective good</li>
-                    <li>Altered landscapes and their sociocultural impacts</li>
-                    <li>Utopian and dystopian landscapes</li>
-                    <li>Virtual landscape</li>
                 </ul>
 
                 <div class="highlight-box">
-                    <strong>This call invites professors, researchers, artists, and graduate and undergraduate students to submit abstracts for oral presentations, creative productions, and posters.</strong>
+                    <strong>This call invites professors, researchers, artists, and students to submit abstracts.</strong>
                 </div>
             </div>
         </div>
@@ -124,26 +131,54 @@
     <footer>
         <div class="pt">
             <p>Faculdade de Letras da Universidade Federal de Minas Gerais</p>
-            <p>Av. Antônio Carlos, 6627 Pampulha - Belo Horizonte/MG - CEP: 31270-901</p>
-            <p>(31) 3409-5101 | dir@letras.ufmg.br</p>
-            <p style="margin-top: 1.5rem; color: #888;">&copy; 2026 - Setor de Tecnologia da Informação - Faculdade de Letras - UFMG</p>
+            <p>dir@letras.ufmg.br</p>
+            <p style="margin-top: 1.5rem; color: #888;">&copy; 2026 - Setor de Tecnologia da Informação - UFMG</p>
         </div>
         <div class="en">
             <p>Faculty of Letters, Federal University of Minas Gerais</p>
-            <p>Av. Antônio Carlos, 6627 Pampulha - Belo Horizonte/MG - ZIP: 31270-901</p>
-            <p>(31) 3409-5101 | dir@letras.ufmg.br</p>
-            <p style="margin-top: 1.5rem; color: #888;">&copy; 2026 - Information Technology Sector - Faculty of Letters - UFMG</p>
+            <p>dir@letras.ufmg.br</p>
+            <p style="margin-top: 1.5rem; color: #888;">&copy; 2026 - Information Technology Sector - UFMG</p>
         </div>
     </footer>
 
     <script>
+        // Função para abrir/fechar o menu lateral
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            
+            sidebar.classList.toggle('open');
+            
+            if (overlay.classList.contains('show')) {
+                overlay.classList.remove('show');
+                setTimeout(() => overlay.style.display = 'none', 300);
+            } else {
+                overlay.style.display = 'block';
+                // Pequeno delay para a animação do CSS funcionar no display:block
+                setTimeout(() => overlay.classList.add('show'), 10);
+            }
+        }
+
+        // Função de troca de idioma (salva na sessão para manter o idioma ao trocar de página)
         function switchLang(lang, btnElement) {
             document.body.className = 'lang-' + lang;
+            sessionStorage.setItem('preferredLanguage', lang);
             
             document.querySelectorAll('.lang-toggle button').forEach(btn => {
                 btn.classList.remove('active');
             });
-            btnElement.classList.add('active');
+            if(btnElement) {
+                btnElement.classList.add('active');
+            } else {
+                // Se foi chamado automaticamente na carga da página
+                document.querySelector(`.lang-toggle button[onclick*="${lang}"]`).classList.add('active');
+            }
+        }
+
+        // Verifica se há um idioma salvo ao carregar a página
+        window.onload = function() {
+            const savedLang = sessionStorage.getItem('preferredLanguage');
+            if(savedLang) { switchLang(savedLang); }
         }
     </script>
 </body>
