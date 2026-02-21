@@ -1,0 +1,191 @@
+/* Variáveis de Cores e Estilo Moderno */
+:root {
+    --bg-color: #f4f7f6;
+    --text-color: #333;
+    --primary-color: #0a2342;
+    --accent-color: #3a6ea5;
+    --media-bg: #e9ecef;
+    --font-main: 'Roboto', sans-serif;
+    --font-title: 'Dancing Script', cursive;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+/* Controle de Idiomas */
+body.lang-en .pt { display: none !important; }
+body.lang-pt .en { display: none !important; }
+
+/* Barra de Navegação */
+nav {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.logo { font-weight: bold; font-size: 1.2rem; letter-spacing: 1px; font-family: var(--font-main); }
+
+.lang-toggle button {
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 6px 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-left: 8px;
+    transition: all 0.3s ease;
+    font-family: var(--font-main);
+    font-weight: 500;
+}
+
+.lang-toggle button.active, .lang-toggle button:hover {
+    background: #fff;
+    color: var(--primary-color);
+}
+
+/* Cabeçalho / Hero Section */
+header {
+    background: url('content/images/topo_site.png') no-repeat center center;
+    background-size: cover;
+    padding: 8rem 5%;
+    text-align: center;
+    color: #fff;
+    position: relative;
+}
+
+header h1 { 
+    font-family: var(--font-title);
+    font-size: 3.5rem; 
+    margin-bottom: 10px; 
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+header h2 { 
+    font-size: 1.5rem; 
+    font-weight: 300; 
+    margin-bottom: 20px; 
+    color: #eee;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+header p { 
+    font-size: 1.1rem; 
+    border-top: 1px solid rgba(255,255,255,0.4); 
+    display: inline-block; 
+    padding-top: 15px;
+    font-weight: 400;
+}
+
+/* Container Principal */
+.container { max-width: 1000px; margin: 3rem auto; padding: 0 5%; }
+
+.content-block {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 2.5rem;
+}
+
+h3 { 
+    color: var(--primary-color); 
+    border-bottom: 3px solid var(--accent-color); 
+    display: inline-block;
+    padding-bottom: 5px; 
+    margin: 2rem 0 1rem 0;
+    font-weight: 500;
+}
+
+p { margin-bottom: 1.2rem; text-align: justify; }
+
+em { color: var(--accent-color); font-style: italic; }
+
+/* Elementos de Intermidialidade */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.media-item {
+    background: var(--media-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.media-item:hover {
+    transform: translateY(-5px);
+}
+
+.media-item img, .media-item video {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.media-item div {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+audio { width: 90%; margin-top: 10px; }
+
+/* Lista de Tópicos */
+.topics-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin-top: 1rem;
+}
+
+.topics-list li {
+    background: var(--bg-color);
+    padding: 15px 20px;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 4px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+/* Chamada em destaque */
+.highlight-box {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: var(--primary-color);
+    color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 3rem 5%;
+    background: var(--primary-color);
+    color: #ccc;
+    font-size: 0.95rem;
+}
+footer p { text-align: center; margin-bottom: 0.5rem; }
