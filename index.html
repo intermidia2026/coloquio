@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intermídia - V Colóquio Internacional</title>
+    <style>
+        /* Variáveis de Cores e Estilo Moderno */
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #2b2b2b;
+            --primary-color: #1a1a1a;
+            --accent-color: #007bff;
+            --media-bg: #e9ecef;
+            --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        /* Controle de Idiomas - Mágica do Toggle */
+        body.lang-en .pt { display: none !important; }
+        body.lang-pt .en { display: none !important; }
+
+        /* Barra de Navegação */
+        nav {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo { font-weight: bold; font-size: 1.2rem; letter-spacing: 1.5px; }
+
+        .lang-toggle button {
+            background: transparent;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 6px 16px;
+            cursor: pointer;
+            border-radius: 20px;
+            margin-left: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .lang-toggle button.active, .lang-toggle button:hover {
+            background: #fff;
+            color: var(--primary-color);
+        }
+
+        /* Cabeçalho / Hero Section */
+        header {
+            padding: 5rem 5%;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1477346611705-65d1883cee1e?auto=format&fit=crop&q=80') center/cover;
+            color: #fff;
+        }
+
+        header h1 { font-size: 2.8rem; margin-bottom: 15px; line-height: 1.2; }
+        header h2 { font-size: 1.3rem; font-weight: 300; margin-bottom: 25px; color: #ddd; }
+        header p { font-size: 1.1rem; border-top: 1px solid rgba(255,255,255,0.3); display: inline-block; padding-top: 15px; }
+
+        /* Container Principal */
+        .container { max-width: 1000px; margin: 3rem auto; padding: 0 5%; }
+
+        .content-block {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            margin-bottom: 2.5rem;
+        }
+
+        h3 { 
+            color: var(--primary-color); 
+            border-bottom: 3px solid var(--accent-color); 
+            display: inline-block;
+            padding-bottom: 5px; 
+            margin: 2rem 0 1rem 0; 
+        }
+        
+        p { margin-bottom: 1.2rem; text-align: justify; }
+
+        /* Elementos de Intermidialidade */
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .media-item {
+            background: var(--media-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .media-item img, .media-item video {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        audio { width: 90%; margin-top: 10px; }
+
+        /* Lista de Tópicos */
+        .topics-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 1rem;
+        }
+
+        .topics-list li {
+            background: var(--bg-color);
+            padding: 15px 20px;
+            border-left: 4px solid var(--accent-color);
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 3rem 5%;
+            background: var(--primary-color);
+            color: #bbb;
+            font-size: 0.95rem;
+        }
+        footer p { text-align: center; margin-bottom: 0.5rem; }
+    </style>
+</head>
+<body class="lang-pt">
+
+    <nav>
+        <div class="logo pt">GRUPO INTERMÍDIA</div>
+        <div class="logo en">INTERMEDIA GROUP</div>
+        <div class="lang-toggle">
+            <button class="active" onclick="switchLang('pt', this)">PT</button>
+            <button onclick="switchLang('en', this)">EN</button>
+        </div>
+    </nav>
+
+    <header>
+        <div class="pt">
+            <h1>V Colóquio Internacional Escrita, Som, Imagem: PAISAGENS</h1>
+            <h2>Edição comemorativa dos 20 anos do Grupo de Pesquisa Intermídia (CNPq)</h2>
+            <p>17 a 20 de maio de 2026 | Universidade Federal de São João del-Rei</p>
+        </div>
+        <div class="en">
+            <h1>V International Colloquium Writing, Sound, Image: LANDSCAPES</h1>
+            <h2>Commemorative edition of the 20th anniversary of the Intermedia Research Group (CNPq)</h2>
+            <p>May 17 to 20, 2026 | Federal University of São João del-Rei</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="content-block">
+            <div class="pt">
+                <h3 style="margin-top: 0;">Galeria Intermídia</h3>
+                <p>O conceito de paisagem explorado através de diferentes meios. Você pode substituir os arquivos abaixo pelos projetos do grupo.</p>
+            </div>
+            <div class="en">
+                <h3 style="margin-top: 0;">Intermedia Gallery</h3>
+                <p>The concept of landscape explored through different media. You can replace the files below with the group's projects.</p>
+            </div>
+
+            <div class="media-grid">
+                <div class="media-item">
+                    <img src="https://images.unsplash.com/photo-1506744626753-eda818294ce1?auto=format&fit=crop&w=600&q=80" alt="Paisagem">
+                    <div class="pt"><strong>Expressão Visual</strong></div>
+                    <div class="en"><strong>Visual Expression</strong></div>
+                </div>
+                <div class="media-item">
+                    <video controls>
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    </video>
+                    <div class="pt"><strong>Imagem em Movimento</strong></div>
+                    <div class="en"><strong>Moving Image</strong></div>
+                </div>
+                <div class="media-item" style="justify-content: center; padding-top: 2rem;">
+                    <div class="pt"><strong>Paisagem Sonora (Soundscape)</strong></div>
+                    <div class="en"><strong>Soundscape</strong></div>
+                    <audio controls>
+                         <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+                    </audio>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <div class="pt">
+                <h3>Apresentação do Colóquio</h3>
+                <p>O V Colóquio Internacional Escrita, Som, Imagem propõe debater a estética e a poética da paisagem em suas representações nas artes e mídias.</p>
+                <p>Em inglês, <em>landscape</em> deriva do holandês <em>landschap</em> — “lant” (terra, land) e “scap” (forma) — sendo o termo usado, a partir do século 15, para designar representações visuais de cenas naturais pitorescas, mas contém em si a ideia de terra ou lugar. Já paisagem chega ao português através do francês <em>paysage</em> — assim como em outras línguas românicas — derivado de pays / país, que, por sua vez, se origina no latim <em>pagus</em>.</p>
+                <p>O termo paisagem assumiu um papel central no campo da geografia, bem como na área de patrimônio, devido à noção de “paisagem cultural”. No campo de Patrimônio Cultural, a paisagem é vista basicamente de duas formas: como vista (seguindo a tradição visual do conceito) ou como produto da relação entre sociedade e natureza.</p>
+                <p>As paisagens dependem do olhar. O historiador Simon Schama, em entrevista sobre os 30 anos da série documental <em>Landscape and Memory</em>, enfatiza a distinção entre os conceitos de natureza e paisagem. Segundo o historiador, enquanto "a matéria bruta da natureza" se encontra "lá fora," a paisagem é "um estado de espírito antes de poder ser um estado de natureza". Essa noção já estava presente na obra seminal de Raymond Williams, <em>O campo e a cidade</em> (1973).</p>
+                
+                <h3>Eixos Temáticos</h3>
+                <p>Convidamos os interessados a enviarem propostas que abordem, do ponto de vista da intermidialidade, um dos tópicos a seguir:</p>
+                <ul class="topics-list">
+                    <li>Paisagem, memória, nostalgia</li>
+                    <li>Paisagem cultural e patrimônio</li>
+                    <li>Paisagens sonoras (soundscapes)</li>
+                    <li>Paisagens literárias</li>
+                    <li>Paisagens no imaginário local, regional, nacional</li>
+                    <li>Paisagem, meio ambiente, transição climática</li>
+                    <li>Direito à paisagem: a paisagem como bem coletivo</li>
+                    <li>Paisagens alteradas e seus impactos socioculturais</li>
+                    <li>Paisagens utópicas e distópicas</li>
+                    <li>Paisagem virtual</li>
+                </ul>
+
+                <p style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-color); border-radius: 8px;"><strong>Esta chamada convoca professores, pesquisadores, artistas e estudantes de pós-graduação e graduação para submissão de resumos de trabalhos nos formatos de comunicação oral, produção criativa e pôster.</strong></p>
+            </div>
+
+            <div class="en">
+                <h3>Colloquium Presentation</h3>
+                <p>The V International Colloquium Writing, Sound, Image proposes to debate the aesthetics and poetics of the landscape in its representations in arts and media.</p>
+                <p>In English, <em>landscape</em> derives from the Dutch <em>landschap</em> — “lant” (land) and “scap” (form) — the term being used from the 15th century onwards to designate visual representations of picturesque natural scenes, but it contains within itself the idea of land or place. "Paisagem" reaches Portuguese through the French <em>paysage</em> — as in other Romance languages — derived from pays / country, which in turn originates from the Latin <em>pagus</em>.</p>
+                <p>The term landscape has assumed a central role in the field of geography, as well as in heritage, due to the notion of "cultural landscape". In the field of Cultural Heritage, landscape is seen basically in two ways: as a view (following the visual tradition of the concept) or as a product of the relationship between society and nature.</p>
+                <p>Landscapes depend on the gaze. Historian Simon Schama, in an interview about the 30th anniversary of the documentary series <em>Landscape and Memory</em>, emphasizes the distinction between the concepts of nature and landscape. According to the historian, while "the raw matter of nature" is "out there", the landscape is "a state of mind before it can be a state of nature". This notion was already present in Raymond Williams's seminal work, <em>The Country and the City</em> (1973).</p>
+                
+                <h3>Thematic Axes</h3>
+                <p>We invite those interested to submit proposals that address, from the perspective of intermediality, one of the following topics:</p>
+                <ul class="topics-list">
+                    <li>Landscape, memory, nostalgia</li>
+                    <li>Cultural landscape and heritage</li>
+                    <li>Soundscapes</li>
+                    <li>Literary landscapes</li>
+                    <li>Landscapes in the local, regional, and national imaginary</li>
+                    <li>Landscape, environment, climate transition</li>
+                    <li>Right to the landscape: landscape as a collective good</li>
+                    <li>Altered landscapes and their sociocultural impacts</li>
+                    <li>Utopian and dystopian landscapes</li>
+                    <li>Virtual landscape</li>
+                </ul>
+
+                <p style="margin-top: 2rem; padding: 1.5rem; background: var(--bg-color); border-radius: 8px;"><strong>This call invites professors, researchers, artists, and graduate and undergraduate students to submit abstracts for oral presentations, creative productions, and posters.</strong></p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="pt">
+            <p>Faculdade de Letras da Universidade Federal de Minas Gerais</p>
+            <p>Av. Antônio Carlos, 6627 Pampulha - Belo Horizonte/MG - CEP: 31270-901</p>
+            <p>(31) 3409-5101 | dir@letras.ufmg.br</p>
+            <p style="margin-top: 1.5rem; color: #888;">&copy; 2026 - Setor de Tecnologia da Informação - Faculdade de Letras - UFMG</p>
+        </div>
+        <div class="en">
+            <p>Faculty of Letters, Federal University of Minas Gerais</p>
+            <p>Av. Antônio Carlos, 6627 Pampulha - Belo Horizonte/MG - ZIP: 31270-901</p>
+            <p>(31) 3409-5101 | dir@letras.ufmg.br</p>
+            <p style="margin-top: 1.5rem; color: #888;">&copy; 2026 - Information Technology Sector - Faculty of Letters - UFMG</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchLang(lang, btnElement) {
+            // Altera a classe do body para 'lang-pt' ou 'lang-en'
+            document.body.className = 'lang-' + lang;
+            
+            // Remove a classe ativa de todos os botões e adiciona no clicado
+            document.querySelectorAll('.lang-toggle button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            btnElement.classList.add('active');
+        }
+    </script>
+</body>
+</html>
