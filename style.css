@@ -16,6 +16,7 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.7;
+    overflow-x: hidden; /* Evita rolagem horizontal quando o menu abre */
 }
 
 /* Controle de Idiomas */
@@ -36,154 +37,133 @@ nav {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+/* Botão Hambúrguer */
+.menu-btn {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.menu-btn:hover { color: var(--accent-color); }
+
 .logo { font-weight: bold; font-size: 1.2rem; letter-spacing: 1px; font-family: var(--font-main); }
 
 .lang-toggle button {
-    background: transparent;
-    color: #fff;
-    border: 1px solid #fff;
-    padding: 6px 16px;
-    cursor: pointer;
-    border-radius: 20px;
-    margin-left: 8px;
-    transition: all 0.3s ease;
-    font-family: var(--font-main);
-    font-weight: 500;
+    background: transparent; color: #fff; border: 1px solid #fff;
+    padding: 6px 16px; cursor: pointer; border-radius: 20px;
+    margin-left: 8px; transition: all 0.3s ease;
+    font-family: var(--font-main); font-weight: 500;
 }
 
 .lang-toggle button.active, .lang-toggle button:hover {
-    background: #fff;
-    color: var(--primary-color);
+    background: #fff; color: var(--primary-color);
 }
+
+/* Menu Lateral (Sidebar) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -320px; /* Escondido fora da tela */
+    width: 320px;
+    height: 100vh;
+    background-color: var(--primary-color);
+    z-index: 2000;
+    transition: left 0.3s ease;
+    padding: 2rem 1.5rem;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.4);
+    overflow-y: auto;
+}
+
+.sidebar.open { left: 0; } /* Classe adicionada via JS para mostrar o menu */
+
+.close-btn {
+    background: transparent; border: none; color: #fff;
+    font-size: 2.5rem; cursor: pointer; position: absolute;
+    top: 15px; right: 20px; line-height: 1;
+}
+
+.menu-links { list-style: none; margin-top: 3rem; }
+.menu-links li { margin-bottom: 0.5rem; }
+.menu-links a {
+    color: #eee; text-decoration: none; font-size: 1.1rem;
+    display: block; padding: 12px 15px; border-radius: 6px;
+    transition: background 0.2s; border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.menu-links a:hover { background-color: var(--accent-color); color: #fff; }
+
+/* Fundo Escuro ao abrir o menu */
+.overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6); z-index: 1500;
+    display: none; opacity: 0; transition: opacity 0.3s ease;
+}
+.overlay.show { opacity: 1; }
 
 /* Cabeçalho e Banner */
-header {
-    background-color: var(--primary-color); /* Mantém o fundo azul escuro */
-    text-align: center;
-}
-
+header { background-color: var(--primary-color); text-align: center; }
 .banner-img {
-    width: 100%; /* Faz a imagem ocupar a tela */
-    max-width: 1200px; /* Evita que fique gigante em monitores muito grandes */
-    height: auto; /* Garante que NADA seja cortado */
-    display: block;
-    margin: 0 auto; /* Centraliza o banner */
+    width: 100%; max-width: 1200px; height: auto; display: block; margin: 0 auto;
 }
-
 .header-info {
-    background-color: var(--accent-color); /* Cria uma barra azul mais clara */
-    color: #fff;
-    padding: 15px 5%;
-    font-size: 1.1rem;
-    font-weight: 500;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Dá uma sombrinha charmosa */
+    background-color: var(--accent-color); color: #fff; padding: 15px 5%;
+    font-size: 1.1rem; font-weight: 500; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
+.header-info p { margin-bottom: 0; text-align: center; }
 
-.header-info p {
-    margin-bottom: 0; /* Remove o espaço extra abaixo do texto */
-    text-align: center;
-}
-
-
-
-/* Container Principal */
-.container { max-width: 1000px; margin: 3rem auto; padding: 0 5%; }
-
+/* Container Principal e Textos */
+.container { max-width: 1000px; margin: 3rem auto; padding: 0 5%; min-height: 50vh; }
 .content-block {
-    background: #fff;
-    padding: 2.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    margin-bottom: 2.5rem;
+    background: #fff; padding: 2.5rem; border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 2.5rem;
 }
-
+h2 { color: var(--primary-color); margin-bottom: 1.5rem; }
 h3 { 
-    color: var(--primary-color); 
-    border-bottom: 3px solid var(--accent-color); 
-    display: inline-block;
-    padding-bottom: 5px; 
-    margin: 2rem 0 1rem 0;
-    font-weight: 500;
+    color: var(--primary-color); border-bottom: 3px solid var(--accent-color); 
+    display: inline-block; padding-bottom: 5px; margin: 2rem 0 1rem 0; font-weight: 500;
 }
-
 p { margin-bottom: 1.2rem; text-align: justify; }
-
 em { color: var(--accent-color); font-style: italic; }
 
 /* Elementos de Intermidialidade */
 .media-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin: 2rem 0;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem; margin: 2rem 0;
 }
-
 .media-item {
-    background: var(--media-bg);
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
+    background: var(--media-bg); border-radius: 8px; overflow: hidden;
+    display: flex; flex-direction: column; align-items: center;
+    padding-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.05); transition: transform 0.3s ease;
 }
-
-.media-item:hover {
-    transform: translateY(-5px);
-}
-
-.media-item img, .media-item video {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    display: block;
-    margin-bottom: 1rem;
-}
-
-.media-item div {
-    color: var(--primary-color);
-    font-weight: 500;
-}
-
-audio { width: 90%; margin-top: 10px; }
+.media-item:hover { transform: translateY(-5px); }
+.media-item img, .media-item video { width: 100%; height: 200px; object-fit: cover; display: block; margin-bottom: 1rem; }
+.media-item div { color: var(--primary-color); font-weight: 500; }
 
 /* Lista de Tópicos */
 .topics-list {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 15px;
-    margin-top: 1rem;
+    list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px; margin-top: 1rem;
 }
-
 .topics-list li {
-    background: var(--bg-color);
-    padding: 15px 20px;
-    border-left: 4px solid var(--accent-color);
-    border-radius: 4px;
-    font-weight: 500;
-    color: var(--primary-color);
+    background: var(--bg-color); padding: 15px 20px; border-left: 4px solid var(--accent-color);
+    border-radius: 4px; font-weight: 500; color: var(--primary-color);
 }
-
-/* Chamada em destaque */
 .highlight-box {
-    margin-top: 2rem;
-    padding: 2rem;
-    background: var(--primary-color);
-    color: #fff;
-    border-radius: 8px;
-    text-align: center;
-    font-size: 1.1rem;
+    margin-top: 2rem; padding: 2rem; background: var(--primary-color);
+    color: #fff; border-radius: 8px; text-align: center; font-size: 1.1rem;
 }
 
 /* Rodapé */
 footer {
-    text-align: center;
-    padding: 3rem 5%;
-    background: var(--primary-color);
-    color: #ccc;
-    font-size: 0.95rem;
+    text-align: center; padding: 3rem 5%; background: var(--primary-color);
+    color: #ccc; font-size: 0.95rem;
 }
 footer p { text-align: center; margin-bottom: 0.5rem; }
