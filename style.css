@@ -56,37 +56,35 @@ nav {
     color: var(--primary-color);
 }
 
-/* Cabeçalho / Hero Section */
+/* Cabeçalho e Banner */
 header {
-    background: url('content/images/topo_site.png') no-repeat center center;
-    background-size: cover;
-    padding: 8rem 5%;
+    background-color: var(--primary-color); /* Mantém o fundo azul escuro */
     text-align: center;
-    color: #fff;
-    position: relative;
 }
 
-header h1 { 
-    font-family: var(--font-title);
-    font-size: 3.5rem; 
-    margin-bottom: 10px; 
-    line-height: 1.1;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+.banner-img {
+    width: 100%; /* Faz a imagem ocupar a tela */
+    max-width: 1200px; /* Evita que fique gigante em monitores muito grandes */
+    height: auto; /* Garante que NADA seja cortado */
+    display: block;
+    margin: 0 auto; /* Centraliza o banner */
 }
-header h2 { 
-    font-size: 1.5rem; 
-    font-weight: 300; 
-    margin-bottom: 20px; 
-    color: #eee;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+
+.header-info {
+    background-color: var(--accent-color); /* Cria uma barra azul mais clara */
+    color: #fff;
+    padding: 15px 5%;
+    font-size: 1.1rem;
+    font-weight: 500;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Dá uma sombrinha charmosa */
 }
-header p { 
-    font-size: 1.1rem; 
-    border-top: 1px solid rgba(255,255,255,0.4); 
-    display: inline-block; 
-    padding-top: 15px;
-    font-weight: 400;
+
+.header-info p {
+    margin-bottom: 0; /* Remove o espaço extra abaixo do texto */
+    text-align: center;
 }
+
+
 
 /* Container Principal */
 .container { max-width: 1000px; margin: 3rem auto; padding: 0 5%; }
