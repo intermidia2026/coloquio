@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Intermidialidade - V Colóquio Internacional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="lang-pt">
+
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <button class="close-btn" onclick="toggleMenu()">&times;</button>
+        <ul class="menu-links pt">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="sobre.html">Sobre intermidialidade</a></li>
+            <li><a href="inscricoes.html">Sobre as inscrições</a></li>
+            <li><a href="comissao.html">Comissão organizadora</a></li>
+            <li><a href="conferencistas.html">Conferencistas</a></li>
+            <li><a href="programacao.html">Programação</a></li>
+            <li><a href="informacoes.html">Informações úteis</a></li>
+            <li><a href="edicoes.html">Edições anteriores</a></li>
+            <li><a href="apoio.html">Promoção e apoio</a></li>
+            <li><a href="contato.html">Contato</a></li>
+        </ul>
+        <ul class="menu-links en">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sobre.html">About intermediality</a></li>
+            <li><a href="inscricoes.html">About registration</a></li>
+            <li><a href="comissao.html">Organizing Committee</a></li>
+            <li><a href="conferencistas.html">Keynote Speakers</a></li>
+            <li><a href="programacao.html">Schedule</a></li>
+            <li><a href="informacoes.html">Useful Information</a></li>
+            <li><a href="edicoes.html">Previous Editions</a></li>
+            <li><a href="apoio.html">Promotion and Support</a></li>
+            <li><a href="contato.html">Contact</a></li>
+        </ul>
+    </aside>
+
+    <nav>
+        <div class="nav-left">
+            <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
+            <div class="logo pt">GRUPO INTERMÍDIA</div>
+            <div class="logo en">INTERMEDIA GROUP</div>
+        </div>
+        <div class="lang-toggle">
+            <button class="active" onclick="switchLang('pt', this)">PT</button>
+            <button onclick="switchLang('en', this)">EN</button>
+        </div>
+    </nav>
+
+    <header>
+        <img src="content/images/topo_site.png" alt="Banner V Colóquio Internacional" class="banner-img">
+    </header>
+
+<div class="container">
+    <div class="content-block">
+        
+        <div class="pt">
+            <h2>Programação</h2>
+            <p style="font-size: 1.2rem; margin-top: 2rem;">Em breve.</p>
+        </div>
+        
+        <div class="en">
+            <h2>Program</h2>
+            <p style="font-size: 1.2rem; margin-top: 2rem;">Coming soon.</p>
+        </div>
+
+    </div>
+
+  <!-- 
+
+  <div class="pt" style="margin-top: 3rem;">
+            <h3>17 de Maio (Domingo)</h3>
+            <ul class="topics-list" style="display: block;">
+                <li style="margin-bottom: 10px;"><strong>09:00 - 10:00:</strong> Credenciamento e Receção</li>
+                <li style="margin-bottom: 10px;"><strong>10:00 - 12:00:</strong> Conferência de Abertura</li>
+                <li style="margin-bottom: 10px;"><strong>14:00 - 18:00:</strong> Simpósios Temáticos</li>
+            </ul>
+
+            <h3>18 de Maio (Segunda-feira)</h3>
+            <ul class="topics-list" style="display: block;">
+                <li style="margin-bottom: 10px;"><strong>09:00 - 12:00:</strong> Mesas Redondas</li>
+                <li style="margin-bottom: 10px;"><strong>14:00 - 16:00:</strong> Sessão de Pôsteres</li>
+            </ul>
+        </div>
+
+        <div class="en" style="margin-top: 3rem;">
+            <h3>May 17th (Sunday)</h3>
+            <ul class="topics-list" style="display: block;">
+                <li style="margin-bottom: 10px;"><strong>09:00 - 10:00:</strong> Registration and Welcome</li>
+                <li style="margin-bottom: 10px;"><strong>10:00 - 12:00:</strong> Opening Keynote</li>
+                <li style="margin-bottom: 10px;"><strong>14:00 - 18:00:</strong> Thematic Symposia</li>
+            </ul>
+
+            <h3>May 18th (Monday)</h3>
+            <ul class="topics-list" style="display: block;">
+                <li style="margin-bottom: 10px;"><strong>09:00 - 12:00:</strong> Roundtables</li>
+                <li style="margin-bottom: 10px;"><strong>14:00 - 16:00:</strong> Poster Session</li>
+            </ul>
+        </div>
+
+  -->
+</div>
+
+    <footer>
+        <div class="pt">
+            <p>Faculdade de Letras da Universidade Federal de Minas Gerais</p>
+            <p>dir@letras.ufmg.br</p>
+            <p style="margin-top: 1.5rem; color: #888;">&copy; 2026 - Setor de Tecnologia da Informação - UFMG</p>
+        </div>
+        <div class="en">
+            <p>Faculty of Letters, Federal University of Minas Gerais</p>
+            <p>dir@letras.ufmg.br</p>
+            <p style="margin-top: 1.5rem; color: #888;">&copy; 2026 - Information Technology Sector - UFMG</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            sidebar.classList.toggle('open');
+            if (overlay.classList.contains('show')) {
+                overlay.classList.remove('show');
+                setTimeout(() => overlay.style.display = 'none', 300);
+            } else {
+                overlay.style.display = 'block';
+                setTimeout(() => overlay.classList.add('show'), 10);
+            }
+        }
+        function switchLang(lang, btnElement) {
+            document.body.className = 'lang-' + lang;
+            sessionStorage.setItem('preferredLanguage', lang);
+            document.querySelectorAll('.lang-toggle button').forEach(btn => btn.classList.remove('active'));
+            if(btnElement) { btnElement.classList.add('active'); }
+            else { document.querySelector(`.lang-toggle button[onclick*="${lang}"]`).classList.add('active'); }
+        }
+        window.onload = function() {
+            const savedLang = sessionStorage.getItem('preferredLanguage');
+            if(savedLang) { switchLang(savedLang); }
+        }
+    </script>
+</body>
+</html>
