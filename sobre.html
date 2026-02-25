@@ -105,20 +105,18 @@
     </div>
 </div>
 
-    <footer>
-        <div class="pt">
-            <p>Faculdade de Letras da Universidade Federal de Minas Gerais</p>
-            <p>dir@letras.ufmg.br</p>
-            <p style="margin-top: 1.5rem; color: #888;">&copy; 2026 - Setor de Tecnologia da Informação - UFMG</p>
-        </div>
-        <div class="en">
-            <p>Faculty of Letters, Federal University of Minas Gerais</p>
-            <p>dir@letras.ufmg.br</p>
-            <p style="margin-top: 1.5rem; color: #888;">&copy; 2026 - Information Technology Sector - UFMG</p>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
 
     <script>
+
+        // Função para carregar o Footer dinamicamente
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Erro ao carregar o footer:', error));
+
         function toggleMenu() {
             const sidebar = document.getElementById('sidebar');
             const overlay = document.getElementById('overlay');
