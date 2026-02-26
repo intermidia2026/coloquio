@@ -171,43 +171,57 @@ footer p { text-align: center; margin-bottom: 0.5rem; }
 /* =========================================
    CARROSSEL / GALERIA DE FOTOS
    ========================================= */
-
 .slideshow-container {
     width: 100%;
-    height: 350px; /* Altura fixa para o layout não pular. Pode ajustar se precisar! */
+    height: 250px; /* Altura fixa para preencher o quadrado */
     position: relative;
-    background-color: #f4f4f4; /* Fundo neutro para fotos verticais não ficarem "soltas" */
-    border-radius: 8px;
     overflow: hidden;
+    border-radius: 8px 8px 0 0; /* Arredonda só os cantos de cima para encaixar no cartão */
 }
 
 .slide {
     width: 100%;
     height: 100%;
-    display: none; /* Esconde todas inicialmente */
-    position: relative;
+    display: none; 
 }
 
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Garante que a foto caiba inteira sem cortar nada */
+    object-fit: cover; /* A mágica que faz a foto preencher todo o espaço sem achatar */
+    border-radius: 8px 8px 0 0;
 }
 
-.credito-foto {
+/* Botões de navegação redondos */
+.prev, .next {
+    cursor: pointer;
     position: absolute;
-    bottom: 10px;
-    right: 10px;
-    background-color: rgba(255, 255, 255, 0.85); /* Fundo branco semi-transparente */
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    color: #333;
-    margin: 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo preto semi-transparente */
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 50%; /* Faz o botão ficar redondo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
 }
 
-/* Animação suave de transição (Fade) */
+/* Posicionamento dos botões nos cantos */
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Animação suave de transição */
 .fade {
     animation-name: fadeAnim;
     animation-duration: 1.5s;
