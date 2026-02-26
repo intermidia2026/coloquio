@@ -54,25 +54,51 @@
     <div id="footer-placeholder"></div>
 
     <script>
+
+        // Função para trocar o idioma
+
+        function switchLang(lang, btn) {
+            localStorage.setItem('lang', lang);
+        
+            // Seleciona tudo que tem .pt e .en
+            let elementosPT = document.querySelectorAll('.pt');
+            let elementosEN = document.querySelectorAll('.en');
+        
+            if (lang === 'pt') {
+                // Oculta o inglês
+                elementosEN.forEach(el => el.style.display = 'none');
+                // Deixa o CSS original decidir como mostrar o português
+                elementosPT.forEach(el => el.style.display = ''); 
+            } else {
+                // Oculta o português
+                elementosPT.forEach(el => el.style.display = 'none');
+                // Deixa o CSS original decidir como mostrar o inglês
+                elementosEN.forEach(el => el.style.display = ''); 
+            }
+        
+            // Atualiza a cor do botão ativo, se o clique veio de um botão
+            if (btn) {
+                document.querySelectorAll('.lang-toggle button').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            }
+        }
        // Função para carregar o Menu dinamicamente
        fetch('menu.html')
         .then(response => response.text())
         .then(data => {
-            // 1. Injeta o menu na página
             document.getElementById('menu-placeholder').innerHTML = data;
             
-            // 2. Verifica se existe um idioma salvo no navegador (ajuste 'lang' se usar outro nome)
+            // Descobre qual idioma está salvo (ou usa 'pt' como padrão)
             let savedLang = localStorage.getItem('lang') || 'pt'; 
             
-            // 3. Mostra a língua certa no menu recém-chegado
-            document.querySelectorAll('.menu-links.pt, .logo.pt').forEach(el => el.style.display = savedLang === 'pt' ? 'block' : 'none');
-            document.querySelectorAll('.menu-links.en, .logo.en').forEach(el => el.style.display = savedLang === 'en' ? 'block' : 'none');
+            // Chama a nova função para aplicar o idioma sem quebrar o CSS
+            switchLang(savedLang, null);
             
-            // 4. Acende o botão correto (PT ou EN) no menu
+            // Acende o botão correto no menu que acabou de chegar
             let btnPt = document.querySelector('.lang-toggle button:nth-child(1)');
             let btnEn = document.querySelector('.lang-toggle button:nth-child(2)');
-            if (savedLang === 'pt' && btnPt) { btnPt.classList.add('active'); btnEn.classList.remove('active'); }
-            if (savedLang === 'en' && btnEn) { btnEn.classList.add('active'); btnPt.classList.remove('active'); }
+            if (savedLang === 'pt' && btnPt) btnPt.classList.add('active');
+            if (savedLang === 'en' && btnEn) btnEn.classList.add('active');
         })
         .catch(error => console.error('Erro ao carregar o menu:', error));
 
