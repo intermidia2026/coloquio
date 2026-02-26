@@ -11,263 +11,185 @@
 </head>
 <body class="lang-pt">
 
-    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+   <div id="menu-placeholder"></div>
 
-    <aside class="sidebar" id="sidebar">
-        <button class="close-btn" onclick="toggleMenu()">&times;</button>
-        <ul class="menu-links pt">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="sobre.html">Sobre intermidialidade</a></li>
-            <li><a href="inscricoes.html">Sobre as inscrições</a></li>
-            <li><a href="comissao.html">Comissão organizadora</a></li>
-            <li><a href="conferencistas.html">Conferencistas</a></li>
-            <li><a href="programacao.html">Programação</a></li>
-            <li><a href="informacoes.html">Informações úteis</a></li>
-            <li><a href="edicoes.html">Edições anteriores</a></li>
-            <li><a href="apoio.html">Promoção e apoio</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
-        <ul class="menu-links en">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="sobre.html">About intermediality</a></li>
-            <li><a href="inscricoes.html">About registration</a></li>
-            <li><a href="comissao.html">Organizing Committee</a></li>
-            <li><a href="conferencistas.html">Keynote Speakers</a></li>
-            <li><a href="programacao.html">Schedule</a></li>
-            <li><a href="informacoes.html">Useful Information</a></li>
-            <li><a href="edicoes.html">Previous Editions</a></li>
-            <li><a href="apoio.html">Promotion and Support</a></li>
-            <li><a href="contato.html">Contact</a></li>
-        </ul>
-    </aside>
-
-    <nav>
-        <div class="nav-left">
-            <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
-            <div class="logo pt">GRUPO INTERMÍDIA</div>
-            <div class="logo en">INTERMEDIA GROUP</div>
-        </div>
-        <div class="lang-toggle">
-            <button class="active" onclick="switchLang('pt', this)">PT</button>
-            <button onclick="switchLang('en', this)">EN</button>
-        </div>
-    </nav>
-
-    <header>
-        <img src="content/images/topo_site.png" alt="Banner V Colóquio Internacional" class="banner-img">
-    </header>
-
-<div class="container">
-    <div class="content-block">
-        
-        <div class="pt">
-            <h2>Sobre as inscrições</h2>
-            <p>Esta chamada convoca professores, pesquisadores, artistas, estudantes de pós-graduação e de graduação para submissão de resumos de trabalhos nos formatos de comunicação oral, produção criativa e pôster.</p>
-            <p>Veja os detalhes na página a seguir:</p>
-
-            <h3>Comunicação Oral</h3>
-            <ul class="topics-list" style="margin-bottom: 1.5rem;">
-                <li><strong>Propostas aceitas de:</strong> professores de ensino superior e/ou educação básica, doutores, doutorandos, mestres, mestrandos.</li>
-                <li><strong>Resumo:</strong> de 200 a 250 palavras</li>
-                <li>5 palavras-chave</li>
-                <li>Indicação do eixo temático</li>
-            </ul>
-            <p><a href="https://forms.gle/gzzvCwdA3TxEVkbt5" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">&#10148; Link do GoogleForms para a submissão de comunicação oral</a></p>
-
-            <h3>Produções Criativas</h3>
-            <ul class="topics-list" style="margin-bottom: 1.5rem;">
-                <li><strong>Resumo:</strong> de 200 a 250 palavras</li>
-                <li>5 palavras-chave</li>
-                <li>Indicação do eixo temático</li>
-                <li>Indicação do tipo de mídia e suporte para a apresentação.</li>
-            </ul>
-            <div class="highlight-box" style="padding: 1rem; margin-top: 0; margin-bottom: 1.5rem; background-color: var(--media-bg); color: var(--text-color);">
-                <strong>Importante:</strong> o link da produção criativa será solicitado somente após a avaliação do resumo.
+    <div class="container">
+        <div class="content-block">
+            
+            <div class="pt">
+                <h2>Sobre as inscrições</h2>
+                <p>Esta chamada convoca professores, pesquisadores, artistas, estudantes de pós-graduação e de graduação para submissão de resumos de trabalhos nos formatos de comunicação oral, produção criativa e pôster.</p>
+                <p>Veja os detalhes na página a seguir:</p>
+    
+                <h3>Comunicação Oral</h3>
+                <ul class="topics-list" style="margin-bottom: 1.5rem;">
+                    <li><strong>Propostas aceitas de:</strong> professores de ensino superior e/ou educação básica, doutores, doutorandos, mestres, mestrandos.</li>
+                    <li><strong>Resumo:</strong> de 200 a 250 palavras</li>
+                    <li>5 palavras-chave</li>
+                    <li>Indicação do eixo temático</li>
+                </ul>
+                <p><a href="https://forms.gle/gzzvCwdA3TxEVkbt5" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">&#10148; Link do GoogleForms para a submissão de comunicação oral</a></p>
+    
+                <h3>Produções Criativas</h3>
+                <ul class="topics-list" style="margin-bottom: 1.5rem;">
+                    <li><strong>Resumo:</strong> de 200 a 250 palavras</li>
+                    <li>5 palavras-chave</li>
+                    <li>Indicação do eixo temático</li>
+                    <li>Indicação do tipo de mídia e suporte para a apresentação.</li>
+                </ul>
+                <div class="highlight-box" style="padding: 1rem; margin-top: 0; margin-bottom: 1.5rem; background-color: var(--media-bg); color: var(--text-color);">
+                    <strong>Importante:</strong> o link da produção criativa será solicitado somente após a avaliação do resumo.
+                </div>
+                <p><a href="https://forms.gle/YK9mmHckM97GuDkG8" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">&#10148; Link do GoogleForms para a submissão de produção criativa</a></p>
+    
+                <h3>Pôster</h3>
+                <ul class="topics-list" style="margin-bottom: 1.5rem;">
+                    <li><strong>Propostas aceitas de:</strong> alunos da graduação</li>
+                    <li><strong>Resumo:</strong> de 150 a 200 palavras</li>
+                    <li>5 palavras-chave</li>
+                    <li>Indicação do eixo temático</li>
+                </ul>
+                <p><a href="https://forms.gle/VCDPSM1mThBMeCELA" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">&#10148; Link do GoogleForms para a submissão de pôster</a></p>
+    
+                <h3>Cronograma</h3>
+                <ul class="topics-list" style="margin-bottom: 2rem;">
+                    <li><strong>Até 25 de janeiro de 2026:</strong> Envio dos formulários de todas as modalidades de submissões</li>
+                    <li><strong>Entre 23 e 27 de fevereiro 2026:</strong> Envio dos aceites</li>
+                    <li><strong>02 de março de 2026:</strong> Abertura das inscrições</li>
+                </ul>
+    
+                <h3>Valores de inscrição</h3>
+                <div style="overflow-x: auto; margin-top: 1rem;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left; min-width: 600px;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: #fff;">
+                                <th style="padding: 12px; border: 1px solid #ddd;">Participantes</th>
+                                <th style="padding: 12px; border: 1px solid #ddd;">02 de março a 17 de abril</th>
+                                <th style="padding: 12px; border: 1px solid #ddd;">18 de abril a 07 de maio</th>
+                                <th style="padding: 12px; border: 1px solid #ddd;">08 a 18 de maio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">Professores/Pesquisadores</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 200,00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 230,00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">---</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Professores da educação básica</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 50,00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 80,00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">---</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">Alunos de pós-graduação e artistas</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 100,00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 130,00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">---</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Alunos de graduação (Pôster)</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 30,00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 50,00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">---</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">Ouvintes</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 30,00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 30,00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 30,00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-            <p><a href="https://forms.gle/YK9mmHckM97GuDkG8" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">&#10148; Link do GoogleForms para a submissão de produção criativa</a></p>
-
-            <h3>Pôster</h3>
-            <ul class="topics-list" style="margin-bottom: 1.5rem;">
-                <li><strong>Propostas aceitas de:</strong> alunos da graduação</li>
-                <li><strong>Resumo:</strong> de 150 a 200 palavras</li>
-                <li>5 palavras-chave</li>
-                <li>Indicação do eixo temático</li>
-            </ul>
-            <p><a href="https://forms.gle/VCDPSM1mThBMeCELA" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">&#10148; Link do GoogleForms para a submissão de pôster</a></p>
-
-            <h3>Cronograma</h3>
-            <ul class="topics-list" style="margin-bottom: 2rem;">
-                <li><strong>Até 25 de janeiro de 2026:</strong> Envio dos formulários de todas as modalidades de submissões</li>
-                <li><strong>Entre 23 e 27 de fevereiro 2026:</strong> Envio dos aceites</li>
-                <li><strong>02 de março de 2026:</strong> Abertura das inscrições</li>
-            </ul>
-
-            <h3>Valores de inscrição</h3>
-            <div style="overflow-x: auto; margin-top: 1rem;">
-                <table style="width: 100%; border-collapse: collapse; text-align: left; min-width: 600px;">
-                    <thead>
-                        <tr style="background-color: var(--primary-color); color: #fff;">
-                            <th style="padding: 12px; border: 1px solid #ddd;">Participantes</th>
-                            <th style="padding: 12px; border: 1px solid #ddd;">02 de março a 17 de abril</th>
-                            <th style="padding: 12px; border: 1px solid #ddd;">18 de abril a 07 de maio</th>
-                            <th style="padding: 12px; border: 1px solid #ddd;">08 a 18 de maio</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="background-color: #f9f9f9;">
-                            <td style="padding: 12px; border: 1px solid #ddd;">Professores/Pesquisadores</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 200,00</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 230,00</td>
-                            <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">---</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px; border: 1px solid #ddd;">Professores da educação básica</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 50,00</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 80,00</td>
-                            <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">---</td>
-                        </tr>
-                        <tr style="background-color: #f9f9f9;">
-                            <td style="padding: 12px; border: 1px solid #ddd;">Alunos de pós-graduação e artistas</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 100,00</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 130,00</td>
-                            <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">---</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px; border: 1px solid #ddd;">Alunos de graduação (Pôster)</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 30,00</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 50,00</td>
-                            <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">---</td>
-                        </tr>
-                        <tr style="background-color: #f9f9f9;">
-                            <td style="padding: 12px; border: 1px solid #ddd;">Ouvintes</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 30,00</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 30,00</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 30,00</td>
-                        </tr>
-                    </tbody>
-                </table>
+            
+            <div class="en">
+                <h2>Registrations</h2>
+                <p>This call for papers invites professors, researchers, artists, and graduate and undergraduate students to submit their abstract proposals in the formats of oral presentations and creative productions.</p>
+                <p>See the details below:</p>
+    
+                <h3>Oral Presentations</h3>
+                <ul class="topics-list" style="margin-bottom: 1.5rem;">
+                    <li><strong>Proposals accepted from:</strong> higher education and/or basic education teachers, doctors, doctoral students, masters, master’s students.</li>
+                    <li><strong>Abstract:</strong> 200 to 250 words</li>
+                    <li>5 keywords</li>
+                    <li>Indication of the topic to be addressed</li>
+                </ul>
+                <p><a href="https://forms.gle/8DhoK55NgEnR2zjx7" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">&#10148; GoogleForms link for submission for oral presentations</a></p>
+    
+                <h3>Creative productions</h3>
+                <ul class="topics-list" style="margin-bottom: 1.5rem;">
+                    <li><strong>Abstract:</strong> 200 to 250 words</li>
+                    <li>5 keywords</li>
+                    <li>Indication of the topic to be addressed</li>
+                    <li>Indication of the type of media and support for the presentation.</li>
+                </ul>
+                <div class="highlight-box" style="padding: 1rem; margin-top: 0; margin-bottom: 1.5rem; background-color: var(--media-bg); color: var(--text-color);">
+                    <strong>Important:</strong> The link to the creative production will be sent only after the abstract evaluation.
+                </div>
+                <p><a href="https://forms.gle/hGrV3MSCSQjnbAMa9" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">&#10148; GoogleForms link for submission for creative productions</a></p>
+    
+                <h3>Dates</h3>
+                <ul class="topics-list" style="margin-bottom: 2rem;">
+                    <li><strong>By 25 January 2026:</strong> Submission of the forms for all modalities of submission</li>
+                    <li><strong>Between 23 and 27 February 2026:</strong> Acceptance letters</li>
+                    <li><strong>2 March 2026:</strong> Opening of registrations</li>
+                </ul>
+    
+                <h3>Registrations</h3>
+                <div style="overflow-x: auto; margin-top: 1rem;">
+                    <table style="width: 100%; border-collapse: collapse; text-align: left; min-width: 600px;">
+                        <thead>
+                            <tr style="background-color: var(--primary-color); color: #fff;">
+                                <th style="padding: 12px; border: 1px solid #ddd;">Participants</th>
+                                <th style="padding: 12px; border: 1px solid #ddd;">March 02 to April 17</th>
+                                <th style="padding: 12px; border: 1px solid #ddd;">April 18 to May 07</th>
+                                <th style="padding: 12px; border: 1px solid #ddd;">May 08 to 18</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">Professors/Researchers</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 200,00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 230,00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">---</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Basic education teachers</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 50,00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 80,00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">---</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">Graduate students and artists</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 100,00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 130,00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">---</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 12px; border: 1px solid #ddd;">Undergraduate students (Poster)</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 30,00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 50,00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">---</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 12px; border: 1px solid #ddd;">Attendees</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 30,00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 30,00</td>
+                                <td style="padding: 12px; border: 1px solid #ddd;">R$ 30,00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
+    
         </div>
-        
-        <div class="en">
-            <h2>Registrations</h2>
-            <p>This call for papers invites professors, researchers, artists, and graduate and undergraduate students to submit their abstract proposals in the formats of oral presentations and creative productions.</p>
-            <p>See the details below:</p>
-
-            <h3>Oral Presentations</h3>
-            <ul class="topics-list" style="margin-bottom: 1.5rem;">
-                <li><strong>Proposals accepted from:</strong> higher education and/or basic education teachers, doctors, doctoral students, masters, master’s students.</li>
-                <li><strong>Abstract:</strong> 200 to 250 words</li>
-                <li>5 keywords</li>
-                <li>Indication of the topic to be addressed</li>
-            </ul>
-            <p><a href="https://forms.gle/8DhoK55NgEnR2zjx7" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">&#10148; GoogleForms link for submission for oral presentations</a></p>
-
-            <h3>Creative productions</h3>
-            <ul class="topics-list" style="margin-bottom: 1.5rem;">
-                <li><strong>Abstract:</strong> 200 to 250 words</li>
-                <li>5 keywords</li>
-                <li>Indication of the topic to be addressed</li>
-                <li>Indication of the type of media and support for the presentation.</li>
-            </ul>
-            <div class="highlight-box" style="padding: 1rem; margin-top: 0; margin-bottom: 1.5rem; background-color: var(--media-bg); color: var(--text-color);">
-                <strong>Important:</strong> The link to the creative production will be sent only after the abstract evaluation.
-            </div>
-            <p><a href="https://forms.gle/hGrV3MSCSQjnbAMa9" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: none;">&#10148; GoogleForms link for submission for creative productions</a></p>
-
-            <h3>Dates</h3>
-            <ul class="topics-list" style="margin-bottom: 2rem;">
-                <li><strong>By 25 January 2026:</strong> Submission of the forms for all modalities of submission</li>
-                <li><strong>Between 23 and 27 February 2026:</strong> Acceptance letters</li>
-                <li><strong>2 March 2026:</strong> Opening of registrations</li>
-            </ul>
-
-            <h3>Registrations</h3>
-            <div style="overflow-x: auto; margin-top: 1rem;">
-                <table style="width: 100%; border-collapse: collapse; text-align: left; min-width: 600px;">
-                    <thead>
-                        <tr style="background-color: var(--primary-color); color: #fff;">
-                            <th style="padding: 12px; border: 1px solid #ddd;">Participants</th>
-                            <th style="padding: 12px; border: 1px solid #ddd;">March 02 to April 17</th>
-                            <th style="padding: 12px; border: 1px solid #ddd;">April 18 to May 07</th>
-                            <th style="padding: 12px; border: 1px solid #ddd;">May 08 to 18</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr style="background-color: #f9f9f9;">
-                            <td style="padding: 12px; border: 1px solid #ddd;">Professors/Researchers</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 200,00</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 230,00</td>
-                            <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">---</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px; border: 1px solid #ddd;">Basic education teachers</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 50,00</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 80,00</td>
-                            <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">---</td>
-                        </tr>
-                        <tr style="background-color: #f9f9f9;">
-                            <td style="padding: 12px; border: 1px solid #ddd;">Graduate students and artists</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 100,00</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 130,00</td>
-                            <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">---</td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 12px; border: 1px solid #ddd;">Undergraduate students (Poster)</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 30,00</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 50,00</td>
-                            <td style="padding: 12px; border: 1px solid #ddd; text-align: center;">---</td>
-                        </tr>
-                        <tr style="background-color: #f9f9f9;">
-                            <td style="padding: 12px; border: 1px solid #ddd;">Attendees</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 30,00</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 30,00</td>
-                            <td style="padding: 12px; border: 1px solid #ddd;">R$ 30,00</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
     </div>
-</div>
 
     <div id="footer-placeholder"></div>
 
-    <script>
-
-    // Função para carregar o Footer dinamicamente
-    fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        })
-    .catch(error => console.error('Erro ao carregar o footer:', error));
-
-        
-        function toggleMenu() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            sidebar.classList.toggle('open');
-            if (overlay.classList.contains('show')) {
-                overlay.classList.remove('show');
-                setTimeout(() => overlay.style.display = 'none', 300);
-            } else {
-                overlay.style.display = 'block';
-                setTimeout(() => overlay.classList.add('show'), 10);
-            }
-        }
-        function switchLang(lang, btnElement) {
-            document.body.className = 'lang-' + lang;
-            sessionStorage.setItem('preferredLanguage', lang);
-            document.querySelectorAll('.lang-toggle button').forEach(btn => btn.classList.remove('active'));
-            if(btnElement) { btnElement.classList.add('active'); }
-            else { document.querySelector(`.lang-toggle button[onclick*="${lang}"]`).classList.add('active'); }
-        }
-        window.onload = function() {
-            const savedLang = sessionStorage.getItem('preferredLanguage');
-            if(savedLang) { switchLang(savedLang); }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
