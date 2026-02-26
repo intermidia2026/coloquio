@@ -68,31 +68,29 @@ nav {
     background: #fff; color: var(--primary-color);
 }
 
-/* Menu Lateral (Sidebar) */
+/* =========================================
+   MENU LATERAL (SIDEBAR)
+   ========================================= */
 .sidebar {
-    position: fixed !important; /* Garante que ele flutue na tela */
+    position: fixed !important; 
     top: 0;
-    height: 100vh; /* Altura total da tela */
+    height: 100vh; 
     z-index: 9999 !important; /* CAMADA DA FRENTE! Vence o overlay */
-    
-    /* Movimento (ajuste o width se o seu menu for mais largo/estreito) */
     width: 280px; 
     left: -300px; /* Escondido fora da tela por padrão */
     transition: left 0.3s ease !important; /* Deslize suave */
-    
     background-color: var(--primary-color, #ffffff); 
-    overflow-y: auto; /* Permite rolar se a tela for pequena */
+    overflow-y: auto; 
 }
 
 .sidebar.active {
     left: 0 !important; /* Puxa o menu para dentro da tela quando clica */
 }
-    background: transparent; border: none; color: #fff;
-    font-size: 2.5rem; cursor: pointer; position: absolute;
-    top: 15px; right: 20px; line-height: 1;
-}
 
-.menu-links { list-style: none; margin-top: 3rem; }
+.menu-links { 
+    list-style: none; 
+    margin-top: 5rem; /* Empurra os links para baixo do botão! */
+}
 .menu-links li { margin-bottom: 0.5rem; }
 .menu-links a {
     color: #eee; text-decoration: none; font-size: 1.1rem;
@@ -101,22 +99,49 @@ nav {
 }
 .menu-links a:hover { background-color: var(--accent-color); color: #fff; }
 
-/* Fundo Escuro ao abrir o menu */
+/* Ajuste do botão fechar (X) da sidebar */
+.sidebar .close-btn {
+    position: absolute !important;
+    top: 15px !important; 
+    right: 20px !important; 
+    font-size: 2.5rem !important; 
+    background: transparent !important;
+    border: none !important;
+    color: rgba(255, 255, 255, 0.7) !important; 
+    cursor: pointer !important;
+    z-index: 10001 !important; 
+    line-height: 1 !important;
+    transition: color 0.3s ease;
+}
+
+.sidebar .close-btn:hover {
+    color: #ffffff !important; 
+}
+
+/* =========================================
+   OVERLAY (FUNDO ESCURO DO MENU)
+   ========================================= */
 .overlay {
-    position: fixed !important; /* Prende na tela inteira, não importa onde ele foi injetado */
+    position: fixed !important; 
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.6) !important; /* Preto com 60% de transparência */
-    z-index: 9998 !important; /* Fica um nível atrás do menu lateral */
-    display: none; /* Escondido por padrão */
+    background-color: rgba(0, 0, 0, 0.6) !important; 
+    z-index: 9998 !important; 
+    display: none; 
     opacity: 0;
-    transition: opacity 0.3s ease; /* Faz a transição de acender/apagar suavemente */
+    transition: opacity 0.3s ease; 
 }
-.overlay.show { opacity: 1; }
 
-/* Cabeçalho e Banner */
+.overlay.active {
+    display: block !important;
+    opacity: 1;
+}
+
+/* =========================================
+   CABEÇALHO E BANNER
+   ========================================= */
 header { background-color: var(--primary-color); text-align: center; }
 .banner-img {
     width: 100%; max-width: 1200px; height: auto; display: block; margin: 0 auto;
@@ -127,7 +152,9 @@ header { background-color: var(--primary-color); text-align: center; }
 }
 .header-info p { margin-bottom: 0; text-align: center; }
 
-/* Container Principal e Textos */
+/* =========================================
+   CONTAINER PRINCIPAL E TEXTOS
+   ========================================= */
 .container { max-width: 1000px; margin: 3rem auto; padding: 0 5%; min-height: 50vh; }
 .content-block {
     background: #fff; padding: 2.5rem; border-radius: 8px;
@@ -141,7 +168,9 @@ h3 {
 p { margin-bottom: 1.2rem; text-align: justify; }
 em { color: var(--accent-color); font-style: italic; }
 
-/* Elementos de Intermidialidade */
+/* =========================================
+   ELEMENTOS DE INTERMIDIALIDADE
+   ========================================= */
 .media-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem; margin: 2rem 0;
@@ -155,7 +184,9 @@ em { color: var(--accent-color); font-style: italic; }
 .media-item img, .media-item video { width: 100%; height: 200px; object-fit: cover; display: block; margin-bottom: 1rem; }
 .media-item div { color: var(--primary-color); font-weight: 500; }
 
-/* Lista de Tópicos */
+/* =========================================
+   LISTA DE TÓPICOS
+   ========================================= */
 .topics-list {
     list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 15px; margin-top: 1rem;
@@ -169,7 +200,9 @@ em { color: var(--accent-color); font-style: italic; }
     color: #fff; border-radius: 8px; text-align: center; font-size: 1.1rem;
 }
 
-/* Rodapé */
+/* =========================================
+   RODAPÉ
+   ========================================= */
 footer {
     text-align: center; padding: 3rem 5%; background: var(--primary-color);
     color: #ccc; font-size: 0.95rem;
@@ -181,10 +214,10 @@ footer p { text-align: center; margin-bottom: 0.5rem; }
    ========================================= */
 .slideshow-container {
     width: 100%;
-    height: 250px; /* Altura fixa para preencher o quadrado */
+    height: 250px; 
     position: relative;
     overflow: hidden;
-    border-radius: 8px 8px 0 0; /* Arredonda só os cantos de cima para encaixar no cartão */
+    border-radius: 8px 8px 0 0; 
 }
 
 .slide {
@@ -196,11 +229,10 @@ footer p { text-align: center; margin-bottom: 0.5rem; }
 .slide img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* A mágica que faz a foto preencher todo o espaço sem achatar */
+    object-fit: cover; 
     border-radius: 8px 8px 0 0;
 }
 
-/* Botões de navegação redondos */
 .prev, .next {
     cursor: pointer;
     position: absolute;
@@ -208,11 +240,11 @@ footer p { text-align: center; margin-bottom: 0.5rem; }
     transform: translateY(-50%);
     width: 36px;
     height: 36px;
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo preto semi-transparente */
+    background-color: rgba(0, 0, 0, 0.5); 
     color: white;
     font-weight: bold;
     font-size: 16px;
-    border-radius: 50%; /* Faz o botão ficar redondo */
+    border-radius: 50%; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -221,7 +253,6 @@ footer p { text-align: center; margin-bottom: 0.5rem; }
     text-decoration: none;
 }
 
-/* Posicionamento dos botões nos cantos */
 .prev { left: 10px; }
 .next { right: 10px; }
 
@@ -229,7 +260,6 @@ footer p { text-align: center; margin-bottom: 0.5rem; }
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Animação suave de transição */
 .fade {
     animation-name: fadeAnim;
     animation-duration: 1.5s;
@@ -238,41 +268,4 @@ footer p { text-align: center; margin-bottom: 0.5rem; }
 @keyframes fadeAnim {
     from {opacity: 0.4} 
     to {opacity: 1}
-}
-
-/* =========================================
-   OVERLAY (FUNDO ESCURO DO MENU)
-   ========================================= */
-
-.overlay.active {
-    display: block !important;
-    opacity: 1;
-}
-
-/* Aproveitando para garantir que o menu fique sempre na frente do overlay */
-.sidebar {
-    z-index: 9999 !important; 
-}
-
-/* =========================================
-   AJUSTE DO BOTÃO FECHAR (X) DA SIDEBAR
-   ========================================= */
-/* Altere .close-btn para a classe real do seu botão, se for diferente */
-.sidebar button, 
-/* Correção definitiva para o posicionamento do botão de fechar (X) na sidebar */
-.sidebar .close-btn {
-  position: absolute;
-  top: 15px; /* Ajuste para mover para cima */
-  right: 15px; /* Alinhado à direita */
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: #888;
-  cursor: pointer;
-  z-index: 10001; /* Garante que fique acima de outros elementos */
-}
-
-/* Garante que o 'X' não fique sumido se a cor herdada for ruim */
-.sidebar .close-btn {
-    color: rgba(255,255,255,0.8) !important; /* Um branco suave por garantia */
 }
