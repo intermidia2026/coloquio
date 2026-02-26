@@ -11,198 +11,120 @@
 </head>
 <body class="lang-pt">
 
-    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+    <div id="menu-placeholder"></div>
 
-    <aside class="sidebar" id="sidebar">
-        <button class="close-btn" onclick="toggleMenu()">&times;</button>
-        <ul class="menu-links pt">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="sobre.html">Sobre intermidialidade</a></li>
-            <li><a href="inscricoes.html">Sobre as inscrições</a></li>
-            <li><a href="comissao.html">Comissão organizadora</a></li>
-            <li><a href="conferencistas.html">Conferencistas</a></li>
-            <li><a href="programacao.html">Programação</a></li>
-            <li><a href="informacoes.html">Informações úteis</a></li>
-            <li><a href="edicoes.html">Edições anteriores</a></li>
-            <li><a href="apoio.html">Promoção e apoio</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
-        <ul class="menu-links en">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="sobre.html">About intermediality</a></li>
-            <li><a href="inscricoes.html">About registration</a></li>
-            <li><a href="comissao.html">Organizing Committee</a></li>
-            <li><a href="conferencistas.html">Keynote Speakers</a></li>
-            <li><a href="programacao.html">Schedule</a></li>
-            <li><a href="informacoes.html">Useful Information</a></li>
-            <li><a href="edicoes.html">Previous Editions</a></li>
-            <li><a href="apoio.html">Promotion and Support</a></li>
-            <li><a href="contato.html">Contact</a></li>
-        </ul>
-    </aside>
-
-    <nav>
-        <div class="nav-left">
-            <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
-            <div class="logo pt">GRUPO INTERMÍDIA</div>
-            <div class="logo en">INTERMEDIA GROUP</div>
-        </div>
-        <div class="lang-toggle">
-            <button class="active" onclick="switchLang('pt', this)">PT</button>
-            <button onclick="switchLang('en', this)">EN</button>
-        </div>
-    </nav>
-
-    <header>
-        <img src="content/images/topo_site.png" alt="Banner V Colóquio Internacional" class="banner-img">
-    </header>
-
-<div class="container">
-    <div class="content-block">
-        
-        <div class="pt">
-            <h2>Informações úteis</h2>
-
-            <h3>Local do evento</h3>
-            <p>O <em>V Colóquio Internacional Escrita, Som, Imagem</em> acontecerá no Campus Santo Antônio (CSA), da Universidade Federal de São João del-Rei (UFSJ), localizado no endereço Praça Frei Orlando, 170 - Centro, São João del-Rei. <a href="https://maps.app.goo.gl/iQb55mvoASm832d86" target="_blank" style="color: var(--accent-color); font-weight: bold;">Clique aqui</a> para ver o local no Google Maps.</p>
-
-            <h3>Sobre São João del-Rei</h3>
-            <p>Essa cidade mineira é daquelas que encantam logo na chegada. Fundada no século XVIII, ela guarda um patrimônio histórico incrível, com igrejas barrocas, como a de São Francisco de Assis, e casarões coloniais que parecem contar histórias a cada janela. Mas não é só de passado que vive a cidade: São João é também cheia de vida cultural, com música, teatro e festas tradicionais. Outro detalhe especial é a Maria Fumaça, o trem turístico que liga São João del-Rei a Tiradentes. E, claro, não dá para esquecer da comida: aquele pão de queijo quentinho, os doces caseiros e a culinária mineira sempre dão um toque especial à visita.</p>
-
-            <h3>Como chegar</h3>
-            <p>Visitar São João del-Rei é sempre uma viagem especial e chegar até aqui pode ser simples e agradável.</p>
-            <ul style="margin-left: 20px; line-height: 1.8; margin-bottom: 1rem;">
-                <li><strong>De avião:</strong> o aeroporto de Belo Horizonte (Confins – CNF) é a principal porta de entrada, com conexões para diversas cidades do Brasil. De lá, você pode seguir de carro ou ônibus até São João del-Rei.</li>
-                <li><strong>De carro:</strong> para quem vem de Belo Horizonte, a viagem dura em torno de 3h30. Do Rio de Janeiro, o percurso leva cerca de 5 horas, e de São Paulo, em torno de 7 horas.</li>
-                <li><strong>De ônibus:</strong> há opções de linhas diretas partindo de Belo Horizonte, Rio de Janeiro e São Paulo. Você desembarca na rodoviária, que fica bem próxima ao centro histórico da cidade.</li>
-            </ul>
-            <p>Não importa o caminho escolhido: todos levam ao charme das ruas de pedra, às igrejas históricas e ao acolhimento de São João del-Rei.</p>
-
-            <h3>Dicas de passeios, restaurantes e transporte</h3>
-            <p>Vocês encontram informações úteis sobre São João del-Rei <a href="https://sites.google.com/view/exploresjdr-pt/sobre-o-guia?authuser=0" target="_blank" style="color: var(--accent-color); font-weight: bold;">neste link</a>.</p>
-
-            <h3>Dicas de hospedagem</h3>
-            <p>As pousadas a seguir possuem vagas com descontos oferecidos aos hóspedes que realizarem reservas diretamente, informando sua participação no evento.</p>
+    <div class="container">
+        <div class="content-block">
             
-            <ul class="topics-list" style="display: block;">
-                <li style="margin-bottom: 10px;">
-                    <strong>Pousadas Beco do Bispo:</strong> Rua Irmã Eugênia Luz Pinto, 93 - Centro, São João del-Rei MG <br>
-                    <a href="http://becodobispo.com.br/" target="_blank" style="color: var(--primary-color);">Site</a> | <a href="mailto:contato@becodobispo.com.br" style="color: var(--primary-color);">E-mail</a>
-                </li>
-                <li style="margin-bottom: 10px;">
-                    <strong>Pousada Casarão:</strong> Rua Ribeiro Bastos, 94 - Centro, São João del-Rei MG <br>
-                    <a href="http://www.pousadacasarao.tur.br/" target="_blank" style="color: var(--primary-color);">Site</a> | <a href="mailto:reservas@pousadacasarao.tur.br" style="color: var(--primary-color);">E-mail</a>
-                </li>
-                <li style="margin-bottom: 10px;">
-                    <strong>Del Mundo Hostel:</strong> Rua Santo Antônio, 224 - Tejuco, São João del-Rei MG <br>
-                    <a href="http://www.delmundohostel.com/" target="_blank" style="color: var(--primary-color);">Site</a>
-                </li>
-                <li style="margin-bottom: 10px;">
-                    <strong>Pousada Villa Buonabitacolo:</strong> Rua Santo Antônio, 400 - Colônia do Marçal, São João del-Rei MG <br>
-                    <a href="http://www.buona.com.br/" target="_blank" style="color: var(--primary-color);">Site</a>
-                </li>
-                <li style="margin-bottom: 10px;">
-                    <strong>Pousada Villa Magnólia:</strong> Rua Ribeiro Bastos, 2 - Centro, São João del-Rei MG <br>
-                    <a href="https://www.villamagnoliapousada.com.br/" target="_blank" style="color: var(--primary-color);">Site</a> | <a href="mailto:contato@pousadavillamagnolia.com.br" style="color: var(--primary-color);">E-mail</a>
-                </li>
-                <li style="margin-bottom: 10px;">
-                    <strong>Pousada dos Sinos:</strong> Avenida Eduardo Magalhães, 106 - Centro, São João del-Rei MG <br>
-                    <a href="https://pousadadossinos.com.br/" target="_blank" style="color: var(--primary-color);">Site</a> | <a href="mailto:contato@pousadadossinos.com.br" style="color: var(--primary-color);">E-mail</a>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="en">
-            <h2>Useful information</h2>
-
-            <h3>Event location</h3>
-            <p>The <em>5th International Colloquium on Word, Sound, and Image</em> will take place at the Santo Antônio Campus (CSA) of the Federal University of São João del-Rei (UFSJ), located at Praça Frei Orlando, 170 - Centro, São João del-Rei. <a href="https://maps.app.goo.gl/iQb55mvoASm832d86" target="_blank" style="color: var(--accent-color); font-weight: bold;">Click here</a> to see the location on Google Maps.</p>
-
-            <h3>About São João del-Rei</h3>
-            <p>This city in Minas Gerais is one of those places that enchants you as soon as you arrive. Founded in the 18th century, it has an incredible historical heritage, with Baroque churches, such as São Francisco de Assis, and colonial mansions that seem to tell stories from every window. But the city does not live only in the past: São João is also full of cultural life, with music, theatre and traditional festivals. Another special feature is the Maria Fumaça, the tourist train that connects São João del-Rei to Tiradentes. And, of course, we can't forget the food: warm pão de queijo, homemade sweets and Minas Gerais cuisine always add a special touch to the visit.</p>
-
-            <h3>How to get there</h3>
-            <p>Visiting São João del-Rei is always a special trip, and getting there can be simple and enjoyable.</p>
-            <ul style="margin-left: 20px; line-height: 1.8; margin-bottom: 1rem;">
-                <li><strong>By plane:</strong> Belo Horizonte Airport (Confins – CNF) is the main gateway, with connections to several cities in Brazil. From there, you can continue by car or bus to São João del-Rei.</li>
-                <li><strong>By car:</strong> for those coming from Belo Horizonte, the trip takes around 3h30. From Rio de Janeiro, the journey takes about 5 hours, and from São Paulo, around 7 hours.</li>
-                <li><strong>By bus:</strong> there are direct bus routes from Belo Horizonte, Rio de Janeiro and São Paulo. You will arrive at the bus station, which is very close to the historic city centre.</li>
-            </ul>
-            <p>No matter which route you choose, they all lead to the charm of the cobbled streets, historic churches and warm welcome of São João del-Rei.</p>
-
-            <h3>Tips for tours, restaurants and transport</h3>
-            <p>You can find useful information about São João del-Rei on <a href="https://sites.google.com/view/exploresjdr-pt/sobre-o-guia?authuser=0" target="_blank" style="color: var(--accent-color); font-weight: bold;">this link</a>.</p>
-
-            <h3>Accomodation Tips</h3>
-            <p>The following inns offer discounted rates to guests who book directly and mention their participation in the event.</p>
+            <div class="pt">
+                <h2>Informações úteis</h2>
+    
+                <h3>Local do evento</h3>
+                <p>O <em>V Colóquio Internacional Escrita, Som, Imagem</em> acontecerá no Campus Santo Antônio (CSA), da Universidade Federal de São João del-Rei (UFSJ), localizado no endereço Praça Frei Orlando, 170 - Centro, São João del-Rei. <a href="https://maps.app.goo.gl/iQb55mvoASm832d86" target="_blank" style="color: var(--accent-color); font-weight: bold;">Clique aqui</a> para ver o local no Google Maps.</p>
+    
+                <h3>Sobre São João del-Rei</h3>
+                <p>Essa cidade mineira é daquelas que encantam logo na chegada. Fundada no século XVIII, ela guarda um patrimônio histórico incrível, com igrejas barrocas, como a de São Francisco de Assis, e casarões coloniais que parecem contar histórias a cada janela. Mas não é só de passado que vive a cidade: São João é também cheia de vida cultural, com música, teatro e festas tradicionais. Outro detalhe especial é a Maria Fumaça, o trem turístico que liga São João del-Rei a Tiradentes. E, claro, não dá para esquecer da comida: aquele pão de queijo quentinho, os doces caseiros e a culinária mineira sempre dão um toque especial à visita.</p>
+    
+                <h3>Como chegar</h3>
+                <p>Visitar São João del-Rei é sempre uma viagem especial e chegar até aqui pode ser simples e agradável.</p>
+                <ul style="margin-left: 20px; line-height: 1.8; margin-bottom: 1rem;">
+                    <li><strong>De avião:</strong> o aeroporto de Belo Horizonte (Confins – CNF) é a principal porta de entrada, com conexões para diversas cidades do Brasil. De lá, você pode seguir de carro ou ônibus até São João del-Rei.</li>
+                    <li><strong>De carro:</strong> para quem vem de Belo Horizonte, a viagem dura em torno de 3h30. Do Rio de Janeiro, o percurso leva cerca de 5 horas, e de São Paulo, em torno de 7 horas.</li>
+                    <li><strong>De ônibus:</strong> há opções de linhas diretas partindo de Belo Horizonte, Rio de Janeiro e São Paulo. Você desembarca na rodoviária, que fica bem próxima ao centro histórico da cidade.</li>
+                </ul>
+                <p>Não importa o caminho escolhido: todos levam ao charme das ruas de pedra, às igrejas históricas e ao acolhimento de São João del-Rei.</p>
+    
+                <h3>Dicas de passeios, restaurantes e transporte</h3>
+                <p>Vocês encontram informações úteis sobre São João del-Rei <a href="https://sites.google.com/view/exploresjdr-pt/sobre-o-guia?authuser=0" target="_blank" style="color: var(--accent-color); font-weight: bold;">neste link</a>.</p>
+    
+                <h3>Dicas de hospedagem</h3>
+                <p>As pousadas a seguir possuem vagas com descontos oferecidos aos hóspedes que realizarem reservas diretamente, informando sua participação no evento.</p>
+                
+                <ul class="topics-list" style="display: block;">
+                    <li style="margin-bottom: 10px;">
+                        <strong>Pousadas Beco do Bispo:</strong> Rua Irmã Eugênia Luz Pinto, 93 - Centro, São João del-Rei MG <br>
+                        <a href="http://becodobispo.com.br/" target="_blank" style="color: var(--primary-color);">Site</a> | <a href="mailto:contato@becodobispo.com.br" style="color: var(--primary-color);">E-mail</a>
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <strong>Pousada Casarão:</strong> Rua Ribeiro Bastos, 94 - Centro, São João del-Rei MG <br>
+                        <a href="http://www.pousadacasarao.tur.br/" target="_blank" style="color: var(--primary-color);">Site</a> | <a href="mailto:reservas@pousadacasarao.tur.br" style="color: var(--primary-color);">E-mail</a>
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <strong>Del Mundo Hostel:</strong> Rua Santo Antônio, 224 - Tejuco, São João del-Rei MG <br>
+                        <a href="http://www.delmundohostel.com/" target="_blank" style="color: var(--primary-color);">Site</a>
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <strong>Pousada Villa Buonabitacolo:</strong> Rua Santo Antônio, 400 - Colônia do Marçal, São João del-Rei MG <br>
+                        <a href="http://www.buona.com.br/" target="_blank" style="color: var(--primary-color);">Site</a>
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <strong>Pousada Villa Magnólia:</strong> Rua Ribeiro Bastos, 2 - Centro, São João del-Rei MG <br>
+                        <a href="https://www.villamagnoliapousada.com.br/" target="_blank" style="color: var(--primary-color);">Site</a> | <a href="mailto:contato@pousadavillamagnolia.com.br" style="color: var(--primary-color);">E-mail</a>
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <strong>Pousada dos Sinos:</strong> Avenida Eduardo Magalhães, 106 - Centro, São João del-Rei MG <br>
+                        <a href="https://pousadadossinos.com.br/" target="_blank" style="color: var(--primary-color);">Site</a> | <a href="mailto:contato@pousadadossinos.com.br" style="color: var(--primary-color);">E-mail</a>
+                    </li>
+                </ul>
+            </div>
             
-            <ul class="topics-list" style="display: block;">
-                <li style="margin-bottom: 10px;">
-                    <strong>Pousadas Beco do Bispo:</strong> Rua Irmã Eugênia Luz Pinto, 93 - Centro, São João del-Rei MG <br>
-                    <a href="https://www.becodobispo.com.br/" target="_blank" style="color: var(--primary-color);">Website</a> | <a href="mailto:contato@becodobispo.com.br" style="color: var(--primary-color);">E-mail</a>
-                </li>
-                <li style="margin-bottom: 10px;">
-                    <strong>Pousada Casarão:</strong> Rua Ribeiro Bastos, 94 - Centro, São João del-Rei MG <br>
-                    <a href="http://www.pousadacasarao.tur.br/" target="_blank" style="color: var(--primary-color);">Website</a> | <a href="mailto:reservas@pousadacasarao.tur.br" style="color: var(--primary-color);">E-mail</a>
-                </li>
-                <li style="margin-bottom: 10px;">
-                    <strong>Del Mundo Hostel:</strong> Rua Santo Antônio, 224 - Tejuco, São João del-Rei MG <br>
-                    <a href="http://www.delmundohostel.com/" target="_blank" style="color: var(--primary-color);">Website</a>
-                </li>
-                <li style="margin-bottom: 10px;">
-                    <strong>Pousada Villa Buonabitacolo:</strong> Rua Santo Antônio, 400 - Colônia do Marçal, São João del-Rei MG <br>
-                    <a href="http://www.buona.com.br/" target="_blank" style="color: var(--primary-color);">Website</a>
-                </li>
-                <li style="margin-bottom: 10px;">
-                    <strong>Pousada Villa Magnólia:</strong> Rua Ribeiro Bastos, 2 - Centro, São João del-Rei MG <br>
-                    <a href="https://www.villamagnoliapousada.com.br/" target="_blank" style="color: var(--primary-color);">Website</a> | <a href="mailto:contato@pousadavillamagnolia.com.br" style="color: var(--primary-color);">E-mail</a>
-                </li>
-                <li style="margin-bottom: 10px;">
-                    <strong>Pousada dos Sinos:</strong> Avenida Eduardo Magalhães, 106 - Centro, São João del-Rei MG <br>
-                    <a href="https://pousadadossinos.com.br/" target="_blank" style="color: var(--primary-color);">Website</a> | <a href="mailto:contato@pousadadossinos.com.br" style="color: var(--primary-color);">E-mail</a>
-                </li>
-            </ul>
+            <div class="en">
+                <h2>Useful information</h2>
+    
+                <h3>Event location</h3>
+                <p>The <em>5th International Colloquium on Word, Sound, and Image</em> will take place at the Santo Antônio Campus (CSA) of the Federal University of São João del-Rei (UFSJ), located at Praça Frei Orlando, 170 - Centro, São João del-Rei. <a href="https://maps.app.goo.gl/iQb55mvoASm832d86" target="_blank" style="color: var(--accent-color); font-weight: bold;">Click here</a> to see the location on Google Maps.</p>
+    
+                <h3>About São João del-Rei</h3>
+                <p>This city in Minas Gerais is one of those places that enchants you as soon as you arrive. Founded in the 18th century, it has an incredible historical heritage, with Baroque churches, such as São Francisco de Assis, and colonial mansions that seem to tell stories from every window. But the city does not live only in the past: São João is also full of cultural life, with music, theatre and traditional festivals. Another special feature is the Maria Fumaça, the tourist train that connects São João del-Rei to Tiradentes. And, of course, we can't forget the food: warm pão de queijo, homemade sweets and Minas Gerais cuisine always add a special touch to the visit.</p>
+    
+                <h3>How to get there</h3>
+                <p>Visiting São João del-Rei is always a special trip, and getting there can be simple and enjoyable.</p>
+                <ul style="margin-left: 20px; line-height: 1.8; margin-bottom: 1rem;">
+                    <li><strong>By plane:</strong> Belo Horizonte Airport (Confins – CNF) is the main gateway, with connections to several cities in Brazil. From there, you can continue by car or bus to São João del-Rei.</li>
+                    <li><strong>By car:</strong> for those coming from Belo Horizonte, the trip takes around 3h30. From Rio de Janeiro, the journey takes about 5 hours, and from São Paulo, around 7 hours.</li>
+                    <li><strong>By bus:</strong> there are direct bus routes from Belo Horizonte, Rio de Janeiro and São Paulo. You will arrive at the bus station, which is very close to the historic city centre.</li>
+                </ul>
+                <p>No matter which route you choose, they all lead to the charm of the cobbled streets, historic churches and warm welcome of São João del-Rei.</p>
+    
+                <h3>Tips for tours, restaurants and transport</h3>
+                <p>You can find useful information about São João del-Rei on <a href="https://sites.google.com/view/exploresjdr-pt/sobre-o-guia?authuser=0" target="_blank" style="color: var(--accent-color); font-weight: bold;">this link</a>.</p>
+    
+                <h3>Accomodation Tips</h3>
+                <p>The following inns offer discounted rates to guests who book directly and mention their participation in the event.</p>
+                
+                <ul class="topics-list" style="display: block;">
+                    <li style="margin-bottom: 10px;">
+                        <strong>Pousadas Beco do Bispo:</strong> Rua Irmã Eugênia Luz Pinto, 93 - Centro, São João del-Rei MG <br>
+                        <a href="https://www.becodobispo.com.br/" target="_blank" style="color: var(--primary-color);">Website</a> | <a href="mailto:contato@becodobispo.com.br" style="color: var(--primary-color);">E-mail</a>
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <strong>Pousada Casarão:</strong> Rua Ribeiro Bastos, 94 - Centro, São João del-Rei MG <br>
+                        <a href="http://www.pousadacasarao.tur.br/" target="_blank" style="color: var(--primary-color);">Website</a> | <a href="mailto:reservas@pousadacasarao.tur.br" style="color: var(--primary-color);">E-mail</a>
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <strong>Del Mundo Hostel:</strong> Rua Santo Antônio, 224 - Tejuco, São João del-Rei MG <br>
+                        <a href="http://www.delmundohostel.com/" target="_blank" style="color: var(--primary-color);">Website</a>
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <strong>Pousada Villa Buonabitacolo:</strong> Rua Santo Antônio, 400 - Colônia do Marçal, São João del-Rei MG <br>
+                        <a href="http://www.buona.com.br/" target="_blank" style="color: var(--primary-color);">Website</a>
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <strong>Pousada Villa Magnólia:</strong> Rua Ribeiro Bastos, 2 - Centro, São João del-Rei MG <br>
+                        <a href="https://www.villamagnoliapousada.com.br/" target="_blank" style="color: var(--primary-color);">Website</a> | <a href="mailto:contato@pousadavillamagnolia.com.br" style="color: var(--primary-color);">E-mail</a>
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <strong>Pousada dos Sinos:</strong> Avenida Eduardo Magalhães, 106 - Centro, São João del-Rei MG <br>
+                        <a href="https://pousadadossinos.com.br/" target="_blank" style="color: var(--primary-color);">Website</a> | <a href="mailto:contato@pousadadossinos.com.br" style="color: var(--primary-color);">E-mail</a>
+                    </li>
+                </ul>
+            </div>
+    
         </div>
-
     </div>
-</div>
     
     <div id="footer-placeholder"></div>
 
-    <script>
-
-        // Função para carregar o Footer dinamicamente
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            })
-        .catch(error => console.error('Erro ao carregar o footer:', error));
-
-        
-        function toggleMenu() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            sidebar.classList.toggle('open');
-            if (overlay.classList.contains('show')) {
-                overlay.classList.remove('show');
-                setTimeout(() => overlay.style.display = 'none', 300);
-            } else {
-                overlay.style.display = 'block';
-                setTimeout(() => overlay.classList.add('show'), 10);
-            }
-        }
-        function switchLang(lang, btnElement) {
-            document.body.className = 'lang-' + lang;
-            sessionStorage.setItem('preferredLanguage', lang);
-            document.querySelectorAll('.lang-toggle button').forEach(btn => btn.classList.remove('active'));
-            if(btnElement) { btnElement.classList.add('active'); }
-            else { document.querySelector(`.lang-toggle button[onclick*="${lang}"]`).classList.add('active'); }
-        }
-        window.onload = function() {
-            const savedLang = sessionStorage.getItem('preferredLanguage');
-            if(savedLang) { switchLang(savedLang); }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
