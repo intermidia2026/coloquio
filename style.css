@@ -70,22 +70,23 @@ nav {
 
 /* Menu Lateral (Sidebar) */
 .sidebar {
-    position: fixed;
+    position: fixed !important; /* Garante que ele flutue na tela */
     top: 0;
-    left: -320px; /* Escondido fora da tela */
-    width: 320px;
-    height: 100vh;
-    background-color: var(--primary-color);
-    z-index: 2000;
-    transition: left 0.3s ease;
-    padding: 2rem 1.5rem;
-    box-shadow: 4px 0 15px rgba(0,0,0,0.4);
-    overflow-y: auto;
+    height: 100vh; /* Altura total da tela */
+    z-index: 9999 !important; /* CAMADA DA FRENTE! Vence o overlay */
+    
+    /* Movimento (ajuste o width se o seu menu for mais largo/estreito) */
+    width: 280px; 
+    left: -300px; /* Escondido fora da tela por padrão */
+    transition: left 0.3s ease !important; /* Deslize suave */
+    
+    background-color: var(--primary-color, #ffffff); 
+    overflow-y: auto; /* Permite rolar se a tela for pequena */
 }
 
-.sidebar.open { left: 0; } /* Classe adicionada via JS para mostrar o menu */
-
-.close-btn {
+.sidebar.active {
+    left: 0 !important; /* Puxa o menu para dentro da tela quando clica */
+}
     background: transparent; border: none; color: #fff;
     font-size: 2.5rem; cursor: pointer; position: absolute;
     top: 15px; right: 20px; line-height: 1;
