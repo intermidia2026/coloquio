@@ -11,93 +11,71 @@
 </head>
 <body class="lang-pt">
 
-    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+    <div id="menu-placeholder"></div>
 
-    <aside class="sidebar" id="sidebar">
-        <button class="close-btn" onclick="toggleMenu()">&times;</button>
-        <ul class="menu-links pt">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="sobre.html">Sobre intermidialidade</a></li>
-            <li><a href="inscricoes.html">Sobre as inscrições</a></li>
-            <li><a href="comissao.html">Comissão organizadora</a></li>
-            <li><a href="conferencistas.html">Conferencistas</a></li>
-            <li><a href="programacao.html">Programação</a></li>
-            <li><a href="informacoes.html">Informações úteis</a></li>
-            <li><a href="edicoes.html">Edições anteriores</a></li>
-            <li><a href="apoio.html">Promoção e apoio</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
-        <ul class="menu-links en">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="sobre.html">About intermediality</a></li>
-            <li><a href="inscricoes.html">About registration</a></li>
-            <li><a href="comissao.html">Organizing Committee</a></li>
-            <li><a href="conferencistas.html">Keynote Speakers</a></li>
-            <li><a href="programacao.html">Schedule</a></li>
-            <li><a href="informacoes.html">Useful Information</a></li>
-            <li><a href="edicoes.html">Previous Editions</a></li>
-            <li><a href="apoio.html">Promotion and Support</a></li>
-            <li><a href="contato.html">Contact</a></li>
-        </ul>
-    </aside>
-
-    <nav>
-        <div class="nav-left">
-            <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
-            <div class="logo pt">GRUPO INTERMÍDIA</div>
-            <div class="logo en">INTERMEDIA GROUP</div>
-        </div>
-        <div class="lang-toggle">
-            <button class="active" onclick="switchLang('pt', this)">PT</button>
-            <button onclick="switchLang('en', this)">EN</button>
-        </div>
-    </nav>
-
-    <header>
-        <img src="content/images/topo_site.png" alt="Banner V Colóquio Internacional" class="banner-img">
-    </header>
-
-<div class="container">
-    <div class="content-block">
-        
-        <div class="pt">
-            <h2>Promoção e apoio</h2>
-            <p>O evento conta com a promoção e apoio das seguintes instituições e agências de fomento:</p>
-        </div>
-        
-        <div class="en">
-            <h2>Promotion and support</h2>
-            <p>The event is promoted and supported by the following institutions and funding agencies:</p>
-        </div>
-
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px; margin-top: 3rem;">
+    <div class="container">
+        <div class="content-block">
             
-            <img src="https://www.ufsj.edu.br/portal2-repositorio/File/i_wprofmat/i/Figuras/UFSJ.png" alt="Logo UFSJ" style="max-height: 80px; width: auto; object-fit: contain;">
-            <img src="https://ufsj.edu.br/portal2-repositorio/Image/ascom/noticias/promel_logotipo-thumb.jpg" alt="Logo PROMEL" style="max-height: 60px; width: auto; object-fit: contain;">
-            <img src="https://ufsj.edu.br/portal2-repositorio/File/prope/marca_prope_verm_peq.jpg" alt="Logo PROPE" style="max-height: 80px; width: auto; object-fit: contain;">
-            <img src="https://ufsj.edu.br/portal2-repositorio/Image/delac/logo%20delac.jpg" alt="Logo DELAC" style="max-height: 80px; width: auto; object-fit: contain;">
-            <img src="https://ufsj.edu.br/portal2-repositorio/Image/ppgmusi/LOGO%20PPGMUSI%2001.jpg" alt="Logo PPGMUSI" style="max-height: 80px; width: auto; object-fit: contain;">
-
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB4HOwW01gSR8eCtksnnOqRrMpx6nZLspFWg&s" alt="Logo ASSIN" style="max-height: 60px; width: auto; object-fit: contain;">
-            <img src="https://musica.ufmg.br/wp-content/uploads/2023/09/logoEM_transparente.png" alt="Logo Escola de Música UFMG" style="max-height: 80px; width: auto; object-fit: contain;">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDTNt2L58liv5zer-FiobJ-auR-ZfY_sgJWQ&s" alt="Logo Poslit UFMG" style="max-height: 80px; width: auto; object-fit: contain;">
-            <img src="https://www.unifal-mg.edu.br/portal/wp-content/uploads/sites/52/2018/04/logo-unifal.png" alt="Logo UNIFAL" style="max-height: 80px; width: auto; object-fit: contain;">
-            <img src="https://ccbs.ufcg.edu.br/images/Logomarcas/UFCG_logo_png.png" alt="Logo UFCG" style="max-height: 80px; width: auto; object-fit: contain;">
-            <img src="content/images/logo_pplin.png" alt="Logo PPLIN style="max-height: 60px; width: auto; object-fit: contain;">
-
+            <div class="pt">
+                <h2>Promoção e apoio</h2>
+                <p>O evento conta com a promoção e apoio das seguintes instituições e agências de fomento:</p>
+            </div>
             
-
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Identidade_Visual_CAPES.png/2212px-Identidade_Visual_CAPES.png" alt="Logo CAPES" style="max-height: 80px; width: auto; object-fit: contain;">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5KMW5wEDsLv2IQ0ykFKyc7vYardkXaLSvfA&s" alt="Logo CNPq" style="max-height: 80px; width: auto; object-fit: contain;">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtPZQff1d46IluGh4ef5Z1LJd0Rgut4uO-yw&s" alt="Logo FAPEMIG" style="max-height: 80px; width: auto; object-fit: contain;">
-
+            <div class="en">
+                <h2>Promotion and support</h2>
+                <p>The event is promoted and supported by the following institutions and funding agencies:</p>
+            </div>
+    
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 40px; margin-top: 3rem;">
+                
+                <img src="https://www.ufsj.edu.br/portal2-repositorio/File/i_wprofmat/i/Figuras/UFSJ.png" alt="Logo UFSJ" style="max-height: 80px; width: auto; object-fit: contain;">
+                <img src="https://ufsj.edu.br/portal2-repositorio/Image/ascom/noticias/promel_logotipo-thumb.jpg" alt="Logo PROMEL" style="max-height: 60px; width: auto; object-fit: contain;">
+                <img src="https://ufsj.edu.br/portal2-repositorio/File/prope/marca_prope_verm_peq.jpg" alt="Logo PROPE" style="max-height: 80px; width: auto; object-fit: contain;">
+                <img src="https://ufsj.edu.br/portal2-repositorio/Image/delac/logo%20delac.jpg" alt="Logo DELAC" style="max-height: 80px; width: auto; object-fit: contain;">
+                <img src="https://ufsj.edu.br/portal2-repositorio/Image/ppgmusi/LOGO%20PPGMUSI%2001.jpg" alt="Logo PPGMUSI" style="max-height: 80px; width: auto; object-fit: contain;">
+    
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQB4HOwW01gSR8eCtksnnOqRrMpx6nZLspFWg&s" alt="Logo ASSIN" style="max-height: 60px; width: auto; object-fit: contain;">
+                <img src="https://musica.ufmg.br/wp-content/uploads/2023/09/logoEM_transparente.png" alt="Logo Escola de Música UFMG" style="max-height: 80px; width: auto; object-fit: contain;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDTNt2L58liv5zer-FiobJ-auR-ZfY_sgJWQ&s" alt="Logo Poslit UFMG" style="max-height: 80px; width: auto; object-fit: contain;">
+                <img src="https://www.unifal-mg.edu.br/portal/wp-content/uploads/sites/52/2018/04/logo-unifal.png" alt="Logo UNIFAL" style="max-height: 80px; width: auto; object-fit: contain;">
+                <img src="https://ccbs.ufcg.edu.br/images/Logomarcas/UFCG_logo_png.png" alt="Logo UFCG" style="max-height: 80px; width: auto; object-fit: contain;">
+                <img src="content/images/logo_pplin.png" alt="Logo PPLIN style="max-height: 60px; width: auto; object-fit: contain;">
+    
+                
+    
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Identidade_Visual_CAPES.png/2212px-Identidade_Visual_CAPES.png" alt="Logo CAPES" style="max-height: 80px; width: auto; object-fit: contain;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5KMW5wEDsLv2IQ0ykFKyc7vYardkXaLSvfA&s" alt="Logo CNPq" style="max-height: 80px; width: auto; object-fit: contain;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtPZQff1d46IluGh4ef5Z1LJd0Rgut4uO-yw&s" alt="Logo FAPEMIG" style="max-height: 80px; width: auto; object-fit: contain;">
+    
+            </div>
+    
         </div>
-
     </div>
-</div>
     <div id="footer-placeholder"></div>
 
     <script>
+       // Função para carregar o Menu dinamicamente
+       fetch('menu.html')
+        .then(response => response.text())
+        .then(data => {
+            // 1. Injeta o menu na página
+            document.getElementById('menu-placeholder').innerHTML = data;
+            
+            // 2. Verifica se existe um idioma salvo no navegador (ajuste 'lang' se usar outro nome)
+            let savedLang = localStorage.getItem('lang') || 'pt'; 
+            
+            // 3. Mostra a língua certa no menu recém-chegado
+            document.querySelectorAll('.menu-links.pt, .logo.pt').forEach(el => el.style.display = savedLang === 'pt' ? 'block' : 'none');
+            document.querySelectorAll('.menu-links.en, .logo.en').forEach(el => el.style.display = savedLang === 'en' ? 'block' : 'none');
+            
+            // 4. Acende o botão correto (PT ou EN) no menu
+            let btnPt = document.querySelector('.lang-toggle button:nth-child(1)');
+            let btnEn = document.querySelector('.lang-toggle button:nth-child(2)');
+            if (savedLang === 'pt' && btnPt) { btnPt.classList.add('active'); btnEn.classList.remove('active'); }
+            if (savedLang === 'en' && btnEn) { btnEn.classList.add('active'); btnPt.classList.remove('active'); }
+        })
+        .catch(error => console.error('Erro ao carregar o menu:', error));
+
         // Função para carregar o Footer dinamicamente
         fetch('footer.html')
             .then(response => response.text())
@@ -105,29 +83,17 @@
                 document.getElementById('footer-placeholder').innerHTML = data;
             })
             .catch(error => console.error('Erro ao carregar o footer:', error));
-        function toggleMenu() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            sidebar.classList.toggle('open');
-            if (overlay.classList.contains('show')) {
-                overlay.classList.remove('show');
-                setTimeout(() => overlay.style.display = 'none', 300);
-            } else {
-                overlay.style.display = 'block';
-                setTimeout(() => overlay.classList.add('show'), 10);
-            }
-        }
-        function switchLang(lang, btnElement) {
-            document.body.className = 'lang-' + lang;
-            sessionStorage.setItem('preferredLanguage', lang);
-            document.querySelectorAll('.lang-toggle button').forEach(btn => btn.classList.remove('active'));
-            if(btnElement) { btnElement.classList.add('active'); }
-            else { document.querySelector(`.lang-toggle button[onclick*="${lang}"]`).classList.add('active'); }
-        }
-        window.onload = function() {
-            const savedLang = sessionStorage.getItem('preferredLanguage');
-            if(savedLang) { switchLang(savedLang); }
-        }
+                function switchLang(lang, btnElement) {
+                    document.body.className = 'lang-' + lang;
+                    sessionStorage.setItem('preferredLanguage', lang);
+                    document.querySelectorAll('.lang-toggle button').forEach(btn => btn.classList.remove('active'));
+                    if(btnElement) { btnElement.classList.add('active'); }
+                    else { document.querySelector(`.lang-toggle button[onclick*="${lang}"]`).classList.add('active'); }
+                }
+                window.onload = function() {
+                    const savedLang = sessionStorage.getItem('preferredLanguage');
+                    if(savedLang) { switchLang(savedLang); }
+                }
     </script>
 </body>
 </html>
