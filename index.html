@@ -93,6 +93,8 @@
             </div>
 
             <div class="media-grid">
+
+                <!-->
                 <div class="media-item">
                     <img src="content/images/foto-galeria-intermidia.jpeg" alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
                     
@@ -103,6 +105,102 @@
                     <div class="pt"><strong>Expressão Visual</strong></div>
                     <div class="en"><strong>Visual Expression</strong></div>
                 </div>
+                <-->
+                
+                <!--> Carrossel de fotos <-->
+                <div class="media-item">   
+                    <div class="slideshow-container">
+                        
+                        <div class="slide fade" style="display: block;">
+                            <img src="content/images/foto-galeria-intermidia.jpeg" alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
+                            <div class="credito-foto">&copy; Kátia Lombardi</div>
+                        </div>
+                
+                        <div class="slide fade">
+                            <img src="content/images/foto-galeria-intermidia-1.png" alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
+                            <div class="credito-foto">&copy; Kátia Lombardi</div>
+                        </div>
+                        
+                        <div class="slide fade">
+                            <img src="content/images/foto-galeria-intermidia-2.png" alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
+                            <div class="credito-foto">&copy; Kátia Lombardi</div>
+                        </div>
+
+                        <div class="slide fade">
+                            <img src="content/images/foto-galeria-intermidia-3.jpg" alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
+                            <div class="credito-foto">&copy; Kátia Lombardi</div>
+                        </div>
+
+                        <div class="slide fade">
+                            <img src="content/images/foto-galeria-intermidia-4.jpg" alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
+                            <div class="credito-foto">&copy; Kátia Lombardi</div>
+                        </div>
+
+                        <div class="slide fade">
+                            <img src="content/images/foto-galeria-intermidia-5.jpeg" alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
+                            <div class="credito-foto">&copy; Kátia Lombardi</div>
+                        </div>
+
+                        <div class="slide fade">
+                            <img src="content/images/foto-galeria-intermidia-6.png" alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
+                            <div class="credito-foto">&copy; Kátia Lombardi</div>
+                        </div>
+
+                        <div class="slide fade">
+                            <img src="content/images/foto-galeria-intermidia-6.png" alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
+                            <div class="credito-foto">&copy; Kátia Lombardi</div>
+                        </div>
+
+                        <div class="slide fade">
+                            <img src="content/images/foto-galeria-intermidia-7.png" alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
+                            <div class="credito-foto">&copy; Kátia Lombardi</div>
+                        </div>
+
+                        <div class="slide fade">
+                            <img src="content/images/foto-galeria-intermidia-8.jpeg" alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
+                            <div class="credito-foto">&copy; Kátia Lombardi</div>
+                        </div>
+
+                        <div class="slide fade">
+                            <img src="content/images/foto-galeria-intermidia-9.png" alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
+                            <div class="credito-foto">&copy; Kátia Lombardi</div>
+                        </div>
+                
+                    </div>
+                    
+                    <div class="pt" style="margin-top: 1rem;"><strong>Expressão Visual</strong></div>
+                    <div class="en" style="margin-top: 1rem;"><strong>Visual Expression</strong></div>
+                
+                    <script>
+                        let slideIndex = 0;
+                        
+                        function carousel() {
+                            let slides = document.getElementsByClassName("slide");
+                            if(slides.length === 0) return; 
+                            
+                            // Esconde todas as fotos
+                            for (let i = 0; i < slides.length; i++) {
+                                slides[i].style.display = "none";  
+                            }
+                            
+                            slideIndex++;
+                            // Se passar da última foto, volta para a primeira
+                            if (slideIndex > slides.length) {slideIndex = 1}    
+                            
+                                // Mostra a foto atual
+                                slides[slideIndex-1].style.display = "block";  
+                                
+                            // Troca a cada 10 segundos (10000 milissegundos)
+                            setTimeout(carousel, 10000); 
+                        }
+                            
+                        // Inicia o carrossel assim que a página abre
+                        carousel();
+                    </script>
+                    
+                </div>
+                                
+                
                 <div class="media-item">
                     <video controls>
                         <source src="content/videos/exemplo-video.mp4" type="video/mp4">
