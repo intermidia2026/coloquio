@@ -253,3 +253,27 @@ footer p { text-align: center; margin-bottom: 0.5rem; }
 .sidebar {
     z-index: 9999 !important; 
 }
+
+/* =========================================
+   AJUSTE DO BOTÃO FECHAR (X) DA SIDEBAR
+   ========================================= */
+/* Altere .close-btn para a classe real do seu botão, se for diferente */
+.sidebar button, 
+.sidebar .close-btn {
+    position: absolute !important;
+    top: 15px !important; /* Distância do topo */
+    right: 15px !important; /* Distância da direita */
+    background: none !important; /* Remove qualquer fundo branco/cinza */
+    border: none !important; /* Remove bordas */
+    color: inherit !important; /* Usa a cor do texto da sidebar (provavelmente branco ou cinza claro) */
+    font-size: 2rem !important; /* Deixa o 'X' bem visível */
+    cursor: pointer !important;
+    padding: 0 !important;
+    z-index: 10000 !important; /* Garante que ele fique acima dos links do menu */
+    line-height: 1 !important;
+}
+
+/* Garante que o 'X' não fique sumido se a cor herdada for ruim */
+.sidebar .close-btn {
+    color: rgba(255,255,255,0.8) !important; /* Um branco suave por garantia */
+}
