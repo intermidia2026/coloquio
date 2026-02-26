@@ -102,9 +102,16 @@ nav {
 
 /* Fundo Escuro ao abrir o menu */
 .overlay {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.6); z-index: 1500;
-    display: none; opacity: 0; transition: opacity 0.3s ease;
+    position: fixed !important; /* Prende na tela inteira, não importa onde ele foi injetado */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6) !important; /* Preto com 60% de transparência */
+    z-index: 9998 !important; /* Fica um nível atrás do menu lateral */
+    display: none; /* Escondido por padrão */
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Faz a transição de acender/apagar suavemente */
 }
 .overlay.show { opacity: 1; }
 
@@ -232,14 +239,16 @@ footer p { text-align: center; margin-bottom: 0.5rem; }
     to {opacity: 1}
 }
 
-/* Garante que o menu e o fundo escuro fiquem na frente de absolutamente TUDO no site */
-.sidebar.active {
-    left: 0 !important; 
-    z-index: 99999 !important;
-    visibility: visible !important;
-}
+/* =========================================
+   OVERLAY (FUNDO ESCURO DO MENU)
+   ========================================= */
 
 .overlay.active {
     display: block !important;
-    z-index: 99998 !important;
+    opacity: 1;
+}
+
+/* Aproveitando para garantir que o menu fique sempre na frente do overlay */
+.sidebar {
+    z-index: 9999 !important; 
 }
