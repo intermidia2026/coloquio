@@ -11,51 +11,7 @@
 </head>
 <body class="lang-pt">
 
-    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
-
-    <aside class="sidebar" id="sidebar">
-        <button class="close-btn" onclick="toggleMenu()">&times;</button>
-        <ul class="menu-links pt">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="sobre.html">Sobre intermidialidade</a></li>
-            <li><a href="inscricoes.html">Sobre as inscrições</a></li>
-            <li><a href="comissao.html">Comissão organizadora</a></li>
-            <li><a href="conferencistas.html">Conferencistas</a></li>
-            <li><a href="programacao.html">Programação</a></li>
-            <li><a href="informacoes.html">Informações úteis</a></li>
-            <li><a href="edicoes.html">Edições anteriores</a></li>
-            <li><a href="apoio.html">Promoção e apoio</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
-        <ul class="menu-links en">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="sobre.html">About intermediality</a></li>
-            <li><a href="inscricoes.html">About registration</a></li>
-            <li><a href="comissao.html">Organizing Committee</a></li>
-            <li><a href="conferencistas.html">Keynote Speakers</a></li>
-            <li><a href="programacao.html">Schedule</a></li>
-            <li><a href="informacoes.html">Useful Information</a></li>
-            <li><a href="edicoes.html">Previous Editions</a></li>
-            <li><a href="apoio.html">Promotion and Support</a></li>
-            <li><a href="contato.html">Contact</a></li>
-        </ul>
-    </aside>
-
-    <nav>
-        <div class="nav-left">
-            <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
-            <div class="logo pt">GRUPO INTERMÍDIA</div>
-            <div class="logo en">INTERMEDIA GROUP</div>
-        </div>
-        <div class="lang-toggle">
-            <button class="active" onclick="switchLang('pt', this)">PT</button>
-            <button onclick="switchLang('en', this)">EN</button>
-        </div>
-    </nav>
-
-    <header>
-        <img src="content/images/topo_site.png" alt="Banner V Colóquio Internacional" class="banner-img">
-    </header>
+    <div id="menu-placeholder"></div>
 
 <div class="container">
     <div class="content-block">
@@ -109,39 +65,6 @@
 
     <div id="footer-placeholder"></div>
 
-    <script>
-
-        // Função para carregar o Footer dinamicamente
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-placeholder').innerHTML = data;
-            })
-            .catch(error => console.error('Erro ao carregar o footer:', error));
-            
-        function toggleMenu() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            sidebar.classList.toggle('open');
-            if (overlay.classList.contains('show')) {
-                overlay.classList.remove('show');
-                setTimeout(() => overlay.style.display = 'none', 300);
-            } else {
-                overlay.style.display = 'block';
-                setTimeout(() => overlay.classList.add('show'), 10);
-            }
-        }
-        function switchLang(lang, btnElement) {
-            document.body.className = 'lang-' + lang;
-            sessionStorage.setItem('preferredLanguage', lang);
-            document.querySelectorAll('.lang-toggle button').forEach(btn => btn.classList.remove('active'));
-            if(btnElement) { btnElement.classList.add('active'); }
-            else { document.querySelector(`.lang-toggle button[onclick*="${lang}"]`).classList.add('active'); }
-        }
-        window.onload = function() {
-            const savedLang = sessionStorage.getItem('preferredLanguage');
-            if(savedLang) { switchLang(savedLang); }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
