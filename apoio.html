@@ -55,8 +55,24 @@
 
     <script>
 
+        // Função para abrir/fechar o menu lateral
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            
+            sidebar.classList.toggle('open');
+            
+            if (overlay.classList.contains('show')) {
+                overlay.classList.remove('show');
+                setTimeout(() => overlay.style.display = 'none', 300);
+            } else {
+                overlay.style.display = 'block';
+                // Pequeno delay para a animação do CSS funcionar no display:block
+                setTimeout(() => overlay.classList.add('show'), 10);
+            }
+        }
+        
         // Função para trocar o idioma
-
         function switchLang(lang, btn) {
             localStorage.setItem('lang', lang);
         
