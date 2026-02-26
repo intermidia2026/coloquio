@@ -4,6 +4,9 @@
 function switchLang(lang, btn) {
     localStorage.setItem('lang', lang);
 
+    // O SEGREDO ESTÁ AQUI: Atualiza a classe principal do body para o CSS voltar a funcionar!
+    document.body.className = 'lang-' + lang;
+
     let elementosPT = document.querySelectorAll('.pt');
     let elementosEN = document.querySelectorAll('.en');
 
@@ -28,7 +31,7 @@ function toggleMenu() {
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('overlay');
     
-    // Só tenta abrir/fechar se os elementos existirem na página
+    // Agora vai funcionar porque a estrutura HTML estará livre da div!
     if (sidebar && overlay) {
         sidebar.classList.toggle('active');
         overlay.classList.toggle('active');
@@ -36,23 +39,21 @@ function toggleMenu() {
 }
 
 // ==========================================
-// 3. CARREGAMENTO DE COMPONENTES (MENU E FOOTER)
+// 3. CARREGAMENTO DE COMPONENTES
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
     
-    // Carrega o Menu
     fetch('menu.html')
         .then(response => response.text())
         .then(data => {
             const menuPlaceholder = document.getElementById('menu-placeholder');
             if (menuPlaceholder) {
-                menuPlaceholder.innerHTML = data;
+                // outerHTML "destrói" a div placeholder e coloca o menu solto no body, exatamente como o CSS gosta!
+                menuPlaceholder.outerHTML = data;
                 
-                // Aplica o idioma salvo assim que o menu carregar
                 let savedLang = localStorage.getItem('lang') || 'pt'; 
                 switchLang(savedLang, null);
                 
-                // Acerta os botões de idioma do menu
                 let btnPt = document.querySelector('.lang-toggle button:nth-child(1)');
                 let btnEn = document.querySelector('.lang-toggle button:nth-child(2)');
                 if (savedLang === 'pt' && btnPt) btnPt.classList.add('active');
@@ -61,13 +62,13 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(error => console.error('Erro ao carregar o menu:', error));
 
-    // Carrega o Footer
     fetch('footer.html')
         .then(response => response.text())
         .then(data => {
             const footerPlaceholder = document.getElementById('footer-placeholder');
             if (footerPlaceholder) {
-                footerPlaceholder.innerHTML = data;
+                // outerHTML no footer também para garantir o layout!
+                footerPlaceholder.outerHTML = data;
             }
         })
         .catch(error => console.error('Erro ao carregar o footer:', error));
