@@ -11,158 +11,80 @@
 </head>
 <body class="lang-pt">
 
-    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+    <div id="menu-placeholder"></div>
 
-    <aside class="sidebar" id="sidebar">
-        <button class="close-btn" onclick="toggleMenu()">&times;</button>
-        <ul class="menu-links pt">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="sobre.html">Sobre intermidialidade</a></li>
-            <li><a href="inscricoes.html">Sobre as inscrições</a></li>
-            <li><a href="comissao.html">Comissão organizadora</a></li>
-            <li><a href="conferencistas.html">Conferencistas</a></li>
-            <li><a href="programacao.html">Programação</a></li>
-            <li><a href="informacoes.html">Informações úteis</a></li>
-            <li><a href="edicoes.html">Edições anteriores</a></li>
-            <li><a href="apoio.html">Promoção e apoio</a></li>
-            <li><a href="contato.html">Contato</a></li>
-        </ul>
-        <ul class="menu-links en">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="sobre.html">About intermediality</a></li>
-            <li><a href="inscricoes.html">About registration</a></li>
-            <li><a href="comissao.html">Organizing Committee</a></li>
-            <li><a href="conferencistas.html">Keynote Speakers</a></li>
-            <li><a href="programacao.html">Schedule</a></li>
-            <li><a href="informacoes.html">Useful Information</a></li>
-            <li><a href="edicoes.html">Previous Editions</a></li>
-            <li><a href="apoio.html">Promotion and Support</a></li>
-            <li><a href="contato.html">Contact</a></li>
-        </ul>
-    </aside>
-
-    <nav>
-        <div class="nav-left">
-            <button class="menu-btn" onclick="toggleMenu()">&#9776;</button>
-            <div class="logo pt">GRUPO INTERMÍDIA</div>
-            <div class="logo en">INTERMEDIA GROUP</div>
+    <div class="container">
+        <div class="pt">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Conferencistas Convidados</h2>
         </div>
-        <div class="lang-toggle">
-            <button class="active" onclick="switchLang('pt', this)">PT</button>
-            <button onclick="switchLang('en', this)">EN</button>
+        <div class="en">
+            <h2 style="text-align: center; margin-bottom: 3rem;">Keynote Speakers</h2>
         </div>
-    </nav>
-
-    <header>
-        <img src="content/images/topo_site.png" alt="Banner V Colóquio Internacional" class="banner-img">
-    </header>
-
-<div class="container">
-    <div class="pt">
-        <h2 style="text-align: center; margin-bottom: 3rem;">Conferencistas Convidados</h2>
-    </div>
-    <div class="en">
-        <h2 style="text-align: center; margin-bottom: 3rem;">Keynote Speakers</h2>
-    </div>
-
-    <div class="content-block" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin-bottom: 2rem;">
-        <img src="content/images/solange-oliveira.png" alt="Solange Ribeiro de Oliveira" style="width: 100%; max-width: 280px; border-radius: 8px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-        <div style="flex: 1; min-width: 300px;">
-            <h3 style="margin-top: 0; margin-bottom: 0.5rem; border: none; padding: 0;">Solange Ribeiro de Oliveira</h3>
-            
-            <div class="pt">
-                <p>Solange Ribeiro de Oliveira é Professora Emérita, doutora e docente livre pela UFMG, Professora Associada da Universidade de Londres e pesquisadora do CNPq. Além de artigos em revistas especializadas, é autora dos livros <em>A Barata e a Crisálida: o romance de Clarice Lispector</em> (José Olympio Editora, 1985); <em>Literatura e Artes Plásticas</em> (Editora da UFOP, 1993); <em>Literatura e Música: Modulações Pós-Coloniais</em> (Perspectiva, 2002); <em>De Mendigos e Malandros: Chico Buarque, Bertolt Brecht, John Gay</em> (Editora CRV, 2011); <em>Perdida entre signos: Literatura, artes e mídias, hoje</em> (Faculdade de Letras da UFMG, 2012); <em>Alvoroço da criação: a arte na ficção de Clarice Lispector</em> (Editora da UFMG, 2019).</p>
-            </div>
-            
-            <div class="en">
-                <p>Solange Ribeiro de Oliveira is a Professor Emeritus, holds a PhD and is a free docent at UFMG, Associate Professor at the University of London, and a CNPq researcher. In addition to articles in specialized journals, she is the author of the books <em>A Barata e a Crisálida: o romance de Clarice Lispector</em> (José Olympio Editora, 1985); <em>Literatura e Artes Plásticas</em> (Editora da UFOP, 1993); <em>Literatura e Música: Modulações Pós-Coloniais</em> (Perspectiva, 2002); <em>De Mendigos e Malandros: Chico Buarque, Bertolt Brecht, John Gay</em> (Editora CRV, 2011); <em>Perdida entre signos: Literatura, artes e mídias, hoje</em> (Faculdade de Letras da UFMG, 2012); <em>Alvoroço da criação: a arte na ficção de Clarice Lispector</em> (Editora da UFMG, 2019).</p>
-            </div>
-        </div>
-    </div>
     
-    <div class="content-block" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin-bottom: 2rem;">
-        <img src="content/images/niklas-salmose.jpg" alt="Niklas Salmose" style="width: 100%; max-width: 280px; border-radius: 8px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-        <div style="flex: 1; min-width: 300px;">
-            <h3 style="margin-top: 0; margin-bottom: 0.5rem; border: none; padding: 0;">Niklas Salmose</h3>
-            
-            <div class="pt">
-                <p>Niklas Salmose é professor de Inglês na Universidade de Linnaeus, na Suécia. Ele é membro do Centro de Estudos Intermediais e Multimodais (IMS). É autor, coautor e editor de diversos trabalhos sobre intermedialidade, nostalgia, estética e modernismo, incluindo os livros <em>Contemporary Nostalgia</em> (2019), <em>Transmediations: Communication across Media Borders</em> (coeditado com Lars Elleström, 2019), <em>Cultural Comets</em> (2022), <em>F. Scott Fitzgerald: A Composite Biography</em> (2023), <em>Intermedial Ecocriticism: The Climate Crisis through Art and Media</em> (coautorado com Jørgen Bruhn, 2023), bem como o número especial "The Voices of Water: Intermedial Blue Eco-Stories", da revista <em>Textus: English Studies in Italy</em> (coeditado com Pennacchia, M., e Golinelli, G., 2025). Atualmente, ele está finalizando o livro <em>Mediations of Nostalgia: Experience, Intermediality, Aesthetics</em>, para a coleção Edinburgh Critical Studies of Intermediality and World Literature, da Edinburgh University Press (editora da Universidade de Edimburgo).</p>
-            </div>
-            
-            <div class="en">
-                <p>Niklas Salmose is a Professor of English at Linnaeus University in Sweden. He is a member of the Centre for Intermedial and Multimodal Studies (IMS). He is the author, co-author, and editor of several works on intermediality, nostalgia, aesthetics, and modernism, including the books <em>Contemporary Nostalgia</em> (2019), <em>Transmediations: Communication across Media Borders</em> (co-edited with Lars Elleström, 2019), <em>Cultural Comets</em> (2022), <em>F. Scott Fitzgerald: A Composite Biography</em> (2023), <em>Intermedial Ecocriticism: The Climate Crisis through Art and Media</em> (co-authored with Jørgen Bruhn, 2023), as well as the special issue "The Voices of Water: Intermedial Blue Eco-Stories" for the journal <em>Textus: English Studies in Italy</em> (co-edited with Pennacchia, M., and Golinelli, G., 2025). He is currently finishing the book <em>Mediations of Nostalgia: Experience, Intermediality, Aesthetics</em>, for the Edinburgh Critical Studies of Intermediality and World Literature series, by Edinburgh University Press.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="content-block" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin-bottom: 2rem;">
-        <img src="content/images/flavio-carsalade.jpg" alt="Flávio Carsalade" style="width: 100%; max-width: 280px; border-radius: 8px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-        <div style="flex: 1; min-width: 300px;">
-            <h3 style="margin-top: 0; margin-bottom: 0.5rem; border: none; padding: 0;">Flávio Carsalade</h3>
-            
-            <div class="pt">
-                <p>Arquiteto pela Escola de Arquitetura da UFMG em 1979, Mestre em Arquitetura (UFMG), Doutor em Arquitetura (UFBa, 2007), Pós-Doutorado na Università degli Studie di Firenze (Florença Itália, 2024), Professor Titular da Escola de Arquitetura da UFMG, onde ingressou em 1982, sendo seu diretor entre 2008-2012. Pesquisador do CNPq. Presidente do Departamento de Minas Gerais do Instituto de Arquitetos do Brasil - IAB/MG (1996/1997 e 1998/1999), Presidente do Instituto Estadual do Patrimônio Histórico e Artístico de Minas Gerais IEPHA/MG (1999 a 2002), Secretário Municipal de Administração Regional Pampulha, Prefeitura Municipal de Belo Horizonte (2003 a 2007), Diretor da Editora UFMG (2015-2024). Professor visitante em universidades dos Estados Unidos da América, Espanha e Alemanha. Autor dos livros <em>A Pedra e o Tempo</em>, <em>Arquitetura: Interfaces</em> e <em>Pampulha</em>. Atualmente é presidente do ICOMOS Brasil.</p>
-            </div>
-            
-            <div class="en">
-                <p>Architect from the UFMG School of Architecture in 1979, Master in Architecture (UFMG), PhD in Architecture (UFBa, 2007), Post-Doctorate at the Università degli Studi di Firenze (Florence, Italy, 2024), Full Professor at the UFMG School of Architecture, which he joined in 1982, serving as its director between 2008-2012. CNPq researcher. President of the Minas Gerais Department of the Institute of Architects of Brazil - IAB/MG (1996/1997 and 1998/1999), President of the State Institute of Historic and Artistic Heritage of Minas Gerais - IEPHA/MG (1999 to 2002), Municipal Secretary of the Pampulha Regional Administration, Belo Horizonte City Hall (2003 to 2007), Director of Editora UFMG (2015-2024). Visiting professor at universities in the United States, Spain, and Germany. Author of the books <em>A Pedra e o Tempo</em>, <em>Arquitetura: Interfaces</em>, and <em>Pampulha</em>. He is currently the president of ICOMOS Brasil.</p>
+        <div class="content-block" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin-bottom: 2rem;">
+            <img src="content/images/solange-oliveira.png" alt="Solange Ribeiro de Oliveira" style="width: 100%; max-width: 280px; border-radius: 8px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="margin-top: 0; margin-bottom: 0.5rem; border: none; padding: 0;">Solange Ribeiro de Oliveira</h3>
+                
+                <div class="pt">
+                    <p>Solange Ribeiro de Oliveira é Professora Emérita, doutora e docente livre pela UFMG, Professora Associada da Universidade de Londres e pesquisadora do CNPq. Além de artigos em revistas especializadas, é autora dos livros <em>A Barata e a Crisálida: o romance de Clarice Lispector</em> (José Olympio Editora, 1985); <em>Literatura e Artes Plásticas</em> (Editora da UFOP, 1993); <em>Literatura e Música: Modulações Pós-Coloniais</em> (Perspectiva, 2002); <em>De Mendigos e Malandros: Chico Buarque, Bertolt Brecht, John Gay</em> (Editora CRV, 2011); <em>Perdida entre signos: Literatura, artes e mídias, hoje</em> (Faculdade de Letras da UFMG, 2012); <em>Alvoroço da criação: a arte na ficção de Clarice Lispector</em> (Editora da UFMG, 2019).</p>
+                </div>
+                
+                <div class="en">
+                    <p>Solange Ribeiro de Oliveira is a Professor Emeritus, holds a PhD and is a free docent at UFMG, Associate Professor at the University of London, and a CNPq researcher. In addition to articles in specialized journals, she is the author of the books <em>A Barata e a Crisálida: o romance de Clarice Lispector</em> (José Olympio Editora, 1985); <em>Literatura e Artes Plásticas</em> (Editora da UFOP, 1993); <em>Literatura e Música: Modulações Pós-Coloniais</em> (Perspectiva, 2002); <em>De Mendigos e Malandros: Chico Buarque, Bertolt Brecht, John Gay</em> (Editora CRV, 2011); <em>Perdida entre signos: Literatura, artes e mídias, hoje</em> (Faculdade de Letras da UFMG, 2012); <em>Alvoroço da criação: a arte na ficção de Clarice Lispector</em> (Editora da UFMG, 2019).</p>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="content-block" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin-bottom: 2rem;">
-        <img src="content/images/chiel-kattenbelt.jpg" alt="Chiel Kattenbelt" style="width: 100%; max-width: 280px; border-radius: 8px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-        <div style="flex: 1; min-width: 300px;">
-            <h3 style="margin-top: 0; margin-bottom: 0.5rem; border: none; padding: 0;">Chiel Kattenbelt</h3>
-            
-            <div class="pt">
-                <p>Chiel Kattenbelt é professor emérito de Comparação das mídias e Intermidialidade no Departamento de Estudos de Mídia e Cultura da Universidade de Utrecht. Ele se interessa especialmente por teoria da mídia, da arte e da performance, estética, semiótica e fenomenologia. Um de seus principais interesses na ciência, na filosofia e na arte é o pensamento em tríades. Ele é afiliado como pesquisador e dramaturgo à companhia belga CREW, especializada principalmente na criação de performances e instalações que utilizam tecnologias como realidade virtual e captura de movimento, Kattenbelt também é membro do conselho da International Society for Intermedial Studies.</p>
-            </div>
-            
-            <div class="en">
-                <p>Chiel Kattenbelt is an emeritus professor of Media Comparison and Intermediality in the Department of Media and Culture Studies at Utrecht University. He is particularly interested in media, art, and performance theory, aesthetics, semiotics, and phenomenology. One of his main interests in science, philosophy, and art is thinking in triads. He is affiliated as a researcher and dramaturge with the Belgian company CREW, specializing primarily in creating performances and installations that use technologies such as virtual reality and motion capture; Kattenbelt is also a board member of the International Society for Intermedial Studies.</p>
+        
+        <div class="content-block" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin-bottom: 2rem;">
+            <img src="content/images/niklas-salmose.jpg" alt="Niklas Salmose" style="width: 100%; max-width: 280px; border-radius: 8px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="margin-top: 0; margin-bottom: 0.5rem; border: none; padding: 0;">Niklas Salmose</h3>
+                
+                <div class="pt">
+                    <p>Niklas Salmose é professor de Inglês na Universidade de Linnaeus, na Suécia. Ele é membro do Centro de Estudos Intermediais e Multimodais (IMS). É autor, coautor e editor de diversos trabalhos sobre intermedialidade, nostalgia, estética e modernismo, incluindo os livros <em>Contemporary Nostalgia</em> (2019), <em>Transmediations: Communication across Media Borders</em> (coeditado com Lars Elleström, 2019), <em>Cultural Comets</em> (2022), <em>F. Scott Fitzgerald: A Composite Biography</em> (2023), <em>Intermedial Ecocriticism: The Climate Crisis through Art and Media</em> (coautorado com Jørgen Bruhn, 2023), bem como o número especial "The Voices of Water: Intermedial Blue Eco-Stories", da revista <em>Textus: English Studies in Italy</em> (coeditado com Pennacchia, M., e Golinelli, G., 2025). Atualmente, ele está finalizando o livro <em>Mediations of Nostalgia: Experience, Intermediality, Aesthetics</em>, para a coleção Edinburgh Critical Studies of Intermediality and World Literature, da Edinburgh University Press (editora da Universidade de Edimburgo).</p>
+                </div>
+                
+                <div class="en">
+                    <p>Niklas Salmose is a Professor of English at Linnaeus University in Sweden. He is a member of the Centre for Intermedial and Multimodal Studies (IMS). He is the author, co-author, and editor of several works on intermediality, nostalgia, aesthetics, and modernism, including the books <em>Contemporary Nostalgia</em> (2019), <em>Transmediations: Communication across Media Borders</em> (co-edited with Lars Elleström, 2019), <em>Cultural Comets</em> (2022), <em>F. Scott Fitzgerald: A Composite Biography</em> (2023), <em>Intermedial Ecocriticism: The Climate Crisis through Art and Media</em> (co-authored with Jørgen Bruhn, 2023), as well as the special issue "The Voices of Water: Intermedial Blue Eco-Stories" for the journal <em>Textus: English Studies in Italy</em> (co-edited with Pennacchia, M., and Golinelli, G., 2025). He is currently finishing the book <em>Mediations of Nostalgia: Experience, Intermediality, Aesthetics</em>, for the Edinburgh Critical Studies of Intermediality and World Literature series, by Edinburgh University Press.</p>
+                </div>
             </div>
         </div>
+    
+        <div class="content-block" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin-bottom: 2rem;">
+            <img src="content/images/flavio-carsalade.jpg" alt="Flávio Carsalade" style="width: 100%; max-width: 280px; border-radius: 8px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="margin-top: 0; margin-bottom: 0.5rem; border: none; padding: 0;">Flávio Carsalade</h3>
+                
+                <div class="pt">
+                    <p>Arquiteto pela Escola de Arquitetura da UFMG em 1979, Mestre em Arquitetura (UFMG), Doutor em Arquitetura (UFBa, 2007), Pós-Doutorado na Università degli Studie di Firenze (Florença Itália, 2024), Professor Titular da Escola de Arquitetura da UFMG, onde ingressou em 1982, sendo seu diretor entre 2008-2012. Pesquisador do CNPq. Presidente do Departamento de Minas Gerais do Instituto de Arquitetos do Brasil - IAB/MG (1996/1997 e 1998/1999), Presidente do Instituto Estadual do Patrimônio Histórico e Artístico de Minas Gerais IEPHA/MG (1999 a 2002), Secretário Municipal de Administração Regional Pampulha, Prefeitura Municipal de Belo Horizonte (2003 a 2007), Diretor da Editora UFMG (2015-2024). Professor visitante em universidades dos Estados Unidos da América, Espanha e Alemanha. Autor dos livros <em>A Pedra e o Tempo</em>, <em>Arquitetura: Interfaces</em> e <em>Pampulha</em>. Atualmente é presidente do ICOMOS Brasil.</p>
+                </div>
+                
+                <div class="en">
+                    <p>Architect from the UFMG School of Architecture in 1979, Master in Architecture (UFMG), PhD in Architecture (UFBa, 2007), Post-Doctorate at the Università degli Studi di Firenze (Florence, Italy, 2024), Full Professor at the UFMG School of Architecture, which he joined in 1982, serving as its director between 2008-2012. CNPq researcher. President of the Minas Gerais Department of the Institute of Architects of Brazil - IAB/MG (1996/1997 and 1998/1999), President of the State Institute of Historic and Artistic Heritage of Minas Gerais - IEPHA/MG (1999 to 2002), Municipal Secretary of the Pampulha Regional Administration, Belo Horizonte City Hall (2003 to 2007), Director of Editora UFMG (2015-2024). Visiting professor at universities in the United States, Spain, and Germany. Author of the books <em>A Pedra e o Tempo</em>, <em>Arquitetura: Interfaces</em>, and <em>Pampulha</em>. He is currently the president of ICOMOS Brasil.</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="content-block" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; margin-bottom: 2rem;">
+            <img src="content/images/chiel-kattenbelt.jpg" alt="Chiel Kattenbelt" style="width: 100%; max-width: 280px; border-radius: 8px; object-fit: cover; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="margin-top: 0; margin-bottom: 0.5rem; border: none; padding: 0;">Chiel Kattenbelt</h3>
+                
+                <div class="pt">
+                    <p>Chiel Kattenbelt é professor emérito de Comparação das mídias e Intermidialidade no Departamento de Estudos de Mídia e Cultura da Universidade de Utrecht. Ele se interessa especialmente por teoria da mídia, da arte e da performance, estética, semiótica e fenomenologia. Um de seus principais interesses na ciência, na filosofia e na arte é o pensamento em tríades. Ele é afiliado como pesquisador e dramaturgo à companhia belga CREW, especializada principalmente na criação de performances e instalações que utilizam tecnologias como realidade virtual e captura de movimento, Kattenbelt também é membro do conselho da International Society for Intermedial Studies.</p>
+                </div>
+                
+                <div class="en">
+                    <p>Chiel Kattenbelt is an emeritus professor of Media Comparison and Intermediality in the Department of Media and Culture Studies at Utrecht University. He is particularly interested in media, art, and performance theory, aesthetics, semiotics, and phenomenology. One of his main interests in science, philosophy, and art is thinking in triads. He is affiliated as a researcher and dramaturge with the Belgian company CREW, specializing primarily in creating performances and installations that use technologies such as virtual reality and motion capture; Kattenbelt is also a board member of the International Society for Intermedial Studies.</p>
+                </div>
+            </div>
+        </div>
+    
     </div>
-
-</div>
 
     <div id="footer-placeholder"></div>
 
-    <script>
-
-        // Função para carregar o Footer dinamicamente
-    fetch('footer.html')
-    .then(response => response.text())
-    .then(data => {
-        document.getElementById('footer-placeholder').innerHTML = data;
-    })
-    
-    .catch(error => console.error('Erro ao carregar o footer:', error));
-        
-        function toggleMenu() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            sidebar.classList.toggle('open');
-            if (overlay.classList.contains('show')) {
-                overlay.classList.remove('show');
-                setTimeout(() => overlay.style.display = 'none', 300);
-            } else {
-                overlay.style.display = 'block';
-                setTimeout(() => overlay.classList.add('show'), 10);
-            }
-        }
-        function switchLang(lang, btnElement) {
-            document.body.className = 'lang-' + lang;
-            sessionStorage.setItem('preferredLanguage', lang);
-            document.querySelectorAll('.lang-toggle button').forEach(btn => btn.classList.remove('active'));
-            if(btnElement) { btnElement.classList.add('active'); }
-            else { document.querySelector(`.lang-toggle button[onclick*="${lang}"]`).classList.add('active'); }
-        }
-        window.onload = function() {
-            const savedLang = sessionStorage.getItem('preferredLanguage');
-            if(savedLang) { switchLang(savedLang); }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
