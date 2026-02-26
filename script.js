@@ -25,7 +25,7 @@ function switchLang(lang, btn) {
 // ==========================================
 // 2. CONTROLE DO MENU LATERAL
 // ==========================================
-// Coloquei no 'window' para garantir que o HTML sempre enxergue a função
+
 window.toggleMenu = function() {
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('overlay');
@@ -41,6 +41,7 @@ window.toggleMenu = function() {
 // ==========================================
 // 3. CARREGAMENTO DE COMPONENTES
 // ==========================================
+
 document.addEventListener("DOMContentLoaded", () => {
     
     // Carrega o Menu
