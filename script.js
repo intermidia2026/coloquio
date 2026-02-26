@@ -3,8 +3,6 @@
 // ==========================================
 function switchLang(lang, btn) {
     localStorage.setItem('lang', lang);
-
-    // O SEGREDO ESTÁ AQUI: Atualiza a classe principal do body para o CSS voltar a funcionar!
     document.body.className = 'lang-' + lang;
 
     let elementosPT = document.querySelectorAll('.pt');
@@ -27,48 +25,60 @@ function switchLang(lang, btn) {
 // ==========================================
 // 2. CONTROLE DO MENU LATERAL
 // ==========================================
-function toggleMenu() {
+// Coloquei no 'window' para garantir que o HTML sempre enxergue a função
+window.toggleMenu = function() {
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('overlay');
     
-    // Agora vai funcionar porque a estrutura HTML estará livre da div!
     if (sidebar && overlay) {
         sidebar.classList.toggle('active');
         overlay.classList.toggle('active');
+    } else {
+        console.error("Erro: Sidebar ou Overlay não foram encontrados na página!");
     }
-}
+};
 
 // ==========================================
 // 3. CARREGAMENTO DE COMPONENTES
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
     
+    // Carrega o Menu
     fetch('menu.html')
         .then(response => response.text())
         .then(data => {
             const menuPlaceholder = document.getElementById('menu-placeholder');
             if (menuPlaceholder) {
-                // outerHTML "destrói" a div placeholder e coloca o menu solto no body, exatamente como o CSS gosta!
-                menuPlaceholder.outerHTML = data;
+                // Método mais seguro para injetar o HTML sem quebrar as referências
+                menuPlaceholder.insertAdjacentHTML('afterend', data);
+                menuPlaceholder.remove(); // Remove a div vazia
                 
                 let savedLang = localStorage.getItem('lang') || 'pt'; 
                 switchLang(savedLang, null);
                 
+                // CORREÇÃO DOS DOIS BOTÕES ACESOS:
                 let btnPt = document.querySelector('.lang-toggle button:nth-child(1)');
                 let btnEn = document.querySelector('.lang-toggle button:nth-child(2)');
-                if (savedLang === 'pt' && btnPt) btnPt.classList.add('active');
-                if (savedLang === 'en' && btnEn) btnEn.classList.add('active');
+                
+                if (btnPt && btnEn) {
+                    btnPt.classList.remove('active'); // Apaga a luz de todos primeiro
+                    btnEn.classList.remove('active');
+                    // Acende só o correto
+                    if (savedLang === 'pt') btnPt.classList.add('active');
+                    if (savedLang === 'en') btnEn.classList.add('active');
+                }
             }
         })
         .catch(error => console.error('Erro ao carregar o menu:', error));
 
+    // Carrega o Footer
     fetch('footer.html')
         .then(response => response.text())
         .then(data => {
             const footerPlaceholder = document.getElementById('footer-placeholder');
             if (footerPlaceholder) {
-                // outerHTML no footer também para garantir o layout!
-                footerPlaceholder.outerHTML = data;
+                footerPlaceholder.insertAdjacentHTML('afterend', data);
+                footerPlaceholder.remove();
             }
         })
         .catch(error => console.error('Erro ao carregar o footer:', error));
