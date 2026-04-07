@@ -84,3 +84,92 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(error => console.error('Erro ao carregar o footer:', error));
 });
+
+/* ==========================================
+   LÓGICA DO PLAYER DE ÁUDIO
+   ========================================== */
+const audio = document.getElementById('bgAudio');
+if (audio) { // Só executa se o player existir nesta página
+    const playPauseBtn = document.getElementById('playPauseBtn');
+    const progressContainer = document.getElementById('progressContainer');
+    const progressBar = document.getElementById('progressBar');
+    const timeDisplay = document.getElementById('timeDisplay');
+
+    function formatTime(seconds) {
+        if (isNaN(seconds)) return "0:00";
+        let minutes = Math.floor(seconds / 60);
+        let secs = Math.floor(seconds % 60);
+        if (secs < 10) secs = '0' + secs;
+        return minutes + ':' + secs;
+    }
+
+    audio.addEventListener('loadedmetadata', () => {
+        timeDisplay.innerText = `0:00 / ${formatTime(audio.duration)}`;
+    });
+
+    playPauseBtn.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+            playPauseBtn.innerText = '❚❚'; 
+        } else {
+            audio.pause();
+            playPauseBtn.innerText = '▶'; 
+        }
+    });
+
+    audio.addEventListener('timeupdate', () => {
+        const percent = (audio.currentTime / audio.duration) * 100;
+        progressBar.style.width = `${percent}%`;
+        timeDisplay.innerText = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+    });
+
+    progressContainer.addEventListener('click', (e) => {
+        const width = progressContainer.clientWidth; 
+        const clickX = e.offsetX; 
+        const duration = audio.duration; 
+        audio.currentTime = (clickX / width) * duration;
+    });
+
+    audio.addEventListener('ended', () => {
+        playPauseBtn.innerText = '▶';
+        progressBar.style.width = '0%';
+    });
+}
+
+/* ==========================================
+   LÓGICA DO SLIDESHOW (GALERIA)
+   ========================================== */
+const slideshowContainers = document.getElementsByClassName("slideshow-container");
+if (slideshowContainers.length > 0) { // Só executa se a galeria existir
+    let slideIndex = 1;
+    let timer;
+
+    // Torna a função global para os botões do HTML conseguirem clicar nela
+    window.plusSlides = function(n) {
+        clearTimeout(timer); 
+        showSlides(slideIndex += n);
+    };
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        if (slides.length === 0) return;
+        
+        if (n > slides.length) {slideIndex = 1}    
+        if (n < 1) {slideIndex = slides.length}
+        
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        
+        slides[slideIndex-1].style.display = "block";  
+        
+        timer = setTimeout(function() {
+            slideIndex++;
+            showSlides(slideIndex);
+        }, 10000); 
+    }
+
+    // Inicia o slideshow
+    showSlides(slideIndex);
+}
