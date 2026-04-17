@@ -173,3 +173,24 @@ if (slideshowContainers.length > 0) { // Só executa se a galeria existir
     // Inicia o slideshow
     showSlides(slideIndex);
 }
+
+// =========================================
+// FUNÇÃO PARA TROCAR AS ABAS DA PROGRAMAÇÃO
+// =========================================
+window.abrirDia = function(evt, idDoDia) {
+    // Esconde todos os conteúdos
+    let conteudos = document.getElementsByClassName("tab-content");
+    for (let i = 0; i < conteudos.length; i++) { 
+        conteudos[i].classList.remove("active"); 
+    }
+    
+    // Tira a cor de destaque de todos os botões
+    let botoes = document.getElementsByClassName("tab-btn");
+    for (let i = 0; i < botoes.length; i++) { 
+        botoes[i].classList.remove("active"); 
+    }
+    
+    // Mostra o dia selecionado e acende o botão clicado
+    document.getElementById(idDoDia).classList.add("active");
+    evt.currentTarget.classList.add("active");
+}
