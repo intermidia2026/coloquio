@@ -13,55 +13,169 @@
 
     <div id="menu-placeholder"></div>
 
-<div class="container">
-    <div class="content-block">
-        
-        <div class="pt">
-            <h2>Programação</h2>
-            <p style="font-size: 1.2rem; margin-top: 2rem;">Em breve.</p>
-        </div>
-        
-        <div class="en">
-            <h2>Program</h2>
-            <p style="font-size: 1.2rem; margin-top: 2rem;">Coming soon.</p>
-        </div>
+    <div class="container">
+        <div class="content-block">
+            
+            <div class="pt">
+                <h2>Programação</h2>
+            </div>
+            <div class="en">
+                <h2>Program</h2>
+            </div>
+            
+            <div class="tabs-container">
+                <button class="tab-btn active" onclick="abrirDia(event, 'dia1')">17/05 (Dom)</button>
+                <button class="tab-btn" onclick="abrirDia(event, 'dia2')">18/05 (Seg)</button>
+                <button class="tab-btn" onclick="abrirDia(event, 'dia3')">19/05 (Ter)</button>
+                <button class="tab-btn" onclick="abrirDia(event, 'dia4')">20/05 (Qua)</button>
+            </div>
+            
+            <div id="dia1" class="tab-content active">
+                <div class="prog-item">
+                    <span class="time">16:00</span>
+                    <span class="activity-title pt">Café / Chá de boas-vindas</span>
+                    <span class="activity-title en">Welcome Coffee / Tea</span>
+                    <span class="location">Anfiteatro CSA</span>
+                </div>
+                <div class="prog-item">
+                    <span class="time">17:00 - 19:00</span>
+                    <div class="pt">
+                        <span class="activity-title">Comemoração 20 anos Grupo Intermídia</span>
+                        <p><strong>Participação:</strong> Claus Clüver | Concerto | <strong>Palestra:</strong> Solange Oliveira (UFMG/CNPq)</p>
+                    </div>
+                    <div class="en">
+                        <span class="activity-title">Intermídia Research Group 20th Anniversary Celebration</span>
+                        <p><strong>Featuring:</strong> Claus Clüver | Concert | <strong>Lecture:</strong> Solange Oliveira (UFMG/CNPq)</p>
+                    </div>
+                    <span class="location">Anfiteatro CSA</span>
+                </div>
+            </div>
+            
+            <div id="dia2" class="tab-content">
+                <div class="prog-item">
+                    <span class="time">09:00</span>
+                    <span class="activity-title pt">Cadastramento</span>
+                    <span class="activity-title en">Registration</span>
+                    <span class="location">Espaço aberto Teatro</span>
+                </div>
+                <div class="prog-item">
+                    <span class="time">09:30</span>
+                    <span class="activity-title pt">Abertura Oficial</span>
+                    <span class="activity-title en">Official Opening</span>
+                    <span class="location">Teatro CSA</span>
+                </div>
+                <div class="prog-item">
+                    <span class="time">10:30 - 12:00</span>
+                    <div class="pt">
+                        <span class="activity-title">Mesas-redondas Paralelas</span>
+                        <p><strong>Mesa 1 [Paisagem Sonora]:</strong> Alex Martoni (PUCMinas) e Edilson Rocha (UFSJ) <span class="location"> — Teatro CSA</span></p>
+                        <p><strong>Mesa 2 [Paisagem, Arte, Cena]:</strong> Simone Cortezão (IFMG) e Maria Clara Ferrer (UFSJ) <span class="location"> — Anfiteatro CSA</span></p>
+                    </div>
+                    <div class="en">
+                        <span class="activity-title">Parallel Round Tables</span>
+                        <p><strong>Table 1 [Soundscape]:</strong> Alex Martoni (PUCMinas) and Edilson Rocha (UFSJ) <span class="location"> — Teatro CSA</span></p>
+                        <p><strong>Table 2 [Landscape, Art, Scene]:</strong> Simone Cortezão (IFMG) and Maria Clara Ferrer (UFSJ) <span class="location"> — Anfiteatro CSA</span></p>
+                    </div>
+                </div>
+                <div class="prog-item">
+                    <span class="time">13:30 - 15:00</span>
+                    <span class="activity-title pt">Palestra: Chiel Kattenbelt (Utrecht University, Holanda)</span>
+                    <span class="activity-title en">Lecture: Chiel Kattenbelt (Utrecht University, Netherlands)</span>
+                    <span class="location">Anfiteatro CSA</span>
+                </div>
+                <div class="prog-item">
+                    <span class="time">15:30 - 18:45</span>
+                    <span class="activity-title pt">Comunicações Orais</span>
+                    <span class="activity-title en">Oral Presentations</span>
+                    <span class="location">Salas Campus CSA</span>
+                </div>
+                <div class="prog-item">
+                    <span class="time">20:00</span>
+                    <span class="activity-title pt">Concerto</span>
+                    <span class="activity-title en">Concert</span>
+                    <span class="location">Solar da Baronesa</span>
+                </div>
+            </div>
+            
+            <div id="dia3" class="tab-content">
+                <div class="prog-item">
+                    <span class="time">10:00 - 12:00</span>
+                    <div class="pt">
+                        <span class="activity-title">Mesas-redondas Paralelas</span>
+                        <p><strong>Mesa 3 [Paisagem, memória, nostalgia]:</strong> Guilherme Cunha (curador), Nydia Negromonte (artista) e Maria Angela Resende (UFSJ) <span class="location"> — Teatro CSA</span></p>
+                        <p><strong>Mesa 4 [Paisagem e tecnologia]:</strong> Clara Matheus (UFCG), José Padovani (UFMG) e Alzira Haddad (gestora cultural) <span class="location"> — Anfiteatro CSA</span></p>
+                    </div>
+                    <div class="en">
+                        <span class="activity-title">Parallel Round Tables</span>
+                        <p><strong>Table 3 [Landscape, memory, nostalgia]:</strong> Guilherme Cunha (curator), Nydia Negromonte (artist) and Maria Angela Resende (UFSJ) <span class="location"> — Teatro CSA</span></p>
+                        <p><strong>Table 4 [Landscape and technology]:</strong> Clara Matheus (UFCG), José Padovani (UFMG) and Alzira Haddad (cultural manager) <span class="location"> — Anfiteatro CSA</span></p>
+                    </div>
+                </div>
+                <div class="prog-item">
+                    <span class="time">13:30 - 15:00</span>
+                    <span class="activity-title pt">Palestra: Niklas Salmose (Linnaeus University, Suécia)</span>
+                    <span class="activity-title en">Lecture: Niklas Salmose (Linnaeus University, Sweden)</span>
+                    <span class="location">Anfiteatro CSA</span>
+                </div>
+                <div class="prog-item">
+                    <span class="time">15:30 - 18:45</span>
+                    <span class="activity-title pt">Comunicações Orais</span>
+                    <span class="activity-title en">Oral Presentations</span>
+                    <span class="location">Salas Campus CSA</span>
+                </div>
+                <div class="prog-item">
+                    <span class="time">20:00</span>
+                    <span class="activity-title pt">Concerto</span>
+                    <span class="activity-title en">Concert</span>
+                    <span class="location">Solar da Baronesa</span>
+                </div>
+            </div>
+            
+            <div id="dia4" class="tab-content">
+                <div class="prog-item">
+                    <span class="time">10:00 - 12:00</span>
+                    <div class="pt">
+                        <span class="activity-title">Mesas-redondas Paralelas</span>
+                        <p><strong>Mesa 5 [Paisagem Cultural]:</strong> Lucas Zamberlan (UFSM), Miriam Vieira (UFSJ) e Maria Cristina Ribas (UERJ) <span class="location"> — Teatro CSA</span></p>
+                        <p><strong>Mesa 6 [Paisagem e cinema]:</strong> Camila Figueiredo (UFMG), Elaine Indrusiak (UFRGS) e Cecília Lima (UFMG) <span class="location"> — Anfiteatro CSA</span></p>
+                    </div>
+                    <div class="en">
+                        <span class="activity-title">Parallel Round Tables</span>
+                        <p><strong>Table 5 [Cultural Landscape]:</strong> Lucas Zamberlan (UFSM), Miriam Vieira (UFSJ) and Maria Cristina Ribas (UERJ) <span class="location"> — Teatro CSA</span></p>
+                        <p><strong>Table 6 [Landscape and cinema]:</strong> Camila Figueiredo (UFMG), Elaine Indrusiak (UFRGS) and Cecília Lima (UFMG) <span class="location"> — Anfiteatro CSA</span></p>
+                    </div>
+                </div>
+                <div class="prog-item">
+                    <span class="time">13:30 - 16:30</span>
+                    <span class="activity-title pt">Comunicações Orais</span>
+                    <span class="activity-title en">Oral Presentations</span>
+                </div>
+                <div class="prog-item">
+                    <span class="time">16:30</span>
+                    <span class="activity-title pt">Mostra de Pôster e Coffee Break</span>
+                    <span class="activity-title en">Poster Session and Coffee Break</span>
+                </div>
+                <div class="prog-item">
+                    <span class="time">17:00</span>
+                    <span class="activity-title pt">Palestra: Flávio Carsalade (UFMG/CNPq)</span>
+                    <span class="activity-title en">Lecture: Flávio Carsalade (UFMG/CNPq)</span>
+                    <span class="location">Anfiteatro CSA</span>
+                </div>
+                <div class="prog-item">
+                    <span class="time">18:30</span>
+                    <span class="activity-title pt">Encerramento Oficial</span>
+                    <span class="activity-title en">Official Closing</span>
+                </div>
+                <div class="prog-item">
+                    <span class="time">19:30</span>
+                    <span class="activity-title pt">Lançamento de Livros e Roda de Choro</span>
+                    <span class="activity-title en">Book Launch and Choro Session</span>
+                    <span class="location">Adro Galeria / Alquibeer</span>
+                </div>
+            </div>
 
+        </div>
     </div>
-
-  <!-- 
-
-  <div class="pt" style="margin-top: 3rem;">
-            <h3>17 de Maio (Domingo)</h3>
-            <ul class="topics-list" style="display: block;">
-                <li style="margin-bottom: 10px;"><strong>09:00 - 10:00:</strong> Credenciamento e Receção</li>
-                <li style="margin-bottom: 10px;"><strong>10:00 - 12:00:</strong> Conferência de Abertura</li>
-                <li style="margin-bottom: 10px;"><strong>14:00 - 18:00:</strong> Simpósios Temáticos</li>
-            </ul>
-
-            <h3>18 de Maio (Segunda-feira)</h3>
-            <ul class="topics-list" style="display: block;">
-                <li style="margin-bottom: 10px;"><strong>09:00 - 12:00:</strong> Mesas Redondas</li>
-                <li style="margin-bottom: 10px;"><strong>14:00 - 16:00:</strong> Sessão de Pôsteres</li>
-            </ul>
-        </div>
-
-        <div class="en" style="margin-top: 3rem;">
-            <h3>May 17th (Sunday)</h3>
-            <ul class="topics-list" style="display: block;">
-                <li style="margin-bottom: 10px;"><strong>09:00 - 10:00:</strong> Registration and Welcome</li>
-                <li style="margin-bottom: 10px;"><strong>10:00 - 12:00:</strong> Opening Keynote</li>
-                <li style="margin-bottom: 10px;"><strong>14:00 - 18:00:</strong> Thematic Symposia</li>
-            </ul>
-
-            <h3>May 18th (Monday)</h3>
-            <ul class="topics-list" style="display: block;">
-                <li style="margin-bottom: 10px;"><strong>09:00 - 12:00:</strong> Roundtables</li>
-                <li style="margin-bottom: 10px;"><strong>14:00 - 16:00:</strong> Poster Session</li>
-            </ul>
-        </div>
-
-  -->
-</div>
 
     <div id="footer-placeholder"></div>
 
