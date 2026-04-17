@@ -269,3 +269,79 @@ footer p { text-align: center; margin-bottom: 0.5rem; }
     from {opacity: 0.4} 
     to {opacity: 1}
 }
+
+/* =========================================
+   ESTILOS DA PÁGINA DE PROGRAMAÇÃO (ABAS E GRADE)
+   ========================================= */
+.tabs-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #ddd;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 12px 15px;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    color: var(--primary-color);
+}
+
+.tab-btn.active {
+    color: var(--accent-color);
+    border-bottom: 3px solid var(--accent-color);
+    font-weight: bold;
+}
+
+.tab-content {
+    display: none;
+    animation: slideIn 0.4s ease-out forwards;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Estilos da Grade Horária */
+.prog-item { 
+    margin-bottom: 1.5rem; 
+    padding-bottom: 1rem; 
+    border-bottom: 1px dashed #ccc; 
+}
+.prog-item:last-child { 
+    border-bottom: none; 
+}
+.time { 
+    font-weight: bold; 
+    color: var(--accent-color); 
+    min-width: 100px; 
+    display: inline-block; 
+}
+.activity-title { 
+    font-weight: 500; 
+    color: var(--primary-color); 
+    display: block; 
+    margin-top: 5px; 
+}
+.location { 
+    font-style: italic; 
+    font-size: 0.9rem; 
+    color: #555; 
+}
