@@ -194,3 +194,18 @@ window.abrirDia = function(evt, idDoDia) {
     document.getElementById(idDoDia).classList.add("active");
     evt.currentTarget.classList.add("active");
 }
+
+// =========================================
+// GOOGLE ANALYTICS (Carregamento Dinâmico)
+// =========================================
+const scriptGA = document.createElement('script');
+scriptGA.async = true;
+scriptGA.src = 'https://www.googletagmanager.com/gtag/js?id=G-TEBVSDG0D1';
+document.head.appendChild(scriptGA);
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+// Configura o ID da propriedade
+gtag('config', 'G-TEBVSDG0D1');
