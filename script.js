@@ -208,4 +208,6 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
 // Configura o ID da propriedade
-gtag('config', 'G-TEBVSDG0D1');
+gtag('config', 'G-TEBVSDG0D1', {
+  'cookie_domain': 'intermidia2026.github.io'
+});
