@@ -196,18 +196,10 @@ window.abrirDia = function(evt, idDoDia) {
 }
 
 // =========================================
-// GOOGLE ANALYTICS (Carregamento Dinâmico)
+// GOATCOUNTER (Analytics Minimalista e Privado)
 // =========================================
-const scriptGA = document.createElement('script');
-scriptGA.async = true;
-scriptGA.src = 'https://www.googletagmanager.com/gtag/js?id=G-TEBVSDG0D1';
-document.head.appendChild(scriptGA);
-
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-// Configura o ID da propriedade
-gtag('config', 'G-TEBVSDG0D1', {
-  'cookie_domain': 'intermidia2026.github.io'
-});
+    const scriptGC = document.createElement('script');
+    scriptGC.dataset.goatcounter = 'https://intermidia2026.goatcounter.com/count';
+    scriptGC.async = true;
+    scriptGC.src = '//gc.zgo.at/count.js';
+    document.head.appendChild(scriptGC);
