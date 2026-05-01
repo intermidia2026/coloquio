@@ -49,11 +49,12 @@ document.addEventListener("DOMContentLoaded", () => {
             const menuPlaceholder = document.getElementById('menu-placeholder');
             if (menuPlaceholder) {
                 menuPlaceholder.insertAdjacentHTML('afterend', data);
-                menuPlaceholder.remove();
+                menuPlaceholder.remove(); 
                 
                 let savedLang = localStorage.getItem('lang') || 'pt'; 
                 switchLang(savedLang, null);
                 
+                // CORREÇÃO DOS DOIS BOTÕES ACESOS:
                 let btnPt = document.querySelector('.lang-toggle button:nth-child(1)');
                 let btnEn = document.querySelector('.lang-toggle button:nth-child(2)');
                 
@@ -80,11 +81,11 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(error => console.error('Erro ao carregar o footer:', error));
 });
 
-// ==========================================
-// 4. LÓGICA DO PLAYER DE ÁUDIO
-// ==========================================
+/* ==========================================
+   4. LÓGICA DO PLAYER DE ÁUDIO
+   ========================================== */
 const audio = document.getElementById('bgAudio');
-if (audio) { 
+if (audio) { // Só executa se o player existir nesta página
     const playPauseBtn = document.getElementById('playPauseBtn');
     const progressContainer = document.getElementById('progressContainer');
     const progressBar = document.getElementById('progressBar');
@@ -131,15 +132,14 @@ if (audio) {
     });
 }
 
-// ==========================================
-// 5. LÓGICA DO SLIDESHOW COM CRÉDITO DINÂMICO
-// ==========================================
-const slideshowContainers = document.getElementsByClassName("slideshow-container");
-if (slideshowContainers.length > 0) { 
+/* ==========================================
+   5. LÓGICA DO SLIDESHOW DE FOTOS
+   ========================================== */
+const carrosselFotos = document.getElementById("carrossel-fotos");
+if (carrosselFotos) { 
     let slideIndex = 1;
     let timer;
 
-    // Array com os nomes dos autores na ordem exata das fotos
     const creditosFotos = [
       "&copy; Kátia Lombardi",    // Foto 1
       "&copy; Kátia Lombardi",    // Foto 2
@@ -158,12 +158,11 @@ if (slideshowContainers.length > 0) {
 
     window.plusSlides = function(n) {
         clearTimeout(timer); 
-        showSlides(slideIndex += n);
+        showSlidesFotos(slideIndex += n);
     };
 
-    function showSlides(n) {
-        let i;
-        let slides = document.getElementsByClassName("slide");
+    function showSlidesFotos(n) {
+        let slides = carrosselFotos.getElementsByClassName("slide");
         let textoCredito = document.getElementById("credito-galeria");
         
         if (slides.length === 0) return;
@@ -171,30 +170,82 @@ if (slideshowContainers.length > 0) {
         if (n > slides.length) {slideIndex = 1}    
         if (n < 1) {slideIndex = slides.length}
         
-        for (i = 0; i < slides.length; i++) {
+        for (let i = 0; i < slides.length; i++) {
             slides[i].style.display = "none";  
         }
         
         slides[slideIndex-1].style.display = "block";  
         
-        // Atualiza o texto do crédito
         if(textoCredito) {
             textoCredito.innerHTML = creditosFotos[slideIndex-1];
         }
         
-        // Timer para passar automaticamente a cada 10 segundos
         timer = setTimeout(function() {
             slideIndex++;
-            showSlides(slideIndex);
+            showSlidesFotos(slideIndex);
         }, 10000); 
     }
 
-    // Inicia o slideshow
-    showSlides(slideIndex);
+    showSlidesFotos(slideIndex);
+}
+
+/* ==========================================
+   6. LÓGICA DO SLIDESHOW DE VÍDEOS (MANUAL)
+   ========================================== */
+const carrosselVideos = document.getElementById("carrossel-videos");
+if (carrosselVideos) {
+    let slideIndexVideo = 1;
+
+    const creditosVideos = [
+      "",                             // Vídeo 1 (Sem crédito)
+      "&copy; Alzira Agostini Haddad" // Vídeo 2 (YouTube)
+    ];
+
+    window.plusSlidesVideo = function(n) {
+        pausarVideosAtivos(carrosselVideos);
+        showSlidesVideos(slideIndexVideo += n);
+    };
+
+    function showSlidesVideos(n) {
+        let slides = carrosselVideos.getElementsByClassName("slide");
+        let textoCredito = document.getElementById("credito-galeria-videos");
+
+        if (slides.length === 0) return;
+
+        if (n > slides.length) {slideIndexVideo = 1}
+        if (n < 1) {slideIndexVideo = slides.length}
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slides[slideIndexVideo-1].style.display = "block";
+
+        if(textoCredito) {
+            textoCredito.innerHTML = creditosVideos[slideIndexVideo-1];
+        }
+    }
+
+    // Função bônus: Pausa o vídeo anterior quando o usuário passa para o próximo slide
+    function pausarVideosAtivos(container) {
+        // Pausa os vídeos mp4 locais
+        let videos = container.getElementsByTagName("video");
+        for(let i = 0; i < videos.length; i++) {
+            videos[i].pause();
+        }
+        // Pausa os vídeos do YouTube dando um "reload" leve no frame
+        let iframes = container.getElementsByTagName("iframe");
+        for(let i = 0; i < iframes.length; i++) {
+            let iframeSrc = iframes[i].src;
+            iframes[i].src = iframeSrc; 
+        }
+    }
+
+    showSlidesVideos(slideIndexVideo);
 }
 
 // =========================================
-// 6. FUNÇÃO PARA TROCAR AS ABAS DA PROGRAMAÇÃO
+// 7. FUNÇÃO PARA TROCAR AS ABAS DA PROGRAMAÇÃO
 // =========================================
 window.abrirDia = function(evt, idDoDia) {
     let conteudos = document.getElementsByClassName("tab-content");
@@ -212,7 +263,7 @@ window.abrirDia = function(evt, idDoDia) {
 }
 
 // =========================================
-// 7. GOATCOUNTER (Analytics Minimalista e Privado)
+// 8. GOATCOUNTER (Analytics Minimalista e Privado)
 // =========================================
 const scriptGC = document.createElement('script');
 scriptGC.dataset.goatcounter = 'https://intermidia2026.goatcounter.com/count';
