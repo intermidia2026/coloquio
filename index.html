@@ -63,69 +63,47 @@
             </div>
 
             <div class="media-grid">
+                
+                <!-- CARROSSEL DE FOTOS -->
                 <div class="media-item">
-                    <div class="slideshow-container">
-                        <!-- FOTO 1 -->
+                    <div class="slideshow-container" id="carrossel-fotos">
+                        <!-- FOTOS -->
                         <div class="slide fade" style="display: block;">
                             <img src="content/images/foto-galeria-intermidia.jpeg" alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
                         </div>
-                        
-                        <!-- FOTO 2 -->
                         <div class="slide fade">
                             <img src="content/images/foto-galeria-intermidia-1.png"  alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
                         </div>
-                        
-                        <!-- FOTO 3 -->
                         <div class="slide fade">
                             <img src="content/images/foto-galeria-intermidia-2.png" alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
                         </div>
-                        
-                        <!-- FOTO 4 -->
                         <div class="slide fade">
                             <img src="content/images/foto-galeria-intermidia-3.jpg" alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
                         </div>
-                        
-                        <!-- FOTO 5 -->
                         <div class="slide fade">
                             <img src="content/images/foto-galeria-intermidia-4.jpg" alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
                         </div>
-                        
-                        <!-- FOTO 6 -->
                         <div class="slide fade">
                             <img src="content/images/foto-galeria-intermidia-5.jpeg" alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
                         </div>
-                        
-                        <!-- FOTO 7 -->
                         <div class="slide fade">
                             <img src="content/images/foto-galeria-intermidia-6.png" alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
                         </div>
-                        
-                        <!-- FOTO 8 -->
                         <div class="slide fade">
                             <img src="content/images/foto-galeria-intermidia-7.png" alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
                         </div>
-                        
-                        <!-- FOTO 9 -->
                         <div class="slide fade">
                             <img src="content/images/foto-galeria-intermidia-8.jpeg" alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
                         </div>
-                        
-                        <!-- FOTO 10 -->
                         <div class="slide fade">
                             <img src="content/images/foto-galeria-intermidia-9.png" alt="Foto por Kátia Lombardi" title="Foto por Kátia Lombardi">
                         </div>
-
-                        <!-- FOTO 11 (Nydia Negromonte) -->
                         <div class="slide fade">
                             <img src="content/images/foto-galeria-intermidia-10.jpeg" alt="Foto por Nydia Negromonte" title="Foto por Nydia Negromonte">
                         </div>
-
-                        <!-- FOTO 12 (Nydia Negromonte) -->
                         <div class="slide fade">
                             <img src="content/images/foto-galeria-intermidia-11.jpeg" alt="Foto por Nydia Negromonte" title="Foto por Nydia Negromonte">
                         </div>
-
-                        <!-- FOTO 13 (Nydia Negromonte) -->
                         <div class="slide fade">
                             <img src="content/images/foto-galeria-intermidia-12.jpeg" alt="Foto por Nydia Negromonte" title="Foto por Nydia Negromonte">
                         </div>
@@ -134,7 +112,7 @@
                         <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     </div>
                     
-                    <!-- Texto do Crédito Dinâmico -->
+                    <!-- Texto do Crédito Dinâmico das Fotos -->
                     <div id="credito-galeria" style="font-size: 0.8rem; color: #888; margin-top: 0.8rem; margin-bottom: 0.5rem; text-align: center;">
                         &copy; Kátia Lombardi
                     </div>
@@ -143,13 +121,34 @@
                     <div class="en" style="margin-top: 1.5rem;"><strong>Visual Expression</strong></div>
                 </div>
                                 
+                <!-- CARROSSEL DE VÍDEOS -->
                 <div class="media-item">
-                    <video controls>
-                        <source src="content/videos/exemplo-video.mp4" type="video/mp4">
-                    </video>
-                    <div class="pt"><strong>Imagem em Movimento</strong></div>
-                    <div class="en"><strong>Moving Image</strong></div>
+                    <div class="slideshow-container" id="carrossel-videos">
+                        
+                        <!-- VÍDEO 1 (Arquivo Local) -->
+                        <div class="slide fade" style="display: block;">
+                            <video controls style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                                <source src="content/videos/exemplo-video.mp4" type="video/mp4">
+                            </video>
+                        </div>
+
+                        <!-- VÍDEO 2 (YouTube) -->
+                        <div class="slide fade">
+                            <iframe style="width: 100%; height: 200px; border-radius: 8px 8px 0 0;" src="https://www.youtube.com/embed/4fLuPmhFhTE?si=AEfr6ieTrYMx4D5P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+
+                        <a class="prev" onclick="plusSlidesVideo(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlidesVideo(1)">&#10095;</a>
+                    </div>
+
+                    <!-- Texto do Crédito Dinâmico dos Vídeos (com min-height para não dar pulo na tela) -->
+                    <div id="credito-galeria-videos" style="font-size: 0.8rem; color: #888; margin-top: 0.8rem; margin-bottom: 0.5rem; text-align: center; min-height: 15px;">
+                    </div>
+
+                    <div class="pt" style="margin-top: 1.5rem;"><strong>Imagem em Movimento</strong></div>
+                    <div class="en" style="margin-top: 1.5rem;"><strong>Moving Image</strong></div>
                 </div>
+
             </div>
         </div>
 
