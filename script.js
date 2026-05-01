@@ -25,7 +25,6 @@ function switchLang(lang, btn) {
 // ==========================================
 // 2. CONTROLE DO MENU LATERAL
 // ==========================================
-
 window.toggleMenu = function() {
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('overlay');
@@ -41,7 +40,6 @@ window.toggleMenu = function() {
 // ==========================================
 // 3. CARREGAMENTO DE COMPONENTES
 // ==========================================
-
 document.addEventListener("DOMContentLoaded", () => {
     
     // Carrega o Menu
@@ -50,21 +48,18 @@ document.addEventListener("DOMContentLoaded", () => {
         .then(data => {
             const menuPlaceholder = document.getElementById('menu-placeholder');
             if (menuPlaceholder) {
-                // Método mais seguro para injetar o HTML sem quebrar as referências
                 menuPlaceholder.insertAdjacentHTML('afterend', data);
-                menuPlaceholder.remove(); // Remove a div vazia
+                menuPlaceholder.remove();
                 
                 let savedLang = localStorage.getItem('lang') || 'pt'; 
                 switchLang(savedLang, null);
                 
-                // CORREÇÃO DOS DOIS BOTÕES ACESOS:
                 let btnPt = document.querySelector('.lang-toggle button:nth-child(1)');
                 let btnEn = document.querySelector('.lang-toggle button:nth-child(2)');
                 
                 if (btnPt && btnEn) {
-                    btnPt.classList.remove('active'); // Apaga a luz de todos primeiro
+                    btnPt.classList.remove('active'); 
                     btnEn.classList.remove('active');
-                    // Acende só o correto
                     if (savedLang === 'pt') btnPt.classList.add('active');
                     if (savedLang === 'en') btnEn.classList.add('active');
                 }
@@ -85,11 +80,11 @@ document.addEventListener("DOMContentLoaded", () => {
         .catch(error => console.error('Erro ao carregar o footer:', error));
 });
 
-/* ==========================================
-   LÓGICA DO PLAYER DE ÁUDIO
-   ========================================== */
+// ==========================================
+// 4. LÓGICA DO PLAYER DE ÁUDIO
+// ==========================================
 const audio = document.getElementById('bgAudio');
-if (audio) { // Só executa se o player existir nesta página
+if (audio) { 
     const playPauseBtn = document.getElementById('playPauseBtn');
     const progressContainer = document.getElementById('progressContainer');
     const progressBar = document.getElementById('progressBar');
@@ -136,15 +131,31 @@ if (audio) { // Só executa se o player existir nesta página
     });
 }
 
-/* ==========================================
-   LÓGICA DO SLIDESHOW (GALERIA)
-   ========================================== */
+// ==========================================
+// 5. LÓGICA DO SLIDESHOW COM CRÉDITO DINÂMICO
+// ==========================================
 const slideshowContainers = document.getElementsByClassName("slideshow-container");
-if (slideshowContainers.length > 0) { // Só executa se a galeria existir
+if (slideshowContainers.length > 0) { 
     let slideIndex = 1;
     let timer;
 
-    // Torna a função global para os botões do HTML conseguirem clicar nela
+    // Array com os nomes dos autores na ordem exata das fotos
+    const creditosFotos = [
+      "&copy; Kátia Lombardi",    // Foto 1
+      "&copy; Kátia Lombardi",    // Foto 2
+      "&copy; Kátia Lombardi",    // Foto 3
+      "&copy; Kátia Lombardi",    // Foto 4
+      "&copy; Kátia Lombardi",    // Foto 5
+      "&copy; Kátia Lombardi",    // Foto 6
+      "&copy; Kátia Lombardi",    // Foto 7
+      "&copy; Kátia Lombardi",    // Foto 8
+      "&copy; Kátia Lombardi",    // Foto 9
+      "&copy; Kátia Lombardi",    // Foto 10
+      "&copy; Nydia Negromonte",  // Foto 11
+      "&copy; Nydia Negromonte",  // Foto 12
+      "&copy; Nydia Negromonte"   // Foto 13
+    ];
+
     window.plusSlides = function(n) {
         clearTimeout(timer); 
         showSlides(slideIndex += n);
@@ -153,6 +164,8 @@ if (slideshowContainers.length > 0) { // Só executa se a galeria existir
     function showSlides(n) {
         let i;
         let slides = document.getElementsByClassName("slide");
+        let textoCredito = document.getElementById("credito-galeria");
+        
         if (slides.length === 0) return;
         
         if (n > slides.length) {slideIndex = 1}    
@@ -164,6 +177,12 @@ if (slideshowContainers.length > 0) { // Só executa se a galeria existir
         
         slides[slideIndex-1].style.display = "block";  
         
+        // Atualiza o texto do crédito
+        if(textoCredito) {
+            textoCredito.innerHTML = creditosFotos[slideIndex-1];
+        }
+        
+        // Timer para passar automaticamente a cada 10 segundos
         timer = setTimeout(function() {
             slideIndex++;
             showSlides(slideIndex);
@@ -175,31 +194,28 @@ if (slideshowContainers.length > 0) { // Só executa se a galeria existir
 }
 
 // =========================================
-// FUNÇÃO PARA TROCAR AS ABAS DA PROGRAMAÇÃO
+// 6. FUNÇÃO PARA TROCAR AS ABAS DA PROGRAMAÇÃO
 // =========================================
 window.abrirDia = function(evt, idDoDia) {
-    // Esconde todos os conteúdos
     let conteudos = document.getElementsByClassName("tab-content");
     for (let i = 0; i < conteudos.length; i++) { 
         conteudos[i].classList.remove("active"); 
     }
     
-    // Tira a cor de destaque de todos os botões
     let botoes = document.getElementsByClassName("tab-btn");
     for (let i = 0; i < botoes.length; i++) { 
         botoes[i].classList.remove("active"); 
     }
     
-    // Mostra o dia selecionado e acende o botão clicado
     document.getElementById(idDoDia).classList.add("active");
     evt.currentTarget.classList.add("active");
 }
 
 // =========================================
-// GOATCOUNTER (Analytics Minimalista e Privado)
+// 7. GOATCOUNTER (Analytics Minimalista e Privado)
 // =========================================
-    const scriptGC = document.createElement('script');
-    scriptGC.dataset.goatcounter = 'https://intermidia2026.goatcounter.com/count';
-    scriptGC.async = true;
-    scriptGC.src = '//gc.zgo.at/count.js';
-    document.head.appendChild(scriptGC);
+const scriptGC = document.createElement('script');
+scriptGC.dataset.goatcounter = 'https://intermidia2026.goatcounter.com/count';
+scriptGC.async = true;
+scriptGC.src = '//gc.zgo.at/count.js';
+document.head.appendChild(scriptGC);
