@@ -133,7 +133,7 @@ if (audio) { // Só executa se o player existir nesta página
 }
 
 /* ==========================================
-   5. LÓGICA DO SLIDESHOW DE FOTOS (DINÂMICO)
+   5. LÓGICA DO SLIDESHOW DE FOTOS (DINÂMICO + LIGHTBOX)
    ========================================== */
 const carrosselFotos = document.getElementById("carrossel-fotos");
 const fotosWrapper = document.getElementById("fotos-wrapper");
@@ -142,8 +142,17 @@ if (carrosselFotos && fotosWrapper) {
     let slideIndex = 1;
     let timer;
 
-    // Lista de fotos! 
-    // Para adicionar/remover fotos e créditos, basta modificar a lista após o upload dos arquivos
+    // 1. Injeta o HTML da tela cheia invisível direto no body
+    const lightboxHTML = `
+        <div id="lightbox-overlay" class="lightbox-overlay" onclick="fecharLightbox(event)">
+            <span class="lightbox-close" onclick="fecharLightbox(event)">&times;</span>
+            <img id="lightbox-img" class="lightbox-img" src="" alt="Imagem em tela cheia">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', lightboxHTML);
+
+    // LISTA DE FOTOS 
     const galeriaFotos = [
         { arquivo: "foto-galeria-intermidia.jpeg", autor: "Kátia Lombardi" },
         { arquivo: "foto-galeria-intermidia-3.jpg", autor: "Kátia Lombardi" },
@@ -157,20 +166,24 @@ if (carrosselFotos && fotosWrapper) {
         { arquivo: "foto-galeria-intermidia-14.jpeg", autor: "Deborah Castro" },
         { arquivo: "foto-galeria-intermidia-15.jpeg", autor: "Deborah Castro" },
         { arquivo: "foto-galeria-intermidia-16.jpeg", autor: "Deborah Castro" }
-
     ];
 
-    // O código gera automaticamente o HTML e joga dentro do wrapper
+    // O código gera automaticamente o HTML das fotos (agora clicáveis!)
     let fotosHTML = "";
     galeriaFotos.forEach((item) => {
         fotosHTML += `
             <div class="slide fade">
-                <img src="content/images/${item.arquivo}" alt="Foto por ${item.autor}" title="Foto por ${item.autor}">
+                <img src="content/images/${item.arquivo}" alt="Foto por ${item.autor}" title="Foto por ${item.autor}" 
+                onclick="abrirLightbox('content/images/${item.arquivo}', '${item.autor}')" 
+                style="cursor: pointer; transition: transform 0.3s ease;"
+                onmouseover="this.style.transform='scale(1.02)'" 
+                onmouseout="this.style.transform='scale(1)'">
             </div>
         `;
     });
     fotosWrapper.innerHTML = fotosHTML;
 
+    // --- Controles Normais do Slideshow ---
     window.plusSlides = function(n) {
         clearTimeout(timer); 
         showSlidesFotos(slideIndex += n);
@@ -191,7 +204,6 @@ if (carrosselFotos && fotosWrapper) {
         
         slides[slideIndex-1].style.display = "block";  
         
-        // Puxa o nome do autor diretamente da nossa listinha para o rodapé
         if(textoCredito) {
             textoCredito.innerHTML = "&copy; " + galeriaFotos[slideIndex-1].autor;
         }
@@ -202,8 +214,36 @@ if (carrosselFotos && fotosWrapper) {
         }, 10000); 
     }
 
-    // Inicia o slideshow
     showSlidesFotos(slideIndex);
+
+    // --- Funções da Tela Cheia (Lightbox) ---
+    window.abrirLightbox = function(src, autor) {
+        const lightbox = document.getElementById("lightbox-overlay");
+        const img = document.getElementById("lightbox-img");
+        const caption = document.getElementById("lightbox-caption");
+        
+        img.src = src;
+        caption.innerHTML = "&copy; " + autor;
+        
+        // Pausa a passagem automática de slides para a pessoa olhar com calma
+        clearTimeout(timer);
+        
+        lightbox.classList.add("active");
+    };
+
+    window.fecharLightbox = function(e) {
+        // Se clicar na tela escura ou no "X" (mas não dentro da foto), fecha.
+        if (e.target.id === "lightbox-overlay" || e.target.classList.contains("lightbox-close")) {
+            const lightbox = document.getElementById("lightbox-overlay");
+            lightbox.classList.remove("active");
+            
+            // Retoma a transição automática das imagens de onde parou
+            timer = setTimeout(function() {
+                slideIndex++;
+                showSlidesFotos(slideIndex);
+            }, 10000); 
+        }
+    };
 }
 
 /* ==========================================
