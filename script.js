@@ -325,3 +325,10 @@ scriptGC.dataset.goatcounter = 'https://intermidia2026.goatcounter.com/count';
 scriptGC.async = true;
 scriptGC.src = '//gc.zgo.at/count.js';
 document.head.appendChild(scriptGC);
+
+// =========================================
+// 9. FUNÇÃO PARA ABRIR/FECHAR RESUMOS
+// =========================================
+window.toggleAbstract = function(element) {
+    element.classList.toggle('active');
+}
