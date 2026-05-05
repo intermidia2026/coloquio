@@ -143,21 +143,21 @@ if (carrosselFotos && fotosWrapper) {
     let timer;
 
     // Lista de fotos! 
-    // Para adicionar/remover fotos e créditos, basta mexer aqui.
+    // Para adicionar/remover fotos e créditos, basta modificar a lista após o upload dos arquivos
     const galeriaFotos = [
         { arquivo: "foto-galeria-intermidia.jpeg", autor: "Kátia Lombardi" },
-        { arquivo: "foto-galeria-intermidia-1.png", autor: "Kátia Lombardi" },
-        { arquivo: "foto-galeria-intermidia-2.png", autor: "Kátia Lombardi" },
         { arquivo: "foto-galeria-intermidia-3.jpg", autor: "Kátia Lombardi" },
         { arquivo: "foto-galeria-intermidia-4.jpg", autor: "Kátia Lombardi" },
         { arquivo: "foto-galeria-intermidia-5.jpeg", autor: "Kátia Lombardi" },
-        { arquivo: "foto-galeria-intermidia-6.png", autor: "Kátia Lombardi" },
         { arquivo: "foto-galeria-intermidia-7.png", autor: "Kátia Lombardi" },
-        { arquivo: "foto-galeria-intermidia-8.jpeg", autor: "Kátia Lombardi" },
-        { arquivo: "foto-galeria-intermidia-9.png", autor: "Kátia Lombardi" },
         { arquivo: "foto-galeria-intermidia-10.jpeg", autor: "Nydia Negromonte" },
         { arquivo: "foto-galeria-intermidia-11.jpeg", autor: "Nydia Negromonte" },
-        { arquivo: "foto-galeria-intermidia-12.jpeg", autor: "Nydia Negromonte" }
+        { arquivo: "foto-galeria-intermidia-12.jpeg", autor: "Nydia Negromonte" },
+        { arquivo: "foto-galeria-intermidia-13.jpeg", autor: "Deborah Castro" },
+        { arquivo: "foto-galeria-intermidia-14.jpeg", autor: "Deborah Castro" },
+        { arquivo: "foto-galeria-intermidia-15.jpeg", autor: "Deborah Castro" },
+        { arquivo: "foto-galeria-intermidia-16.jpeg", autor: "Deborah Castro" }
+
     ];
 
     // O código gera automaticamente o HTML e joga dentro do wrapper
