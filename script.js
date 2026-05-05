@@ -133,28 +133,43 @@ if (audio) { // Só executa se o player existir nesta página
 }
 
 /* ==========================================
-   5. LÓGICA DO SLIDESHOW DE FOTOS
+   5. LÓGICA DO SLIDESHOW DE FOTOS (DINÂMICO)
    ========================================== */
 const carrosselFotos = document.getElementById("carrossel-fotos");
-if (carrosselFotos) { 
+const fotosWrapper = document.getElementById("fotos-wrapper");
+
+if (carrosselFotos && fotosWrapper) { 
     let slideIndex = 1;
     let timer;
 
-    const creditosFotos = [
-      "&copy; Kátia Lombardi",    // Foto 1
-      "&copy; Kátia Lombardi",    // Foto 2
-      "&copy; Kátia Lombardi",    // Foto 3
-      "&copy; Kátia Lombardi",    // Foto 4
-      "&copy; Kátia Lombardi",    // Foto 5
-      "&copy; Kátia Lombardi",    // Foto 6
-      "&copy; Kátia Lombardi",    // Foto 7
-      "&copy; Kátia Lombardi",    // Foto 8
-      "&copy; Kátia Lombardi",    // Foto 9
-      "&copy; Kátia Lombardi",    // Foto 10
-      "&copy; Nydia Negromonte",  // Foto 11
-      "&copy; Nydia Negromonte",  // Foto 12
-      "&copy; Nydia Negromonte"   // Foto 13
+    // Lista de fotos! 
+    // Para adicionar/remover fotos e créditos, basta mexer aqui.
+    const galeriaFotos = [
+        { arquivo: "foto-galeria-intermidia.jpeg", autor: "Kátia Lombardi" },
+        { arquivo: "foto-galeria-intermidia-1.png", autor: "Kátia Lombardi" },
+        { arquivo: "foto-galeria-intermidia-2.png", autor: "Kátia Lombardi" },
+        { arquivo: "foto-galeria-intermidia-3.jpg", autor: "Kátia Lombardi" },
+        { arquivo: "foto-galeria-intermidia-4.jpg", autor: "Kátia Lombardi" },
+        { arquivo: "foto-galeria-intermidia-5.jpeg", autor: "Kátia Lombardi" },
+        { arquivo: "foto-galeria-intermidia-6.png", autor: "Kátia Lombardi" },
+        { arquivo: "foto-galeria-intermidia-7.png", autor: "Kátia Lombardi" },
+        { arquivo: "foto-galeria-intermidia-8.jpeg", autor: "Kátia Lombardi" },
+        { arquivo: "foto-galeria-intermidia-9.png", autor: "Kátia Lombardi" },
+        { arquivo: "foto-galeria-intermidia-10.jpeg", autor: "Nydia Negromonte" },
+        { arquivo: "foto-galeria-intermidia-11.jpeg", autor: "Nydia Negromonte" },
+        { arquivo: "foto-galeria-intermidia-12.jpeg", autor: "Nydia Negromonte" }
     ];
+
+    // O código gera automaticamente o HTML e joga dentro do wrapper
+    let fotosHTML = "";
+    galeriaFotos.forEach((item) => {
+        fotosHTML += `
+            <div class="slide fade">
+                <img src="content/images/${item.arquivo}" alt="Foto por ${item.autor}" title="Foto por ${item.autor}">
+            </div>
+        `;
+    });
+    fotosWrapper.innerHTML = fotosHTML;
 
     window.plusSlides = function(n) {
         clearTimeout(timer); 
@@ -162,7 +177,7 @@ if (carrosselFotos) {
     };
 
     function showSlidesFotos(n) {
-        let slides = carrosselFotos.getElementsByClassName("slide");
+        let slides = fotosWrapper.getElementsByClassName("slide");
         let textoCredito = document.getElementById("credito-galeria");
         
         if (slides.length === 0) return;
@@ -176,8 +191,9 @@ if (carrosselFotos) {
         
         slides[slideIndex-1].style.display = "block";  
         
+        // Puxa o nome do autor diretamente da nossa listinha para o rodapé
         if(textoCredito) {
-            textoCredito.innerHTML = creditosFotos[slideIndex-1];
+            textoCredito.innerHTML = "&copy; " + galeriaFotos[slideIndex-1].autor;
         }
         
         timer = setTimeout(function() {
@@ -186,6 +202,7 @@ if (carrosselFotos) {
         }, 10000); 
     }
 
+    // Inicia o slideshow
     showSlidesFotos(slideIndex);
 }
 
@@ -228,12 +245,10 @@ if (carrosselVideos) {
 
     // Função bônus: Pausa o vídeo anterior quando o usuário passa para o próximo slide
     function pausarVideosAtivos(container) {
-        // Pausa os vídeos mp4 locais
         let videos = container.getElementsByTagName("video");
         for(let i = 0; i < videos.length; i++) {
             videos[i].pause();
         }
-        // Pausa os vídeos do YouTube dando um "reload" leve no frame
         let iframes = container.getElementsByTagName("iframe");
         for(let i = 0; i < iframes.length; i++) {
             let iframeSrc = iframes[i].src;
