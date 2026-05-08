@@ -170,7 +170,12 @@ if (carrosselFotos && fotosWrapper) {
         { arquivo: "foto-galeria-intermidia-18.jpeg", autor: "Curadoria: Guilherme Cunha" },
         { arquivo: "foto-galeria-intermidia-19.jpeg", autor: "Curadoria: Guilherme Cunha" },
         { arquivo: "foto-galeria-intermidia-20.jpeg", autor: "Curadoria: Guilherme Cunha" },
-        { arquivo: "foto-galeria-intermidia-21.jpeg", autor: "Curadoria: Guilherme Cunha" }
+        { arquivo: "foto-galeria-intermidia-21.jpeg", autor: "Curadoria: Guilherme Cunha" },
+        { arquivo: "foto-galeria-intermidia-22.jpeg", autor: "Simone Cortezão" },
+        { arquivo: "foto-galeria-intermidia-23.jpeg", autor: "Simone Cortezão" },
+        { arquivo: "foto-galeria-intermidia-24.jpeg", autor: "Simone Cortezão" },
+        { arquivo: "foto-galeria-intermidia-25.jpeg", autor: "Simone Cortezão" },
+        { arquivo: "foto-galeria-intermidia-26.jpeg", autor: "Simone Cortezão" }
     ];
 
     // O código gera automaticamente o HTML das fotos (agora clicáveis!)
