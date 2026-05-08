@@ -173,7 +173,7 @@ if (carrosselFotos && fotosWrapper) {
     galeriaFotos.forEach((item) => {
         fotosHTML += `
             <div class="slide fade">
-                <img src="content/images/${item.arquivo}" alt="Foto por ${item.autor}" title="Foto por ${item.autor}" 
+                <img src="content/images/${item.arquivo}" alt="Foto - ${item.autor}" title="Foto - ${item.autor}" 
                 onclick="abrirLightbox('content/images/${item.arquivo}', '${item.autor}')" 
                 style="cursor: pointer; transition: transform 0.3s ease;"
                 onmouseover="this.style.transform='scale(1.02)'" 
