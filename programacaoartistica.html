@@ -1,36 +1,236 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Programação Artística - V Colóquio Internacional</title>
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="style.css">
-  </head>
-  <body class="lang-pt">
-  
-      <div id="menu-placeholder"></div>
-  
-      <div class="container">
-          <div class="content-block" style="text-align: center; padding: 5rem 2rem; min-height: 40vh; display: flex; flex-direction: column; justify-content: center;">
-              
-              <div class="pt">
-                  <h2>Programação Artística</h2>
-                  <h3 style="border-bottom: none; font-size: 1.3rem; color: var(--accent-color); margin-top: 1rem;">Em breve.</h3>
-              </div>
-  
-              <div class="en">
-                  <h2>Artistic Program</h2>
-                  <h3 style="border-bottom: none; font-size: 1.3rem; color: var(--accent-color); margin-top: 1rem;">Coming soon.</h3>
-              </div>
-  
-          </div>
-      </div>
-  
-      <div id="footer-placeholder"></div>
-  
-      <script src="script.js"></script>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação Artística - V Colóquio Internacional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* =========================================
+           ESTILOS DOS ARTISTAS E RELEASE (COLLAPSE)
+           ========================================= */
+        .artist-card {
+            background-color: #fcfcfc;
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .artist-card {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+        }
+        .artist-photo {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            flex-shrink: 0;
+            border: 2px solid #eaeaea;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .artist-info {
+            flex-grow: 1;
+        }
+        .artist-info h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+        }
+        .artist-info p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+            text-align: justify;
+            margin-bottom: 0.8rem;
+        }
+        
+        /* Estilos específicos do botão e do Release */
+        .btn-release {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #fff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        .btn-release:hover {
+            background-color: var(--primary-color);
+        }
+        .release-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s ease, padding 0.5s ease, margin 0.5s ease, opacity 0.4s ease;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            margin-top: 0;
+            padding: 0 1.5rem;
+            opacity: 0;
+        }
+        .release-content.active {
+            max-height: 4000px; /* Valor alto para caber todo o texto do release */
+            padding: 1.5rem;
+            margin-top: 15px;
+            border: 1px solid #eaeaea;
+            opacity: 1;
+        }
+        .release-content h4 {
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        .release-content ul {
+            padding-left: 1.5rem;
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-top: 0.5rem;
+        }
+        .release-content li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body class="lang-pt">
+
+    <div id="menu-placeholder"></div>
+
+    <div class="container">
+        <div class="content-block" style="border: none; box-shadow: none; padding-top: 2rem;">
+            
+            <div class="pt">
+                <h2 style="text-align: center; margin-bottom: 3rem;">Programação Artística</h2>
+            </div>
+            <div class="en">
+                <h2 style="text-align: center; margin-bottom: 3rem;">Artistic Program</h2>
+            </div>
+
+            <div class="artist-card">
+                <img class="artist-photo" src="content/images/vento-vertentes.jpg" alt="Vento Vertentes">
+                <div class="artist-info">
+                    <h3>Vento Vertentes</h3>
+                    <div class="pt">
+                        <p>Criação e experimentação em música instrumental são nossas vertentes, com ventos sonoros que passam por diferentes estilos, em arranjos inéditos de obras autorais e de compositores renomados da música brasileira e mundial.</p>
+                    </div>
+                    <div class="en">
+                        <p>Creation and experimentation in instrumental music are our strands, with sound winds that move through different styles, in unprecedented arrangements of original works and renowned composers of Brazilian and global music.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <img class="artist-photo" src="content/images/ana-liberatto.jpg" alt="Ana Liberatto">
+                <div class="artist-info">
+                    <h3>Ana Liberatto</h3>
+                    <div class="pt">
+                        <p>Natural de São João del-Rei, enverga as tradições culturais e musicais da terra, com um repertório calcado em uma MPB refinada e em sua potente energia vocal e pessoal que entrega em suas performances uma experiência densa e repleta de significados.</p>
+                    </div>
+                    <div class="en">
+                        <p>Born in São João del-Rei, she embodies the cultural and musical traditions of the land, with a repertoire based on refined Brazilian Popular Music (MPB) and her powerful vocal and personal energy, delivering a dense and meaningful experience in her performances.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-card">
+                <img class="artist-photo" src="content/images/companhia-da-musica.jpg" alt="Companhia da Música">
+                <div class="artist-info">
+                    <h3>Companhia da Música</h3>
+                    
+                    <div class="pt">
+                        <p>É formada por professores, técnicos e alunos da UFSJ, UFOP, UFMG e do Conservatório Estadual de Música Padre José Maria Xavier de São João del-Rei. Este grupo se dedica a pesquisas e projetos artísticos centrados nos ricos acervos musicais históricos da Região das Vertentes em Minas Gerais.</p>
+                        <button class="btn-release" onclick="toggleRelease(this)">Ler release completo ▼</button>
+                    </div>
+                    <div class="en">
+                        <p>Formed by professors, technicians, and students from UFSJ, UFOP, UFMG, and the Padre José Maria Xavier State Conservatory of Music in São João del-Rei. This group is dedicated to research and artistic projects centered on the rich historical musical collections of the Vertentes Region in Minas Gerais.</p>
+                        <button class="btn-release" onclick="toggleRelease(this)">Read full release ▼</button>
+                    </div>
+                    
+                    <div class="release-content">
+                        <div class="pt">
+                            <h4>Grupo “Companhia da Música” apresenta:<br>“Partidos da música: resgate de uma prática musical mineira centenária”</h4>
+                            <p><strong>Recital Comentado</strong></p>
+                            <p>O grupo musical e o projeto inspiram-se no conceito histórico dos "Partidos da Música" ou "Companhias da Música", que no século XIX eram agrupamentos musicais essenciais para a vida cultural e religiosa da região de São João del Rei, formados muitas vezes por famílias de músicos que encontravam no ofício da performance e do ensino da música uma forma de inserção e distinção social.</p>
+                            <p>O projeto propõe oficinas de instrumentos e canto para músicos da comunidade e recitais comentados em um formato que combina a performance musical com a contextualização da história social da música na região, a trajetória dos compositores, e as práticas de performance da época. Uma característica inovadora destes recitais comentados é a utilização de reduções para piano e instrumentos solistas/voz de obras originalmente orquestrais, uma estratégia que não apenas viabiliza a performance em espaços com infraestrutura variada, mas também dialoga com práticas históricas de difusão musical.</p>
+                            <p>No repertório estão obras sacras e camerísticas do século XIX, com ênfase em compositores mineiros como Padre José Maria Xavier e Presciliano José da Silva, cujas obras refletem a intensa atividade musical e o papel social dos músicos na sociedade oitocentista mineira. Além disso, obras dos compositores cariocas Francisco Manuel da Silva e Lino José Nunes retratam a intensa ligação das cidades históricas mineiras com o Rio de Janeiro, capital do Império no século XIX.</p>
+                            <p>Ao levar este repertório e conhecimento às cidades de São João del-Rei, Ouro Preto e Belo Horizonte o projeto busca a valorização do patrimônio imaterial mineiro.</p>
+                            
+                            <h4>Participantes</h4>
+                            <ul>
+                                <li><strong>Antônio Carlos Guimarães</strong> (Docente UFSJ) – Coordenador Geral e Músico (Flautista / Palestrante / Pesquisador)</li>
+                                <li><strong>Edésio de Lara Melo</strong> (Docente UFOP / PPPGMUSI-UFSJ) – Músico (Cantor / Palestrante / Pesquisador)</li>
+                                <li><strong>Elenis Aparecida Sabino Guimarães</strong> (Docente UFSJ) – Musicista (Cantora / Palestrante)</li>
+                                <li><strong>Alice Peixoto de Assunção</strong> (Docente Conservatório Estadual de Música PJMX) – Musicista (Cantora / Palestrante)</li>
+                                <li><strong>Gabriel Cursino Madeira Casara</strong> (Músico UFSJ) – Músico (Pianista / Transcritor / Palestrante / Pesquisador)</li>
+                                <li><strong>Isabele Alves</strong> (Discente pós-graduação UFMG) – Violoncelista</li>
+                                <li><strong>Fausto Borém</strong> (Docente UFMG) – Músico (Contrabaixista), Pesquisador e Palestrante</li>
+                                <li><strong>Vitor</strong> (Discente UFSJ) – Músico (Cantor)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="en">
+                            <h4>"Companhia da Música" Group presents:<br>"Partidos da música: rescuing a century-old musical practice from Minas Gerais"</h4>
+                            <p><strong>Commented Recital</strong></p>
+                            <p>The musical group and project are inspired by the historical concept of the "Partidos da Música" or "Companhias da Música", which in the 19th century were essential musical groups for the cultural and religious life of the São João del Rei region, often formed by families of musicians who found in the craft of performance and music teaching a form of social insertion and distinction.</p>
+                            <p>The project proposes instrument and singing workshops for community musicians and commented recitals in a format that combines musical performance with the contextualization of the social history of music in the region, the trajectory of the composers, and the performance practices of the time. An innovative feature of these commented recitals is the use of piano reductions and solo instruments/voice for originally orchestral works, a strategy that not only enables performance in spaces with varied infrastructure but also dialogues with historical practices of musical dissemination.</p>
+                            <p>The repertoire includes sacred and chamber works from the 19th century, with an emphasis on composers from Minas Gerais such as Padre José Maria Xavier and Presciliano José da Silva, whose works reflect the intense musical activity and the social role of musicians in 19th-century Minas Gerais society. In addition, works by Rio de Janeiro composers Francisco Manuel da Silva and Lino José Nunes portray the intense connection between the historic cities of Minas Gerais and Rio de Janeiro, capital of the Empire in the 19th century.</p>
+                            <p>By bringing this repertoire and knowledge to the cities of São João del-Rei, Ouro Preto, and Belo Horizonte, the project seeks to value the intangible heritage of Minas Gerais.</p>
+                            
+                            <h4>Participants</h4>
+                            <ul>
+                                <li><strong>Antônio Carlos Guimarães</strong> (UFSJ Professor) – General Coordinator and Musician (Flutist / Speaker / Researcher)</li>
+                                <li><strong>Edésio de Lara Melo</strong> (UFOP / PPPGMUSI-UFSJ Professor) – Musician (Singer / Speaker / Researcher)</li>
+                                <li><strong>Elenis Aparecida Sabino Guimarães</strong> (UFSJ Professor) – Musician (Singer / Speaker)</li>
+                                <li><strong>Alice Peixoto de Assunção</strong> (PJMX State Music Conservatory Professor) – Musician (Singer / Speaker)</li>
+                                <li><strong>Gabriel Cursino Madeira Casara</strong> (UFSJ Musician) – Musician (Pianist / Transcriber / Speaker / Researcher)</li>
+                                <li><strong>Isabele Alves</strong> (UFMG Graduate Student) – Cellist</li>
+                                <li><strong>Fausto Borém</strong> (UFMG Professor) – Musician (Double bassist), Researcher and Speaker</li>
+                                <li><strong>Vitor</strong> (UFSJ Student) – Musician (Singer)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="script.js"></script>
+    
+    <script>
+        function toggleRelease(btn) {
+            // Encontra o container do release correspondente
+            const cardInfo = btn.closest('.artist-info');
+            const content = cardInfo.querySelector('.release-content');
+            
+            // Verifica o idioma atual para mudar o texto do botão corretamente
+            const isPt = btn.closest('.pt') !== null;
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                btn.innerHTML = isPt ? 'Ler release completo ▼' : 'Read full release ▼';
+            } else {
+                content.classList.add('active');
+                btn.innerHTML = isPt ? 'Ocultar release ▲' : 'Hide full release ▲';
+            }
+        }
+    </script>
+</body>
 </html>
