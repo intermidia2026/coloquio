@@ -9,6 +9,53 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
+
+        /* =========================================
+           MODAL TELA CHEIA PARA FOTOS
+           ========================================= */
+        .foto-modal {
+            display: none; 
+            position: fixed; 
+            z-index: 9999; 
+            padding-top: 60px; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.9); 
+        }
+        .foto-modal-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        #foto-caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            text-align: center;
+            color: #eee;
+            padding: 15px 0;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+        .close-foto {
+            position: absolute;
+            top: 15px;
+            right: 30px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .close-foto:hover {
+            color: #bbb;
+        }
+        
         /* =========================================
            ESTILOS DOS ARTISTAS E RELEASE (COLLAPSE)
            ========================================= */
@@ -122,7 +169,7 @@
             </div>
 
             <div class="artist-card">
-                <img class="artist-photo" src="content/images/vento-vertentes.jpg" alt="Vento Vertentes">
+                <img class="artist-photo" src="content/images/vento-vertentes.jpg" alt="Vento Vertentes" onclick="abrirFoto(this)" style="cursor: pointer;">
                 <div class="artist-info">
                     <h3>Vento Vertentes</h3>
                     <div class="pt">
@@ -135,7 +182,7 @@
             </div>
 
             <div class="artist-card">
-                <img class="artist-photo" src="content/images/ana-liberatto.jpg" alt="Ana Liberatto">
+                <img class="artist-photo" src="content/images/ana-liberatto.jpg" alt="Ana Liberatto" onclick="abrirFoto(this)" style="cursor: pointer;">
                 <div class="artist-info">
                     <h3>Ana Liberatto</h3>
                     <div class="pt">
@@ -148,7 +195,7 @@
             </div>
 
             <div class="artist-card">
-                <img class="artist-photo" src="content/images/companhia-da-musica.jpg" alt="Companhia da Música">
+                <img class="artist-photo" src="content/images/companhia-da-musica.jpg" alt="Companhia da Música" onclick="abrirFoto(this)" style="cursor: pointer;">
                 <div class="artist-info">
                     <h3>Companhia da Música</h3>
                     
@@ -212,6 +259,12 @@
 
     <div id="footer-placeholder"></div>
 
+    <div id="modalTelaCheia" class="foto-modal" onclick="fecharFoto()">
+        <span class="close-foto">&times;</span>
+        <img class="foto-modal-content" id="imgAmpliada">
+        <div id="foto-caption"></div>
+    </div>
+
     <script src="script.js"></script>
     
     <script>
@@ -230,6 +283,20 @@
                 content.classList.add('active');
                 btn.innerHTML = isPt ? 'Ocultar release ▲' : 'Hide full release ▲';
             }
+        }
+
+        function abrirFoto(elementoImg) {
+            const modal = document.getElementById("modalTelaCheia");
+            const imgModal = document.getElementById("imgAmpliada");
+            const legenda = document.getElementById("foto-caption");
+            
+            modal.style.display = "block";
+            imgModal.src = elementoImg.src;
+            legenda.innerHTML = elementoImg.alt; // Pega o nome do artista automaticamente
+        }
+
+        function fecharFoto() {
+            document.getElementById("modalTelaCheia").style.display = "none";
         }
     </script>
 </body>
